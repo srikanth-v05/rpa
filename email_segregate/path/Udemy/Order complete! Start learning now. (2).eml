@@ -1,0 +1,5112 @@
+Delivered-To: vignesh2604.m@gmail.com
+Received: by 2002:a05:6638:4e19:b0:4d5:e1cd:dfa5 with SMTP id ep25csp309203jab;
+        Tue, 1 Oct 2024 09:40:14 -0700 (PDT)
+X-Google-Smtp-Source: AGHT+IFquckDZR+Of3Z+i1eaFX8B4lE9FtJ2cW2ejv8EIm5zV9qe1uI1j54Odkm3rUFwgsIp67mi
+X-Received: by 2002:a05:6102:440d:b0:493:977c:5f11 with SMTP id ada2fe7eead31-4a3e6971000mr62045137.5.1727800814412;
+        Tue, 01 Oct 2024 09:40:14 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1727800814; cv=none;
+        d=google.com; s=arc-20240605;
+        b=VUwVOufbF4E0DekwfFjXcl/M6L95CB8huAAXXPAGjWWgksb6IMnt6Q/n3SSNveMnkO
+         CnKkxxWN9c5YnlVG3Ry2vtHwSwAsdFJOuAyb+XTJYwogrK3otgBlrp9qimqKdRmAOrND
+         wPSpRIwHLrLqrc0Jxb8+4zm+2NN4qkKgFrh+0ZJ7K5yHOoBIa9yx1O1mhP/YfIKG9Z9A
+         eHKqm+8wf5qXE8K7DhInImPMXzM+0JHlohl3WrgmOlejxXyQvzZWo/uwH24pk0EAyxbT
+         91G+i+RiCZjIZ8ELVGo6WF9/ZVY7bbaePe/MZvTqwelNbWl/hmwhJkbbnqkwDAzGcOiX
+         RV3Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:reply-to:subject:message-id:mime-version:from:date
+         :dkim-signature:dkim-signature;
+        bh=hHIM/Kq5/YcJcZovt7kRZcb3mAjOTJXEQIYGciNxsx0=;
+        fh=rsrl12rvDOcirU93c2qbKFjXoDJmzXBsnt9QXNuv+Qs=;
+        b=MMpmZInzu0T7NYbiuYV0UXJd4rs6uosuVKZJpPawRkGEkgGZOQHrBUOL5k3gAfh/Hc
+         voEngX+ZHaurmBTczrjbM4D5IJZkrlITAZDUz9can/Imwa4m3doVjeub2v23NszvCZM4
+         1k5u+iBTsU6HaS2m6qPldj2/Fk7DkDBRZ5JMu8sOeL0mNsB5UVwL7h7+TrKzArhbtHh3
+         1Ye4OuKxcPxbLeuJXkamkD9xkrrJnRll/HBPCjC+NSi1qWBBkTYhuQX5eq2ks2cbDXAt
+         fpoLx+dzy7X0cd25lhBIgh2h7xX3M8LiJPCAADVkGl9SfeHMTX1UT5r1pTwmOKfUzewd
+         9uPA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@alerts.udemy.com header.s=s1 header.b=XH6dyd9V;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=B9hPI0xP;
+       spf=pass (google.com: domain of bounces+21743674-5752-vignesh2604.m=gmail.com@abmail.alerts.udemy.com designates 149.72.173.41 as permitted sender) smtp.mailfrom="bounces+21743674-5752-vignesh2604.m=gmail.com@abmail.alerts.udemy.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=alerts.udemy.com
+Return-Path: <bounces+21743674-5752-vignesh2604.m=gmail.com@abmail.alerts.udemy.com>
+Received: from o3608.abmail.alerts.udemy.com (o3608.abmail.alerts.udemy.com. [149.72.173.41])
+        by mx.google.com with ESMTPS id a1e0cc1a2514c-84eb221fb96si2001544241.164.2024.10.01.09.40.14
+        for <vignesh2604.m@gmail.com>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Tue, 01 Oct 2024 09:40:14 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+21743674-5752-vignesh2604.m=gmail.com@abmail.alerts.udemy.com designates 149.72.173.41 as permitted sender) client-ip=149.72.173.41;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@alerts.udemy.com header.s=s1 header.b=XH6dyd9V;
+       dkim=pass header.i=@sendgrid.info header.s=smtpapi header.b=B9hPI0xP;
+       spf=pass (google.com: domain of bounces+21743674-5752-vignesh2604.m=gmail.com@abmail.alerts.udemy.com designates 149.72.173.41 as permitted sender) smtp.mailfrom="bounces+21743674-5752-vignesh2604.m=gmail.com@abmail.alerts.udemy.com";
+       dmarc=pass (p=REJECT sp=REJECT dis=NONE) header.from=alerts.udemy.com
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=alerts.udemy.com;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=s1; bh=hHIM/Kq5/YcJcZovt7kRZcb3mAjOTJXEQIYGciNxsx0=;
+	b=XH6dyd9VtHf7ien1tPMisnxX5vReRbyDbtO2tZV971C9ddpgzCK+hcQxelBxLTzd/qc4
+	ecyudQpbMTwxjXKLG59yM3hNk4arkkFIHONu3kdl1JKTX9g6gBkUSxAuiBsRHvym0hly+P
+	1agZu18kam42FEx1Ex2XOSkX6N8289bIQlGpKAn89lKboZAIcQdB5Ee6PMo4Sw0zzB5t2X
+	LED+retndolHNKmxTCgNrmke1snlFDFjEc0h2b0G6DkyRhhsRTdDg1jeaJS0WNeA65BrC5
+	T2G2Id2HCU41D+eUoOpB7TABavf0E7WnjdHOn4dZnGXUsyiPZDvGDWXZuTPktNgg==
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=sendgrid.info;
+	h=content-type:from:mime-version:subject:reply-to:x-feedback-id:to:cc:
+	content-type:from:subject:to;
+	s=smtpapi; bh=hHIM/Kq5/YcJcZovt7kRZcb3mAjOTJXEQIYGciNxsx0=;
+	b=B9hPI0xPYRKQDgiH/Wlb8mqgF5IfkrXbcntqLPylVnD9Otc9zf3tPdaT9sjF2lD24VfJ
+	KMeg13DNjR3YG+kKEWYss+YjjyQwWwCZ76wyq4mg18MQJRGg9YLLxx+dJveRTztq3k2SbO
+	pSrfC/pvQeE5bs+pt1sdIch6j5f3crfMk=
+Received: by recvd-6cc54446c4-nngcm with SMTP id recvd-6cc54446c4-nngcm-1-66FC25EE-7
+	2024-10-01 16:40:14.023572263 +0000 UTC m=+1636992.103102267
+Received: from MjE3NDM2NzQ (unknown)
+	by geopod-ismtpd-12 (SG) with HTTP
+	id BYnQiRikRu2mvqwbAQ0aOw
+	Tue, 01 Oct 2024 16:40:13.990 +0000 (UTC)
+Content-Type: multipart/alternative; boundary=50bd7ba51cd55c322eb158585d9e8b998a726fbc7f6bccc911f08b438cd4
+Date: Tue, 01 Oct 2024 16:40:14 +0000 (UTC)
+From: Udemy <hello@alerts.udemy.com>
+Mime-Version: 1.0
+Message-ID: <BYnQiRikRu2mvqwbAQ0aOw@geopod-ismtpd-12>
+Subject: Order complete! Start learning now.
+Reply-To: no-reply@alerts.udemy.com
+X-Feedback-ID: 21743674:SG
+X-SG-EID: 
+ =?us-ascii?Q?u001=2EprZIduz3Hio3jjIVO=2F+qXB4Uc52UQ2enCK3VmjtOA6ZvSG6QcpNwH2Gs9?=
+ =?us-ascii?Q?3rupgDV8h6Hfmeo+FoL8=2F9OWASiATdCZ4gf5L7W?=
+ =?us-ascii?Q?kVwG8ixetBpsejKL5YqrKeK37Qmj9sNd3HuRUgr?=
+ =?us-ascii?Q?tZziYww=2F94WQwQngh77outR0D03agc4BwydCMpK?=
+ =?us-ascii?Q?i+YySXjSSwQQac4Ble8NooAro3un2tSaWxJS8mz?=
+ =?us-ascii?Q?kUFFDG=2Fbw38w+FpcgARAKDHpTMXaXbRoP36WTVA?= =?us-ascii?Q?4UYC?=
+X-SG-ID: 
+ =?us-ascii?Q?u001=2ESdBcvi+Evd=2FbQef8eZF3BpTL9BgbK5wfSJMJGMsmprDrjDW6011yC6XOo?=
+ =?us-ascii?Q?3uya5MXQFo3gmTYgA8d+IU4oK=2FVBgTlGlslnd6Z?=
+ =?us-ascii?Q?ClT6sbr4CJquaiBaZYTD9ub5a4PqH4I5aD27uX+?=
+ =?us-ascii?Q?qDC+iDaUyip8=2F9gqLuGzqnkbw5jD6DX+0L9toTG?=
+ =?us-ascii?Q?pVk4yDH6HvGy1I17t9FrktTsD=2F6WEQwH7HHcPx1?=
+ =?us-ascii?Q?hX8clwTNjMxEyy2tKKeWXS=2FhlWwaMWHwrFa3Pmu?=
+ =?us-ascii?Q?FRRJXbE6vl4sNmoocrwyuRrYyINr=2FabI6kT1kEd?=
+ =?us-ascii?Q?aP34kQ9VzXiwChQ3BaroXAU0DlMvC+cdVOmj+XE?=
+ =?us-ascii?Q?FTG4=2Fq5LxRMnZgrliHAzOHe7uOBinNXJnRooufO?=
+ =?us-ascii?Q?GjIrpQ1E+Qo70G=2FxO1dqREK8wLqapAzAqagPxe9?=
+ =?us-ascii?Q?7mgtPDpQ2V2Swo6sjtuQH3b8DAM2afK8GzpW9Kv?=
+ =?us-ascii?Q?=2FZJ86c0HCgxEeqoVLPeJv2Bf7=2FTK7mu6b1773Kc?=
+ =?us-ascii?Q?EGqEQ=3D?=
+To: vignesh2604.m@gmail.com
+X-Entity-ID: u001.Akf8bWOMPmyk/zxQlcdHrQ==
+
+--50bd7ba51cd55c322eb158585d9e8b998a726fbc7f6bccc911f08b438cd4
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain; charset=utf-8
+Mime-Version: 1.0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Thanks for choosing to learn with us =E2=80=94 we=E2=80=99re excited to be =
+on your journey with you.
+
+
+
+
+
+
+
+
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =
+=CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=
+=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=
+=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=
+=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=E2=80=8C =CD=8F=
+=E2=80=8C =CD=8F=E2=80=8C
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        Udemy Logo   Udemy  =20
+( https://ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8l=
+jn8XOB2-2FWb4C6mdz6rNETCcqPeLofoW276uINFpoJTnrqweJ-2FPS-2Fei6AB8pNZrlXD98xB=
+y850xU61HfVtH-2FHXOUwj1BMCUZ4raKB0E-2BnqGHd3TLa6jzk0BdWDJTB0UsqykSww-2BHRwH=
+9sgooXTsGKf3NO1K5xjA7VawQnugGrZe4KMoAGjKU-2By78kHTniKkUhgkbE0roR2pSKaGSzW-2=
+BEx-2ByxG2-2Faj28w5Mj1fYFLB0MZ07bGUxxwnkz7X03uUGNXvxDXZqivrDhZlczzCOr10G0-3=
+D4d0s_F-2BBDh37bplPUhH9FbpP4x-2BcuUs-2B-2Fz4mqZ3rIgXX1iGcrKBEin5N-2F5-2F-2F=
+ISI5nMYzmPBpRk41Vz6oynZ3b7itCYEv5O0TRHvk96yLWK7nSf1KKQK-2B7lW1e6wZO7hzHZUP9=
+-2FhnqspXEKWl2rNGKQR3oP7KG0YJtjKYwmO5bOcjtF284VbaBMpmTHv2Rv4GWznoGnq4uSTlwf=
+K0Ml2cQKA5a4IwFQ4AIWkw16o4toHAtJCQ2u5PmI7XVM1SU-2BrlCH6AsGkhRk2ejQFEU6McGnU=
+ioQoeibzp9KAF5G5vcueh0APxMcbqJcEZHNRaBnXTPLbESJxyb50k9tn-2BORQQbsfnwUWPWYzP=
+qiIrYjlMErkrL-2BDfmmvxiYsqIYcqMzvSqasjDoT1s-2B1RHXXDe9nnCfALymcL0SYTTJZfcPG=
+hHMBjvhdqDzDaoscbSK9TXPZ5SsRtFX330bCmghP2iUWbgtd9YRjsZUwYhqIQP6UU1tDYWmI3ST=
+Oj5rjxikOl-2BkJiWXXY5Cb3CyWHIYEHIGD3drxJm7pfh6rv6sg9oF3mKU7Cp6vetVkh-2BsSI1=
+7qwjBzuj5GEuX8CKLkDU7nTbYv4QQ5O5MZl9vfqonfpnKv2IqbkRPYmBteD05sVHBt8INVSB4qa=
+mYOiHxcNzBXk7UymTlzVagA-3D-3D )
+         =20
+
+ (
+https://ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8llX=
+O6bPP2VYqAEArl1-2BjgnZnvlaRPhkQSI54dOLAVfoVWxnRq4MnWFdcBITiZqEFKuBPIQ-2FA0i=
+VY23DYKMfESKrliFYfwhAfTsD6sSpBtbatJnWUdqm74gFmb0JYfDmqAAyR9BCGwgERF5qg4dT-2=
+FFBjWvOqeob-2Bw3y8ySnF56etJ-2FN7CD3UVYfWdTUF94aNkNMCcMj6lkbZeb3uTUevsOwRRLX=
+QbuVLoIEb6LaXawliHM4xuOl-2BxZEFGyX7R4in-2FiF5Mj1mSDyYbpHflBk2mzQhNiXtporFoN=
+QFypvMyTVuTXg-2BqxRbrIM6qBPlnaLE5pRzNSN8ij2SOkSSbpLMdBi4-3DcdsD_F-2BBDh37bp=
+lPUhH9FbpP4x-2BcuUs-2B-2Fz4mqZ3rIgXX1iGcrKBEin5N-2F5-2F-2FISI5nMYzmPBpRk41V=
+z6oynZ3b7itCYEv5O0TRHvk96yLWK7nSf1KKQK-2B7lW1e6wZO7hzHZUP9-2FhnqspXEKWl2rNG=
+KQR3oP7KG0YJtjKYwmO5bOcjtF284VbaBMpmTHv2Rv4GWznoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4=
+AIWkw16o4toHAtJCQ2u5PmI7XVM1SU-2BrlCH6AsGkhRk2ejQFEU6McGnUioQoeibzp9KAF5G5v=
+cueh0APxMcbqJcEZHNRaBnXTPLbESJxyb50k9tn-2BORQQbsfnwUWPWYzPqiIrYjlMErkrL-2BD=
+fmmvxiYsqIYcqMzvSqasjDoT1s-2B1RHXXDe9nnCfALymcL0SYTTJZfcPGhHMBjvhdqDzDaoscb=
+SK9TXPZ5SsRtFX330bCmghP2iUWbgtd9YRjsZUwYhqIQP6UU1tDYWmI3STOj5rjxikOl-2BkJiW=
+XXY58unkX8RcclewxvMHWpqkHk0-2FR-2F-2BrbUrYm4szbJB-2FmKerLSyN2aj2yuAzNTCMQVY=
+4jsojHq-2F2gJlImXdO8kVfPhw3WLNJKuzJgd4YVKT1XwUGFLx4bXtMr09gmxHSXLZCipRK0pmA=
+XGvLfGr4B-2FLHyw-3D-3D
+)              Your order=E2=80=99s been processed
+You=E2=80=99re all set to start learning. Ready to jump in?
+Start learning (
+https://ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8lj4=
+g-2BwO2YYasAh0hb-2FAhYwagXsgA3YNvQtsSe1AjitpnhXIL7Rp8qVXWEOUCGmBzmtsxPFtLyP=
+tz0HoSJoYyJwu3BTUVSOIo0ZxosNME1Zzg-2FPgHg0DV2mgt-2FcJLp8p6Wr-2FULo-2FkKmtZ7=
+PFeKdhtyNR9MR-2BDukvNoED0vSqpynDIIxsMDSGreqmo9uV8EMSa3CPw2NjiLivV5-2FYReVPr=
+-2Bcen6TF8f3ksTZk9IoZGe9i1anNuhwWwW87WxpECVMXqJSpadRfc9x-2B9fAADcHCJ5tqLhQK=
+i45Y7WChYzNAkj-2BkE8IHV_F-2BBDh37bplPUhH9FbpP4x-2BcuUs-2B-2Fz4mqZ3rIgXX1iGc=
+rKBEin5N-2F5-2F-2FISI5nMYzmPBpRk41Vz6oynZ3b7itCYEv5O0TRHvk96yLWK7nSf1KKQK-2=
+B7lW1e6wZO7hzHZUP9-2FhnqspXEKWl2rNGKQR3oP7KG0YJtjKYwmO5bOcjtF284VbaBMpmTHv2=
+Rv4GWznoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4AIWkw16o4toHAtJCQ2u5PmI7XVM1SU-2BrlCH6As=
+GkhRk2ejQFEU6McGnUioQoeibzp9KAF5G5vcueh0APxMcbqJcEZHNRaBnXTPLbESJxyb50k9tn-=
+2BORQQbsfnwUWPWYzPqiIrYjlMErkrL-2BDfmmvxiYsqIYcqMzvSqasjDoT1s-2B1RHXXDe9nnC=
+fALymcL0SYTTJZfcPGhHMBjvhdqDzDaoscbSK9TXPZ5SsRtFX330bCmghP2iUWbgtd9YRjsZUwY=
+hqIQP6UU1tDYWmI3STOj5rjxikOl-2BkJiWXXY526N5xSuO6dUx-2BBUdaZ0PHMvqXhgEugqZpz=
+EH10FvNrtIZDyEeGASnVs3Bm4O4gYrG7RziE1FHaAozv8Z6HV9EN3N1bMOGYBijct9PCloP3qY0=
+TEEAmaDz1adhMPFzQzNbiAtBh8khK1d5QZ3wOFS7Q-3D-3D
+)          =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Transaction date:
+01/10/2024
+Transaction number:
+PD-CC-666D476C5A484B676C36794461413D3D
+Course name
+List price
+Your price
+
+Flutter UI Bootcamp | Build Beautiful Apps using Flutter      List Price:
+=E2=82=B92,299.00 Your Price:
+=E2=82=B90.00
+
+Subtotal:
+=E2=82=B90.00
+Tax rate:
+18%
+Tax:
+=E2=82=B90.00
+Credits:
+=E2=82=B90.00
+Total:
+=E2=82=B90.00
+Purchased by
+Tamil selvan
+
+Payment method: free-method
+Sold by
+Udemy, Inc.
+600 Harrison Street, 3rd Floor
+San Francisco, CA 94107, US
+Need help?
+Visit our <a href=3D"https://ablink.alerts.udemy.com/ls/click?upn=3Du001.MP=
+WQNoKfOWucilOG4GS8lu3YomVGrfz3oxvOve8qE3NsViE4-2B4QFSI381YNhLtiDOV-3_F-2BBD=
+h37bplPUhH9FbpP4x-2BcuUs-2B-2Fz4mqZ3rIgXX1iGcrKBEin5N-2F5-2F-2FISI5nMYzmPBp=
+Rk41Vz6oynZ3b7itCYEv5O0TRHvk96yLWK7nSf1KKQK-2B7lW1e6wZO7hzHZUP9-2FhnqspXEKW=
+l2rNGKQR3oP7KG0YJtjKYwmO5bOcjtF284VbaBMpmTHv2Rv4GWznoGnq4uSTlwfK0Ml2cQKA5a4=
+IwFQ4AIWkw16o4toHAtJCQ2u5PmI7XVM1SU-2BrlCH6AsGkhRk2ejQFEU6McGnUioQoeibzp9KA=
+F5G5vcueh0APxMcbqJcEZHNRaBnXTPLbESJxyb50k9tn-2BORQQbsfnwUWPWYzPqiIrYjlMErkr=
+L-2BDfmmvxiYsqIYcqMzvSqasjDoT1s-2B1RHXXDe9nnCfALymcL0SYTTJZfcPGhHMBjvhdqDzD=
+aoscbSK9TXPZ5SsRtFX330bCmghP2iUWbgtd9YRjsZUwYhqIQP6UU1tDYWmI3STOj5rjxikOl-2=
+BkJiWXXY50Bu2O8-2Fa2qspYIeNuMw1mfO6iMTy4EvJoC14OzoKjUEma9yo2AIcAKyRWAD92tp5=
+BC-2B383HOzsc8B7WyKfjjJJ5mo-2FCEc93nu7Rf2K72ghRfyb713XsIiCUTcyg-2FWyFka7n3A=
+ETpKlo6K3nOJAJ59Q-3D-3D style=3D"text-decoration:underline;color:#000000;">=
+Help Center</a> for support.
+
+
+
+
+
+
+
+              =20
+( https://ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8l=
+gwUIXaCv5sLUpJA-2Fl-2F0scavixj7wWylFxcPpv2QPP9xJCJPajlTu35h9XJiBmn80gX6sRi4=
+gSx2khkguIFwPNMu65I62xpQlTJwkfhu66EKufuj5yW-2B6oaien2SfaY5hrwP8BB9PQA2g-2Bn=
+6KxgHEvvhFRrEwFEbXVi6pY-2FaBJUo4Fjw26zHa8lV0nVFKqfp3SkEozpjtNRiJG3fFaUCtt-2=
+B44eWpi0wjPylm06qI-2B1duCQuHO14Y7alFqXdhOjTPSAeDb9rTsbI9VWg5mqOR1MW57LQv64j=
+f959c-2FPFpDmbjus-P_F-2BBDh37bplPUhH9FbpP4x-2BcuUs-2B-2Fz4mqZ3rIgXX1iGcrKBE=
+in5N-2F5-2F-2FISI5nMYzmPBpRk41Vz6oynZ3b7itCYEv5O0TRHvk96yLWK7nSf1KKQK-2B7lW=
+1e6wZO7hzHZUP9-2FhnqspXEKWl2rNGKQR3oP7KG0YJtjKYwmO5bOcjtF284VbaBMpmTHv2Rv4G=
+WznoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4AIWkw16o4toHAtJCQ2u5PmI7XVM1SU-2BrlCH6AsGkhR=
+k2ejQFEU6McGnUioQoeibzp9KAF5G5vcueh0APxMcbqJcEZHNRaBnXTPLbESJxyb50k9tn-2BOR=
+QQbsfnwUWPWYzPqiIrYjlMErkrL-2BDfmmvxiYsqIYcqMzvSqasjDoT1s-2B1RHXXDe9nnCfALy=
+mcL0SYTTJZfcPGhHMBjvhdqDzDaoscbSK9TXPZ5SsRtFX330bCmghP2iUWbgtd9YRjsZUwYhqIQ=
+P6UU1tDYWmI3STOj5rjxikOl-2BkJiWXXY5Ud11inw0a9Z8jHb-2BGpmrFZba75YXUtEqQ1AhCE=
+TpR-2FaSODpPeokT14XdOdKt6ZZqrNqp4Mgn1mOf8KaHaob4GDfIvUH3BfD9hKS7ZL-2F6f5cEy=
+mqmIpfTyt1ozqdAxxaUZ5YtN-2BNDQCfWwqClYb2koA-3D-3D )
+ Download our app and learn anywhere=20
+( https://ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8l=
+vQcUKdzeedEn1epjly7okwQRYyJT4my19UpD254WDONMffb6WeHAfsp53asvhAcJ15fL341DwAL=
+G4PjGZ6xOVSu-2BHtSnYEMzEJ16mmTMINqGj8yRufek199E67HIJ1Z-2FuAvSF9mj-2F2uZ5eAr=
+paEI-2BE-2FYOgHPlKWvglBzdos4asFc2M6ru-2BIFBvyQ2LUkGgoU4e5uKt1vEZDnXOu6sDymR=
+OYfdomZ9FCkPCoPA4lr58dJ5CI-2BmHJZhW31Jbidh3CCUVmHaOMPHxuJiZkM76dOjmjGJYzkrM=
+VMjq9w0LX1SkeBDRUqeP04kQLRhCl3zot3Q-3D-3DQ87Z_F-2BBDh37bplPUhH9FbpP4x-2BcuU=
+s-2B-2Fz4mqZ3rIgXX1iGcrKBEin5N-2F5-2F-2FISI5nMYzmPBpRk41Vz6oynZ3b7itCYEv5O0=
+TRHvk96yLWK7nSf1KKQK-2B7lW1e6wZO7hzHZUP9-2FhnqspXEKWl2rNGKQR3oP7KG0YJtjKYwm=
+O5bOcjtF284VbaBMpmTHv2Rv4GWznoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4AIWkw16o4toHAtJCQ2=
+u5PmI7XVM1SU-2BrlCH6AsGkhRk2ejQFEU6McGnUioQoeibzp9KAF5G5vcueh0APxMcbqJcEZHN=
+RaBnXTPLbESJxyb50k9tn-2BORQQbsfnwUWPWYzPqiIrYjlMErkrL-2BDfmmvxiYsqIYcqMzvSq=
+asjDoT1s-2B1RHXXDe9nnCfALymcL0SYTTJZfcPGhHMBjvhdqDzDaoscbSK9TXPZ5SsRtFX330b=
+CmghP2iUWbgtd9YRjsZUwYhqIQP6UU1tDYWmI3STOj5rjxikOl-2BkJiWXXY5W8M5-2B4aEJMU1=
+FXvWMi4pXh-2BO9HogCzb7CiUWDpkW2tWBMEYVaK74AOsnhtWqUv-2Fi1ZtacKmbmFvaMfMzn5f=
+g-2Fg7uOkuoB7z3sD7sdNSa0ZeVNx7kRVSGsj35Bje9szb7VvN3-2BjoLD4VXrrOh5KjkVA-3D-=
+3D )
+ =20
+( https://ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8l=
+vQcUKdzeedEn1epjly7okwQRYyJT4my19UpD254WDONMffb6WeHAfsp53asvhAcJ15fL341DwAL=
+G4PjGZ6xOVSu-2BHtSnYEMzEJ16mmTMINqGj8yRufek199E67HIJ1Z-2FuAvSF9mj-2F2uZ5eAr=
+paEI-2BE-2FYOgHPlKWvglBzdos4asFc2M6ru-2BIFBvyQ2LUkGgoU4e5uKt1vEZDnXOu6sDymR=
+OYfdomZ9FCkPCoPA4lr58dJ5CI-2BmHJZhW31Jbidh3CCUVmHaOMPHxuJiZkM76dOjmjGJYzkrM=
+VMjq9w0LX1SkeBDRUqeP04kQLRhCl3zot3Q-3D-3DnHTL_F-2BBDh37bplPUhH9FbpP4x-2BcuU=
+s-2B-2Fz4mqZ3rIgXX1iGcrKBEin5N-2F5-2F-2FISI5nMYzmPBpRk41Vz6oynZ3b7itCYEv5O0=
+TRHvk96yLWK7nSf1KKQK-2B7lW1e6wZO7hzHZUP9-2FhnqspXEKWl2rNGKQR3oP7KG0YJtjKYwm=
+O5bOcjtF284VbaBMpmTHv2Rv4GWznoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4AIWkw16o4toHAtJCQ2=
+u5PmI7XVM1SU-2BrlCH6AsGkhRk2ejQFEU6McGnUioQoeibzp9KAF5G5vcueh0APxMcbqJcEZHN=
+RaBnXTPLbESJxyb50k9tn-2BORQQbsfnwUWPWYzPqiIrYjlMErkrL-2BDfmmvxiYsqIYcqMzvSq=
+asjDoT1s-2B1RHXXDe9nnCfALymcL0SYTTJZfcPGhHMBjvhdqDzDaoscbSK9TXPZ5SsRtFX330b=
+CmghP2iUWbgtd9YRjsZUwYhqIQP6UU1tDYWmI3STOj5rjxikOl-2BkJiWXXY5nObHtpxcWuU4Ns=
+F2euqv8CNO6ommgQDPAu9lvLR8pcmKwa30gWnZ-2FE-2BGyus3gPNjhwg0gIDCvpp4y2ml32Pjw=
+51zxEEduFK1OA9AQ20Mnf3-2FY1ED0og9io49tdXW-2Fc8pJGalUrF4lPD0STC4GxHx2w-3D-3D=
+ )
+ Instagram (
+https://ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8lkt=
+WZ0B95nyX-2BvXv1D5fPmLkzh5KJmePHJp6YvEGr7MkPZGeEGBfqEfwpWjUIOqBWXWp-2Bzkm-2=
+FLsvSeCp6KY21Jgv-2BXDC-2F49ARkX2UJ0dbP7LvOXKA-2FYcxqIWF-2Fz3gt855WTV56mgx1Y=
+pZSvi5DNLxW9U78snAth55FtvKekP9RQnpmGOdAsIgDY8QBZCPw91maX6tvuop9yBdFPGnZBMtg=
+KfxAF8ANmfNseU-2BzCobzcezHf2WD2D6Gc-2BZgZksWMyZJbWD12I-2FlerOS-2BN3-2BV4Tq9=
+I8GLMHExi4YC-2FIH-2FiRnkfnisx_F-2BBDh37bplPUhH9FbpP4x-2BcuUs-2B-2Fz4mqZ3rIg=
+XX1iGcrKBEin5N-2F5-2F-2FISI5nMYzmPBpRk41Vz6oynZ3b7itCYEv5O0TRHvk96yLWK7nSf1=
+KKQK-2B7lW1e6wZO7hzHZUP9-2FhnqspXEKWl2rNGKQR3oP7KG0YJtjKYwmO5bOcjtF284VbaBM=
+pmTHv2Rv4GWznoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4AIWkw16o4toHAtJCQ2u5PmI7XVM1SU-2Br=
+lCH6AsGkhRk2ejQFEU6McGnUioQoeibzp9KAF5G5vcueh0APxMcbqJcEZHNRaBnXTPLbESJxyb5=
+0k9tn-2BORQQbsfnwUWPWYzPqiIrYjlMErkrL-2BDfmmvxiYsqIYcqMzvSqasjDoT1s-2B1RHXX=
+De9nnCfALymcL0SYTTJZfcPGhHMBjvhdqDzDaoscbSK9TXPZ5SsRtFX330bCmghP2iUWbgtd9YR=
+jsZUwYhqIQP6UU1tDYWmI3STOj5rjxikOl-2BkJiWXXY5oHW4cTpwcNRBybMnr-2BVi8JFkGfyG=
+LSiPMspS3fo5jj6Lp8XtxQK6GKmC-2FMyMdzYncRx-2BSPfzKxd9xflw9IunzRiXO0FcvCMCF-2=
+BZRL552OZkRF1pUE5vRAsPeMZujyhMtY18CPmhlxgzTaGDeT1BSkw-3D-3D
+)=20
+( https://ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8l=
+j0ugqiqY3U-2B0vmeePH1L2-2F0UZh839hWq8gcdL3yKNNpu2OluX5T-2B1uYw3UgNiaNhue69S=
+TlgUtTV3J4YFNqM7TvUPvxzPuCSNjSu3U5wgKly0-2FeOipo6yxhn39-2BtaAuXx-2Belv9gG4o=
+HHifTEU-2BjRXxGjv43KyPVrkYJANBQXQfDeQIpQkzlB-2BBPFnJSOqFuZMkB-2FIFe06wDxe-2=
+F5vrlD1Rp9-2FebzwzyLJ3Rwp3FsgfC9MbfaeJN8rNDvzroblk9DFtfdG0C8sFJlMlO9BfBn1La=
+ZHIYNcFMBPt3pXDG7PrV1gynFV-2F-2BThAVH1t5-2FntBqpw-3D-3DrZdJ_F-2BBDh37bplPUh=
+H9FbpP4x-2BcuUs-2B-2Fz4mqZ3rIgXX1iGcrKBEin5N-2F5-2F-2FISI5nMYzmPBpRk41Vz6oy=
+nZ3b7itCYEv5O0TRHvk96yLWK7nSf1KKQK-2B7lW1e6wZO7hzHZUP9-2FhnqspXEKWl2rNGKQR3=
+oP7KG0YJtjKYwmO5bOcjtF284VbaBMpmTHv2Rv4GWznoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4AIWk=
+w16o4toHAtJCQ2u5PmI7XVM1SU-2BrlCH6AsGkhRk2ejQFEU6McGnUioQoeibzp9KAF5G5vcueh=
+0APxMcbqJcEZHNRaBnXTPLbESJxyb50k9tn-2BORQQbsfnwUWPWYzPqiIrYjlMErkrL-2BDfmmv=
+xiYsqIYcqMzvSqasjDoT1s-2B1RHXXDe9nnCfALymcL0SYTTJZfcPGhHMBjvhdqDzDaoscbSK9T=
+XPZ5SsRtFX330bCmghP2iUWbgtd9YRjsZUwYhqIQP6UU1tDYWmI3STOj5rjxikOl-2BkJiWXXY5=
+bOqXd4qlxRuXUm2nSoIctORc7EiaTMEygrch1lWlTYr1dhV4KY60Q3t59gQV5xfSaqtN639uHcf=
+7UX4EBYhgu3AOnBjH-2B1ffpRMndk362NQ0lIlyEk512NWKNJvlkY7IyBykXhJp4rvYRKRXmaGF=
+ig-3D-3D )
+ (
+https://ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8lsO=
+dOeexWMtyhjU-2Ffnhbi2amEgTquIPcazXkz35m-2BVPBQDO-2BdOlksVfYgR6IfZHJTdv-2FiG=
+9e6pUiy8TKt5u6R5aGW1QlyZpIOY52bZSo-2BbGxW8gjRa9LBLjBBTiVb2TrjofjoUgCGdYJ-2F=
+kvz516ymA0ewuQhdOZkEDoA2a804f8mx6vUwlWOVYcWrzaXlSgwB4NGTjLskol3VlbGWVw26EgQ=
+tXZeMvUQnynuXdUPFixLrJjAUQHIYKWkW0h1JwUZZK9OU3XTpkduE2fPsJvofcP6HyYtmzYuJtz=
+xh8kKOdzCDPLe_F-2BBDh37bplPUhH9FbpP4x-2BcuUs-2B-2Fz4mqZ3rIgXX1iGcrKBEin5N-2=
+F5-2F-2FISI5nMYzmPBpRk41Vz6oynZ3b7itCYEv5O0TRHvk96yLWK7nSf1KKQK-2B7lW1e6wZO=
+7hzHZUP9-2FhnqspXEKWl2rNGKQR3oP7KG0YJtjKYwmO5bOcjtF284VbaBMpmTHv2Rv4GWznoGn=
+q4uSTlwfK0Ml2cQKA5a4IwFQ4AIWkw16o4toHAtJCQ2u5PmI7XVM1SU-2BrlCH6AsGkhRk2ejQF=
+EU6McGnUioQoeibzp9KAF5G5vcueh0APxMcbqJcEZHNRaBnXTPLbESJxyb50k9tn-2BORQQbsfn=
+wUWPWYzPqiIrYjlMErkrL-2BDfmmvxiYsqIYcqMzvSqasjDoT1s-2B1RHXXDe9nnCfALymcL0SY=
+TTJZfcPGhHMBjvhdqDzDaoscbSK9TXPZ5SsRtFX330bCmghP2iUWbgtd9YRjsZUwYhqIQP6UU1t=
+DYWmI3STOj5rjxikOl-2BkJiWXXY5O9G-2BuwgG93Zm6ccSawov79jWkxwwLs8zPfcVcX1tki4W=
+gnefJQKGj4Gx1vceCKNN-2BtTSxhG0O2FjcgFIkO9I3uRdnI-2BhYbpcDMytL9obFgLielR8wVD=
+9dfFIGWKudCQVedqVrcybNpbVAv5bum2gzw-3D-3D
+) (
+https://ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8lkE=
+7uN4GALu4qwDrYxhQKcEyCAgevywPW8D5AIAvEY5osuprkmHbwFSSH34t1lySYOk9hBBLAMbqNU=
+GcN-2FCe2ypAenovGMlC0BscIpmQ1pIcU-2BTLaPwcx9dGHs6I970AQcVJqEYrz0JFBn29VKo-2=
+BTWTUymxLsp7OC4HPLgeQz8JLbPSHUL5fu1chE3jS0D7vqBEC4Gq0wSys-2FV2k9na-2BL3W5FF=
+R5P8DJF-2BCa9xw8650mGFAioB5ZmIubC4sT5YoDLQKG-2FmDtFU5LeNNjQvv932dbY3zu5K9zg=
+76LdMy3wnXKPY8RwE09oHYcP2Lu8WHJXQ-3D-3D1Ryl_F-2BBDh37bplPUhH9FbpP4x-2BcuUs-=
+2B-2Fz4mqZ3rIgXX1iGcrKBEin5N-2F5-2F-2FISI5nMYzmPBpRk41Vz6oynZ3b7itCYEv5O0TR=
+Hvk96yLWK7nSf1KKQK-2B7lW1e6wZO7hzHZUP9-2FhnqspXEKWl2rNGKQR3oP7KG0YJtjKYwmO5=
+bOcjtF284VbaBMpmTHv2Rv4GWznoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4AIWkw16o4toHAtJCQ2u5=
+PmI7XVM1SU-2BrlCH6AsGkhRk2ejQFEU6McGnUioQoeibzp9KAF5G5vcueh0APxMcbqJcEZHNRa=
+BnXTPLbESJxyb50k9tn-2BORQQbsfnwUWPWYzPqiIrYjlMErkrL-2BDfmmvxiYsqIYcqMzvSqas=
+jDoT1s-2B1RHXXDe9nnCfALymcL0SYTTJZfcPGhHMBjvhdqDzDaoscbSK9TXPZ5SsRtFX330bCm=
+ghP2iUWbgtd9YRjsZUwYhqIQP6UU1tDYWmI3STOj5rjxikOl-2BkJiWXXY5Zg-2BVCu9u4D8H7t=
+q0bQIag9xNleSPjc1O8XDxdb-2B-2B1xLDp7ya-2FHN2UOgMLS1ab2MA7NIJWkwuwbjgEP-2FnJ=
+APHJP3ToQYKwNmk-2BcmQ68jJ4BbWS-2B8vY3q12NiVdQ2GxH8xxEWGF42c-2BYM6TnjYzHMMsQ=
+-3D-3D
+) (
+https://ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8lgu=
+LLBbPRONAPVNgdA4KZXA-2FWIXLDQW-2FlpJHT-2BLBjXV9MJqAsT5XPwG8ZTfMPnCyw9ztmmej=
+k4rUtUh43baNxCWKeSSd3LYfXSoWrFd-2FEL1TPYUN1imHybwlUevJrchrwr4M6-2BFjUXnTTPT=
+hQloQNz0SPyFKsr8wfJESErysBcZvbrHw5hO1-2FtQCK-2BqrVgUS-2BeY98nfGHBaxHZ9cDc3h=
+QcW1a95TFx3swyOxBcVldIG0tMWwu1IKb0LGUiV5XDlNXMYaw7Uo1GObPywbCtMzLpdwf-2B6wW=
+IxWSJnWWW-2F7jw5E0Uzs_F-2BBDh37bplPUhH9FbpP4x-2BcuUs-2B-2Fz4mqZ3rIgXX1iGcrK=
+BEin5N-2F5-2F-2FISI5nMYzmPBpRk41Vz6oynZ3b7itCYEv5O0TRHvk96yLWK7nSf1KKQK-2B7=
+lW1e6wZO7hzHZUP9-2FhnqspXEKWl2rNGKQR3oP7KG0YJtjKYwmO5bOcjtF284VbaBMpmTHv2Rv=
+4GWznoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4AIWkw16o4toHAtJCQ2u5PmI7XVM1SU-2BrlCH6AsGk=
+hRk2ejQFEU6McGnUioQoeibzp9KAF5G5vcueh0APxMcbqJcEZHNRaBnXTPLbESJxyb50k9tn-2B=
+ORQQbsfnwUWPWYzPqiIrYjlMErkrL-2BDfmmvxiYsqIYcqMzvSqasjDoT1s-2B1RHXXDe9nnCfA=
+LymcL0SYTTJZfcPGhHMBjvhdqDzDaoscbSK9TXPZ5SsRtFX330bCmghP2iUWbgtd9YRjsZUwYhq=
+IQP6UU1tDYWmI3STOj5rjxikOl-2BkJiWXXY5MA6SvTpmstOQeBqetZJ-2F6mkPoiZKeaah8jox=
+1sUHOGLw2HfPV5TV8jsTEO4a2jeJB4wrpvPl1JmUU-2BMLDv33Ypwt3mkz6or5MJyj92r0ZO4rP=
+uKRMdvmY-2FbvAsbxkUATmev6Zw6YvgNa-2F2OghHDJsQ-3D-3D
+)  About us (
+?lid=3D&utm_source=3Demail-pro&utm_campaign=3D220401_Student-MX_EM_Transact=
+ional_Receipt_Paid_V2&utm_medium=3DEmail&utm_term=3DFooter_Transactional_20=
+23&utm_content=3Dudemy_braze.4a8074691eef9a731e24d35266457f3c
+) | Udemy Business (
+?lid=3D&utm_source=3Demail-pro&utm_campaign=3D220401_Student-MX_EM_Transact=
+ional_Receipt_Paid_V2&utm_medium=3DEmail&utm_term=3DFooter_Transactional_20=
+23&utm_content=3Dudemy_braze.4a8074691eef9a731e24d35266457f3c
+)           You are receiving this email because you signed up on Udemy.com=
+ with this email address.
+Support (
+https://ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8lu3=
+YomVGrfz3oxvOve8qE3NwpItgY885qmlrg8mb9pTwX0Q1SOtvV99nQyJAdGsUyaII6hZS-2FPYf=
+-2BpbdJ0-2BKwdmY6W-2FPhyI4ThYNhKYwnx1Q6uZwNX7q36YwWk3RVc0L12ajnj8SL-2BFruuN=
+9RvkTOPo0GaJLLv3LJIGmnVmoaftP0YI-2FVJqFq1yg566Wi6-2FLKe7u3r5pm-2F-2Bmoa2JPb=
+VtQGaLEOaK0qQiy-2F7hmm0DhQ7fxwSjoKZ-2Bw-2B4UsqBPh1zHVj3fV6lJKNNExBI44-2BEsJ=
+jYy-2BHuWxLnohba0Hi7KQaaKnPz1FkVT-2BtEFznQkA3h-2B1Q-3D-3DqHd7_F-2BBDh37bplP=
+UhH9FbpP4x-2BcuUs-2B-2Fz4mqZ3rIgXX1iGcrKBEin5N-2F5-2F-2FISI5nMYzmPBpRk41Vz6=
+oynZ3b7itCYEv5O0TRHvk96yLWK7nSf1KKQK-2B7lW1e6wZO7hzHZUP9-2FhnqspXEKWl2rNGKQ=
+R3oP7KG0YJtjKYwmO5bOcjtF284VbaBMpmTHv2Rv4GWznoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4AI=
+Wkw16o4toHAtJCQ2u5PmI7XVM1SU-2BrlCH6AsGkhRk2ejQFEU6McGnUioQoeibzp9KAF5G5vcu=
+eh0APxMcbqJcEZHNRaBnXTPLbESJxyb50k9tn-2BORQQbsfnwUWPWYzPqiIrYjlMErkrL-2BDfm=
+mvxiYsqIYcqMzvSqasjDoT1s-2B1RHXXDe9nnCfALymcL0SYTTJZfcPGhHMBjvhdqDzDaoscbSK=
+9TXPZ5SsRtFX330bCmghP2iUWbgtd9YRjsZUwYhqIQP6UU1tDYWmI3STOj5rjxikOl-2BkJiWXX=
+Y5Dfp6GS9DpP2-2F2O8t84-2BQB2Y18kGkxJp-2FhKEh0zq3ijX3VV3BpnefOzTnRwbSs-2F-2B=
+ovYTOP6tsxD2pNREZox6iyyULze70NRlTVdc1RpNfjuxE0ZWxYXXHo49uhteQdVCWIzN2xVFTL1=
+eSmKT7-2FkkkVQ-3D-3D
+) Privacy terms=20
+( https://ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8l=
+lZZXCvPhpO2-2Fr1B92MXjE3gQaT6Vz-2BxTBBQcGb6HVygJaZl9ngs1h2qrC5kFGltKvpHYTBc=
+n2-2F-2B5o619-2BbON7F05CJh0qOrfXO72HA01x02yx2VrruRGjocdt6IO1J-2FOLuoN50MeFN=
+a6i-2B6JYcxQbZFJVO84hkBWl43BqoOFIdgMPG-2BJIH947iJmJbzwOypM6XEj9kQZMfQ2Ic1Jl=
+g-2FYSuNX47nUfmMsOoHkKUVvuGuPldpIKheVNDo5H71fa7-2BBza719BwGeJ3cO752DqWjvJHY=
+-2F4PtLNAvaRJdvDY5CXgnja0Owq7TiBn7CHvIdzM5Q-3D-3DQzRd_F-2BBDh37bplPUhH9FbpP=
+4x-2BcuUs-2B-2Fz4mqZ3rIgXX1iGcrKBEin5N-2F5-2F-2FISI5nMYzmPBpRk41Vz6oynZ3b7i=
+tCYEv5O0TRHvk96yLWK7nSf1KKQK-2B7lW1e6wZO7hzHZUP9-2FhnqspXEKWl2rNGKQR3oP7KG0=
+YJtjKYwmO5bOcjtF284VbaBMpmTHv2Rv4GWznoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4AIWkw16o4t=
+oHAtJCQ2u5PmI7XVM1SU-2BrlCH6AsGkhRk2ejQFEU6McGnUioQoeibzp9KAF5G5vcueh0APxMc=
+bqJcEZHNRaBnXTPLbESJxyb50k9tn-2BORQQbsfnwUWPWYzPqiIrYjlMErkrL-2BDfmmvxiYsqI=
+YcqMzvSqasjDoT1s-2B1RHXXDe9nnCfALymcL0SYTTJZfcPGhHMBjvhdqDzDaoscbSK9TXPZ5Ss=
+RtFX330bCmghP2iUWbgtd9YRjsZUwYhqIQP6UU1tDYWmI3STOj5rjxikOl-2BkJiWXXY5KGuK-2=
+FhdwrXcYco92WVfAb9IKr2fflShfMtXtDcBmuhYtEXU91YHXnJQqBbjFbTmMCPl2WEC53eQRVP-=
+2FfmC4pOyhiQvh3-2FvOz8Cvb8WpIIjCnQKvyubfQQVjJ26pMWhqGKdUgOIqZbYZZ84-2BbntKV=
+1Q-3D-3D )
+ Udemy.com 600 Harrison Street, 3rd Floor San Francisco, CA 94107 USA
+--50bd7ba51cd55c322eb158585d9e8b998a726fbc7f6bccc911f08b438cd4
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset=utf-8
+Mime-Version: 1.0
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.=
+w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+<meta name=3D"viewport" content=3D"initial-scale=3D1.0">
+<title>Udemy</title>
+<meta name=3D"x-apple-disable-message-reformatting">
+<meta name=3D"color-scheme" content=3D"light dark">
+<meta name=3D"supported-color-schemes" content=3D"light dark">
+<meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D1.=
+0">
+<style type=3D"text/css">
+@import url('https://fonts.googleapis.com/css?family=3DSource+Sans+Pro:300,=
+400,600');
+@import url('https://fonts.googleapis.com/css?family=3DZilla+Slab:300,400,6=
+00');
+@font-face {
+  font-family: 'Udemy Sans';
+  font-style: normal;
+  font-weight: 400;
+  src: url('https://www.udemy.com/staticx/udemy/fonts/Udemy-Sans-Regular-v1=
+.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Udemy Sans';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://www.udemy.com/staticx/udemy/fonts/Udemy-Sans-Bold-v1.wo=
+ff2') format('woff2');
+}
+@font-face {
+  font-family: 'SuisseWorks';
+  font-style: normal;
+  font-weight: 700;
+  src: url('https://www.udemy.com/staticx/udemy/fonts/SuisseWorks-Bold-v1.w=
+off2') format('woff2');
+}
+/* CLIENT-SPECIFIC STYLES */
+body, table, td, a, p {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    font-family: 'Udemy Sans', Helvetica, Arial, sans-serif;
+}
+table, td {
+    mso-table-lspace: 0pt;
+    mso-table-rspace: 0pt;
+    border-collapse: collapse;
+}
+img {
+    -ms-interpolation-mode: bicubic;
+}
+/* iOS BLUE LINKS */
+a[x-apple-data-detectors] {
+    color: inherit !important;
+    text-decoration: none !important;
+    font-size: inherit !important;
+    font-family: inherit !important;
+    font-weight: inherit !important;
+    line-height: inherit !important;
+}
+.appleFooter a {
+    color: #ffffff !important;
+    text-decoration: none!important;
+}
+.courseBadge {
+    vertical-align: middle;
+    font-size: 9px;
+    border: none;
+    font-weight: 700;
+    line-height: 1.5;
+    text-align: center;
+    text-transform: uppercase;
+}
+   =20
+/* DESKTOP STYLES */
+
+@media only screen and (max-width:480px) {
+
+    body {
+    margin: 0 !important
+}
+th {
+    display: block !important
+}
+.hidegmail {
+    display: none !important;
+}
+   =20
+#container {
+    width: 100% !important;
+}
+
+/* Promo footer */
+
+table[class=3Dresize_table_to_360], td[class=3Dresize_table_to_360] {
+  width: 100% !important;
+  height: auto;
+  margin: 0 auto;
+}
+.drop {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+.drop1 {
+  width: 80% !important;
+  height: auto !important;
+  display: block !important;
+}
+*[class=3D"drop"] {
+  display: block !important;
+  width: 100% !important;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+.Download_app {
+  width: 140px;
+  float: left;
+}
+.Download_app img {
+  width: 140px;
+  height: 46px;
+}
+.SocialIcons {
+    width: 250px;
+}
+
+.padding-first_module{
+padding-top:25px !important;
+}
+
+.Pt-50 {
+    padding-top: 50px !important;
+}
+.footerPadding {
+    padding: 50px 25px 0px 25px !important;
+}
+           =20
+/* Ends Promo footer */         =20
+          =20
+.container {
+    width: 320px !important;
+    padding: 0 0;
+    min-width: 320px !important
+}
+.reverse-stack {
+    display: block !important;
+    width: 100% !important;
+}
+.mw90 {
+    max-width: 90% !important;
+}
+.mw100 {
+    max-width: 100px !important;
+}
+.pt-40{
+    padding-top:40px !important;
+    }
+.pb-40{
+   padding-bottom:40px !important;
+    }
+.mobPaddingTop5 {
+    padding-top: 5px !important;
+}
+.mobPaddingRight10 {
+    padding-right: 10px !important;
+}
+.mobFont16 {
+    font-size: 16px !important;
+    line-height: 22px !important;
+}
+.mobFont17 {
+    font-size: 17px !important;
+    line-height: 22px !important;
+}
+.mobFont18 {
+    font-size: 18px !important;
+    line-height: 22px !important;
+}
+.mobFont22 {
+    font-size: 22px !important;
+    line-height: 24px !important;
+}
+.mobHeadlineFont37 {
+    font-size: 37px !important;
+    line-height: 45px !important;
+}
+.deviceWidth {
+    display: block !important;
+    width: 100% !important;
+}
+.hidden {
+    display: none;
+}
+.mobFont40 {
+    font-size: 40px !important;
+}
+.courseCardTop {
+    width: 30% !important;
+    float: left;
+    min-width: 30% !important;
+}
+.courseCardBottom {
+    width: 70% !important;
+    float: left;
+    min-width: 70% !important;
+    border-bottom: 0px !important;
+}
+.mobileColor {
+    background-color: #ffffff !important;
+}
+.mobileCourseLine {
+    border-bottom: 1px #fffffe solid;
+}
+.titleHeight {
+    height: auto;
+}
+.titlePadding {
+    padding-top: 0px !important;
+    padding-bottom: 10px !important;
+    padding-left: 10px !important;
+    font-size: 16px !important;
+}
+.starPricePadding {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    padding-left: 10px !important;
+    font-size: 80% !important;
+}
+.courseImage {
+    width: 100%;
+    height: auto !important;
+}
+.moduleTitlePadding {
+    padding: 20px 0px 5px 0px !important;
+}
+.mobileCoursePadding {
+    padding: 15px 0px 15px 0px !important;
+    width: 100% !important;
+}
+.W_Mobile_light-img_new {
+    width: 75% !important;
+    float: right;
+    padding-top: 0px !important;
+    padding-left: 60px;
+    border: 2px solid red;
+}
+.targetedSpacer {
+    width: 5%;
+}
+.mobileNavBarImage {
+    height: 30px !important;
+    width: auto !important;
+}
+.instImage {
+    width: 30% !important;
+    float: left !important;
+    min-width: 30% !important;
+    padding-top: 15px !important;
+}
+.instDescription {
+    width: 70% !important;
+    float: right !important;
+    min-width: 70% !important;
+    border: none !important;
+    padding-bottom: 20px;
+    padding-top: 15px;
+    height: auto !important;
+}
+.instText {
+    text-align: left !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+    padding-bottom: 0px !important;
+}
+.banner-wrapper {
+    width: 100%!important;
+    height: auto!important;
+}
+.banner-left {
+    width: 100% !important;
+    text-align: center !important;
+    float: left!important;
+    display: block!important;
+}
+.banner-right {
+    width: 100%!important;
+    text-align: center !important;
+    float: left!important;
+    display: block!important;
+    padding-top: 0px !important;
+}
+.banner-text {
+    text-align: center !important;
+    padding-top: 20px !important;
+}
+.banner-button-wrapper {
+    width: 100%!important;
+    height: auto!important;
+    font-weight: normal;
+}
+   =20
+/* START Custom Styles for SUB*/
+.banner-wrapper-custom {
+    width: 100%!important;
+    height: auto!important;
+}
+.banner-center {
+    width: 100%!important;
+    text-align: center !important;
+    float: center!important;
+    display: block!important;
+    padding-top: 0px !important;
+}
+.banner-wrapper-custom tr {
+    display: flex;
+    flex-direction: column;
+}
+.banner-wrapper-custom tr>th:nth-child(1) {
+    order: 2;
+}
+.banner-wrapper-custom tr>th:nth-child(2) {
+    order: 1;
+}
+/* END Custom Styles for SUB*/
+
+.hidemobile {
+display: none !important;
+}
+.nomob {
+    display: none!important;
+}
+.show {
+    display: block!important;
+}
+.progress_number {
+    padding: 0 !important;
+    text-align: left;
+}
+.mobshow {
+    display: table !important;
+    width: auto !important;
+    overflow: visible !important;
+    float: none !important;
+    max-height: inherit !important;
+    max-width: inherit !important;
+    line-height: auto !important;
+    margin: auto !important;
+    margin-top: 0px !important;
+    visibility: inherit !important;
+}
+}
+   =20
+
+/* Dark Mode Styles */
+:root {
+    color-scheme: light dark;
+    supported-color-schemes: light dark;
+}
+
+   =20
+[data-ogsc] .mobshow {
+    display: table !important;
+    width: auto !important;
+    overflow: visible !important;
+    float: none !important;
+    max-height: inherit !important;
+    max-width: inherit !important;
+    line-height: auto !important;
+    margin: auto !important;
+    margin-top: 0px !important;
+    visibility: inherit !important;
+}   =20
+
+    /* Dark Mode Styles */   =20
+   =20
+@media (prefers-color-scheme: dark ) { =20
+   =20
+body {
+    background: #000000;
+}
+.ctaButton {
+    background-color: #fffffe !important;
+    color: #000001 !important;
+    border:2px solid #fffffe !important;
+}
+.recieptWrapper {
+    background-color: #000001 !important;
+    color: #fffffe !important;
+}
+.darkModeTextWhite {
+    color: #ffffff !important;
+}
+.AccentDarkModetextC0C4FC {
+    color: #C0C4FC !important;
+}
+.darkModeBorderWhite {
+    border-color: #fffffe !important;
+}
+/* Shows Dark Mode-Only Content, Like Images */
+.dark-img {
+    display: block !important;
+    width: auto !important;
+    overflow: visible !important;
+    float: none !important;
+    max-height: inherit !important;
+    max-width: inherit !important;
+    line-height: auto !important;
+    margin-top: 0px !important;
+    visibility: inherit !important;
+}
+/* Hides Light Mode-Only Content, Like Images */
+.light-img {
+    display: none;
+    display: none !important;
+}
+/* Custom Dark Mode Background Color */
+.darkmode {
+    background-color: #000000 !important;
+}
+/* Divider Line */
+.sectiondivider {
+    border-bottom: 1px solid #fffffe !important;
+}
+/* Custom Dark Mode Font Colors */
+h1, h2, p, span, a, b {
+    color: #ffffff !important;
+}
+.title_drk {
+    color: #ffffff !important;
+}
+/* Custom Dark Mode Text Link Color */
+.link {
+    color: #91ADD4 !important;
+}
+/* Dark CTA */
+[data-ogsc] .darkModeTextWhite {
+    color: #ffffff !important;
+}
+.darkctabtn {
+    padding: 13px 27px 13px 27px !important;
+    font-size: 16px !important;
+    color: #000000 !important;
+    text-decoration: none !important;
+    border-radius: 2px !important;
+    -webkit-border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    background-color: #ffffff !important;
+    display: inline-block !important;
+    text-align: center !important;
+}
+
+[data-ogsc] .darkSocial {
+  background-color: #ffffff !important;
+}
+/* Dark CTA */
+[data-ogsc] .darkctabtn {
+    padding: 13px 27px 13px 27px !important;
+    font-size: 16px !important;
+    color: #000000 !important;
+    text-decoration: none !important;
+    border-radius: 2px !important;
+    -webkit-border-radius: 2px !important;
+    -moz-border-radius: 2px !important;
+    background-color: #ffffff !important;
+    display: inline-block !important;
+    text-align: center !important;
+}
+}
+/* Shows Dark Mode-Only Content, Like Images */
+[data-ogsc] .dark-img {
+    display: block !important;
+    width: auto !important;
+    overflow: visible !important;
+    float: none !important;
+    max-height: inherit !important;
+    max-width: inherit !important;
+    line-height: auto !important;
+    margin-top: 0px !important;
+    visibility: inherit !important;
+}
+/* Hides Light Mode-Only Content, Like Images */
+[data-ogsc] .light-img {
+    display: none;
+    display: none !important;
+}
+/* Custom Dark Mode Background Color */
+[data-ogsc] .darkmode {
+    background-color: #000000 !important;
+}
+/* Divider Line */
+[data-ogsc] .sectiondivider {
+    border-bottom: 1px solid #ffffff !important;
+}
+/* Custom Dark Mode Font Colors */
+[data-ogsc] h1, [data-ogsc] h2, [data-ogsc] p, [data-ogsc] span, [data-ogsc=
+] a, [data-ogsc] b {
+    color: #ffffff !important;
+}
+[data-ogsc] .AccentDarkMode {
+    color: #A335EF !important;
+}
+.AccentDarkMode {
+    color: #A335EF !important;
+}
+[data-ogsc] .AccentDarkModeTeal {
+    color: #1C9FA2 !important;
+}
+
+.AccentDarkModeBlack {
+    color: #000000 !important;
+}
+[data-ogsc] .AccentDarkModeBlack {
+    color: #000000 !important;
+}
+.AccentDarkModeTeal {
+    color: #1C9FA2 !important;
+}
+[data-ogsc] .AccentDarkModeOrange {
+    color: #F4522C !important;
+}
+.AccentDarkModeOrange {
+    color: #F4522C !important;
+}
+[data-ogsc] .title_drk {
+    color: #ffffff !important;
+}
+[data-ogsc] .title_light {
+    color: #000001 !important;
+}
+.title_light {
+    color: #000001 !important;
+}
+[data-ogsc] body {
+    background: #000000;
+}
+/* Custom Dark Mode Text Link Color */
+[data-ogsc] .link {
+    color: #91ADD4 !important;
+}
+.PriceMobile {
+    padding-left: 47px;
+}
+.Subtotal {
+    padding-right: 54px;
+}
+.total {
+    padding-right: 50px;
+}
+.recieptWrapper {
+    padding-bottom: 37px !important;
+    padding-top: 50px !important;
+}
+
+@media only screen and (min-width: 481px) {
+.mobshow {
+    display: none;
+    display: none !important;
+}
+}
+
+@media screen and (max-width: 480px) {
+*.nomobile {
+    display: none !important;
+}
+.PriceMobile {
+    padding-left: 0px;
+}
+.coursePriceMob {
+    padding-right: 0px !important;
+}
+.Subtotal {
+    border-top: 0px solid transparent !important;
+    padding-right: 0px;
+}
+.total {
+    padding-right: 0px;
+}
+.both_price_mob {
+    width: 300px;
+}
+.titlePaddingMob {
+    max-width: 320px !important
+}
+.recieptWrapper {
+    padding-bottom: 37px !important;
+    padding-top: 50px !important;
+}
+.recieptInfoWrapper {
+    padding-bottom: 37px !important;
+}
+.courseHeadingMob {
+    font-size: 16px !important;
+}
+.coursePriceMob {
+padding-left:8px: !important;
+}
+.HeightMob {
+    height: 0px;
+}
+.W_Mobile {
+    width: 282px;
+    height: auto;
+}
+.hidden {
+    display: none;
+}
+.mobileCourseLine {
+    border-bottom: 1px #fffffe solid;
+}
+.titleHeight {
+    height: auto;
+}
+.titlePadding {
+    padding-top: 0px !important;
+    padding-bottom: 10px !important;
+    padding-left: 10px !important;
+    font-size: 16px !important;
+}
+.starPricePadding {
+    padding-top: 0px !important;
+    padding-bottom: 0px !important;
+    padding-left: 10px !important;
+    font-size: 80% !important;
+}
+.courseImage {
+    width: 100%;
+    height: auto !important;
+}
+.moduleTitlePadding {
+    padding: 20px 0px 5px 0px !important;
+}
+.mobileCoursePadding {
+    padding: 15px 0px 15px 0px !important;
+    width: 100% !important;
+}
+*.show {
+    display: block !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: visible !important;
+    width: auto !important;
+    max-height: inherit !important;
+}
+/*Table,Td resize*/
+
+table[class=3Dresize_table_to_360], td[class=3Dresize_table_to_360] {
+    width: 100% !important;
+    height: auto;
+    margin: 0 auto;
+}
+.drop {
+    width: 100% !important;
+    height: auto !important;
+    display: block !important;
+}
+.drop1 {
+    width: 80% !important;
+    height: auto !important;
+    display: block !important;
+}
+*[class=3D"drop"] {
+    display: block !important;
+    width: 100% !important;
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+}
+.padding_mobile {
+    padding: 10px !important;
+}
+.mobile_padding {
+    padding-left: 25px !important;
+}
+.mobshow {
+    display: table !important;
+    width: auto !important;
+    overflow: visible !important;
+    float: none !important;
+    max-height: inherit !important;
+    max-width: inherit !important;
+    line-height: auto !important;
+    margin: auto !important;
+    margin-top: 0px !important;
+    visibility: inherit !important;
+}
+}
+@media print{ #_two50 { background-image:url('https://UdemyValidityMX.evere=
+stengagement.com/ea/cvq1jKPHOY/?t=3Dp&e=3Dvignesh2604.m@gmail.com&c=3D22040=
+1_Student-MX_EM_Transactional_Receipt_Paid_V2'); } } blockquote #_two50, #m=
+ailContainerBody #_two50, div.OutlookMessageHeader, table.moz-email-headers=
+-table { background-image:url('https://UdemyValidityMX.everestengagement.co=
+m/ea/cvq1jKPHOY/?t=3Df&e=3Dvignesh2604.m@gmail.com&c=3D220401_Student-MX_EM=
+_Transactional_Receipt_Paid_V2'); } </style>=20
+</head>
+<body><img src=3D"https://ablink.alerts.udemy.com/wf/open?upn=3Du001.R5-2Fg=
+DYqIPC5RaQakWYiTFoq4neM7C-2BsQgkC71hNOvyAp1uhtg0GFrxZgSB0F9-2FDUy-2F1fLL-2B=
+s-2FhCiXfUbNMm2XkoxKb4jVacqOupphTaU5izucWA73OkEKk54lhBaBh-2FgVoHOd9F-2BxXjm=
+f9Yq4BzOxxHqIoyEgBAYAOGBJp3DjCZ4lJb18RsrNAXcLmrsUu9edpHIdtBhYV72R8EMBrquEBW=
+mC-2Bf6CRCZZQhNC5m20l-2FV4j-2Bh4yey49jD4QD0jo7S7RoINwTiVY2WKOgrYHNMdVUreal4=
+iJPUHNeDMYLlRvp5CgGkfwcXjW-2Frr53Y2svB5JlbHbUjAfkhglFbEbZx8xBcDmXQJAwwxgdmX=
+Ghk3yBo4j113wII2-2BmbrrDYX9W2ULwfOYiQ3ragUM6vGZ-2BT8W4gnT4gzCJuOL0zjo6ysfBH=
+A6-2BFK0oNmsb2bKHizr45K1dRu5wJY5XNcUgJUVZcUHuZq9UeD35SLSNrM8dyAXRVjcne2KXQ0=
+4rFyDMtuCV9oo833sWSv9fP0jKaV3arEi3rWe7V6WMkxA4QebLVTepFMvciNOKlb56wG-2B7dBc=
+wr61H-2F2Yh6tSi-2BEaB9NM4mB6Pa32RHlLFbFv-2BS6gAGOM-2Frdiv6JWHZ0BY-2FKIah3aD=
+fUcFw0tKd-2BEnSy4uu7MHWvg-3D-3D" alt=3D"" width=3D"1" height=3D"1" border=
+=3D"0" style=3D"height:1px !important;width:1px !important;border-width:0 !=
+important;margin-top:0 !important;margin-bottom:0 !important;margin-right:0=
+ !important;margin-left:0 !important;padding-top:0 !important;padding-botto=
+m:0 !important;padding-right:0 !important;padding-left:0 !important;"/>
+<div style=3D"display:none !important;visibility:hidden;mso-hide:all;font-s=
+ize:1px;color:#ffffff;line-height:1px;max-height:0px;max-width:0px;opacity:=
+0;overflow:hidden;">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Thanks for choosing to learn with us =E2=80=94 we=E2=80=99re excited to be =
+on your journey with you.</div>
+<div id=3D"_two50"></div> <img id=3D"_two50_img" src=3D"https://UdemyValidi=
+tyMX.everestengagement.com/ea/cvq1jKPHOY/?e=3Dvignesh2604.m@gmail.com&amp;c=
+=3D220401_Student-MX_EM_Transactional_Receipt_Paid_V2" width=3D"1" height=
+=3D"1" style=3D"margin:0 !important; padding:0 !important; border:0 !import=
+ant; height:1px !important; width:1px !important;">
+
+ =20
+ =20
+
+
+
+
+
+
+
+
+
+
+
+
+    <table width=3D"660" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" a=
+lign=3D"center" id=3D"container">
+      <tr>
+        <td width=3D"100%" style=3D"min-width: 100%;">
+<table align=3D"center" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" wi=
+dth=3D"100%" style=3D"min-width:100%; display:block;">
+            <tr>
+              <td width=3D"100%" align=3D"center" style=3D"display:block; t=
+ext-align:center; vertical-align:top; font-size:16; min-width:100%;">
+                <!-- PREHEADER -->
+                <div style=3D"display: none; max-height: 0px; overflow: hid=
+den;"> =CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=
+=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=
+=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C=
+&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=
+=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nb=
+sp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=
+=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp;=
+=CD=8F=E2=80=8C&nbsp;=CD=8F=E2=80=8C&nbsp; </div>
+<!-- // PREHEADER -->=20
+
+<!-- campaign directives -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ =20
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- // campaign directives -->
+
+<!-- user directives -->
+
+
+
+
+
+
+<!-- // user directives -->
+
+
+<!-- CONTENT BLOCKS -->
+   <!-- Header -->
+
+
+
+    <!-- Dark Mode Header -->
+<table align=3D"center" width=3D"660" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" style=3D"width:100%; max-width: 660px;" class=3D"container-cell=
+-fluid">
+              <tr>
+                <td><table align=3D"center" width=3D"100%" border=3D"0" cel=
+lspacing=3D"0" cellpadding=3D"0">
+                    <tr>
+                      <td><table width=3D"100%" border=3D"0" cellspacing=3D=
+"0" cellpadding=3D"0">
+                          <tr>
+                            <td class=3D"darkModeTextWhite" align=3D"center=
+" style=3D"text-align:center; min-width:374px; padding-top: 35px;padding-bo=
+ttom:35px;"><a href=3D"https://ablink.alerts.udemy.com/ls/click?upn=3Du001.=
+MPWQNoKfOWucilOG4GS8ljn8XOB2-2FWb4C6mdz6rNETCcqPeLofoW276uINFpoJTnrqweJ-2FP=
+S-2Fei6AB8pNZrlXD98xBy850xU61HfVtH-2FHXOUwj1BMCUZ4raKB0E-2BnqGHd3TLa6jzk0Bd=
+WDJTB0UsqykSww-2BHRwH9sgooXTsGKf3NO1K5xjA7VawQnugGrZe4KMoAGjKU-2By78kHTniKk=
+UhgkbE0roR2pSKaGSzW-2BEx-2ByxG2-2Faj28w5Mj1fYFLB0MZ07bGUxxwnkz7X03uUGNXvxDX=
+ZqivrDhZlczzCOr10G0-3DUZ7q_F-2BBDh37bplPUhH9FbpP4x-2BcuUs-2B-2Fz4mqZ3rIgXX1=
+iGcrKBEin5N-2F5-2F-2FISI5nMYzmPBpRk41Vz6oynZ3b7itCYEv5O0TRHvk96yLWK7nSf1KKQ=
+K-2B7lW1e6wZO7hzHZUP9-2FhnqspXEKWl2rNGKQR3oP7KG0YJtjKYwmO5bOcjtF284VbaBMpmT=
+Hv2Rv4GWznoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4AIWkw16o4toHAtJCQ2u5PmI7XVM1SU-2BrlCH=
+6AsGkhRk2ejQFEU6McGnUioQoeibzp9KAF5G5vcueh0APxMcbqJcEZHNRaBnXTPLbESJxyb50k9=
+tn-2BORQQbsfnwUWPWYzPqiIrYjlMErkrL-2BDfmmvxiYsqIYcqMzvSqasjDoT1s-2B1RHXXDe9=
+nnCfALymcL0SYTTJZfcPGhHMBjvhdqDzDaoscbSK9TXPZ5SsRtFX330bCmghP2iUWbgtd9YRjsZ=
+UwYhqIQP6UU1tDYWmI3STOj5rjxikOl-2BkJiWXXY50O3bFfWvd6hf2OU-2Bp28JuzFwR9fKDqv=
+WNVaOKRgtdFTrHioTBn4HuB5Ow1MSipXQUciTnBjLxz4C4U9rq0uvyh6Rvz91-2BpZ-2B0kdlvv=
+NpLZAkV-2B-2B5ac9BXq4ph6R2aM1klduh2S0sdGhqnztSpf80-2Fw-3D-3D"> <img class=
+=3D"light-img" src=3D"https://mi.udemy.com/p/rp/278662707bd4dca8.png/?mi_u=
+=3D657314fd90a19b00015ec74a&amp;utm_source=3Demail-pro&amp;utm_campaign=3D2=
+20401_Student-MX_EM_Transactional_Receipt_Paid_V2&amp;utm_medium=3DEmail&am=
+p;utm_term=3DHEADER&amp;utm_content=3Dudemy_braze.4a8074691eef9a731e24d3526=
+6457f3c" width=3D"135" height=3D"auto" alt=3D"Udemy Logo" border=3D"0">=20
+                              <!-- The following Dark Mode logo image is hi=
+dden=20
+    with MSO conditional code and inline CSS, but will be        =20
+    revealed once Dark Mode is triggered -->=20
+                              <!--[if !mso]><! --><div class=3D"dark-img" s=
+tyle=3D"display:none; overflow:hidden; float:left; width:0px; max-height:0p=
+x; max-width:0px; line-height:0px; visibility:hidden;" align=3D"center">
+          <img src=3D"https://braze-images.com/appboy/communication/assets/=
+image_assets/images/66b57d887846460063806efb/original.png" width=3D"135" he=
+ight=3D"auto" alt=3D"Udemy" style=3D"color: #ffffff; font-family: sans-seri=
+f; text-align:center;" border=3D"0">
+    </div>
+<!--<![endif]-->=20
+                              </a></td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+            </table>
+<!-- // HEADER -->
+
+  =20
+
+<!-- // Header -->
+               =20
+<!-- Gradient Hero -->
+
+
+
+
+
+=09
+	=09
+		<!-- IMAGE -->
+<table width=3D"560" cellpadding=3D"0" cellspacing=3D"0" align=3D"center" s=
+tyle=3D"width: 100%; max-width: 560px;text-align: center">
+<tr>
+<td style=3D"padding-top: 56px;" width=3D"100%" align=3D"center">
+    <table width=3D"342" cellpadding=3D"0" cellspacing=3D"0" align=3D"cente=
+r"><tr><td align=3D"center">	<a href=3D"https://ablink.alerts.udemy.com/ls/=
+click?upn=3Du001.MPWQNoKfOWucilOG4GS8llXO6bPP2VYqAEArl1-2BjgnZnvlaRPhkQSI54=
+dOLAVfoVWxnRq4MnWFdcBITiZqEFKuBPIQ-2FA0iVY23DYKMfESKrliFYfwhAfTsD6sSpBtbatJ=
+nWUdqm74gFmb0JYfDmqAAyR9BCGwgERF5qg4dT-2FFBjWvOqeob-2Bw3y8ySnF56etJ-2FN7CD3=
+UVYfWdTUF94aNkNMCcMj6lkbZeb3uTUevsOwRRLXQbuVLoIEb6LaXawliHM4xuOl-2BxZEFGyX7=
+R4in-2FiF5Mj1mSDyYbpHflBk2mzQhNiXtporFoNQFypvMyTVuTXg-2BqxRbrIM6qBPlnaLE5pR=
+zNSN8ij2SOkSSbpLMdBi4-3D_1mt_F-2BBDh37bplPUhH9FbpP4x-2BcuUs-2B-2Fz4mqZ3rIgX=
+X1iGcrKBEin5N-2F5-2F-2FISI5nMYzmPBpRk41Vz6oynZ3b7itCYEv5O0TRHvk96yLWK7nSf1K=
+KQK-2B7lW1e6wZO7hzHZUP9-2FhnqspXEKWl2rNGKQR3oP7KG0YJtjKYwmO5bOcjtF284VbaBMp=
+mTHv2Rv4GWznoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4AIWkw16o4toHAtJCQ2u5PmI7XVM1SU-2Brl=
+CH6AsGkhRk2ejQFEU6McGnUioQoeibzp9KAF5G5vcueh0APxMcbqJcEZHNRaBnXTPLbESJxyb50=
+k9tn-2BORQQbsfnwUWPWYzPqiIrYjlMErkrL-2BDfmmvxiYsqIYcqMzvSqasjDoT1s-2B1RHXXD=
+e9nnCfALymcL0SYTTJZfcPGhHMBjvhdqDzDaoscbSK9TXPZ5SsRtFX330bCmghP2iUWbgtd9YRj=
+sZUwYhqIQP6UU1tDYWmI3STOj5rjxikOl-2BkJiWXXY5Eni5lgwWjg4sfjX-2FRdnlbqILHX8VY=
+7-2FZvM4Nz02EygIg-2FIw1f-2FIL0qbTWwP2TMFSklKqQ2FflzPqmc-2Fe3wRUFjT0vHvA-2By=
+eLfdXnY91MfuR1qhQj1R0tCejn4dPe2ChegKnC8k7SGY6vdvH-2FFf0wYA-3D-3D" target=3D=
+"_blank"><img class=3D"W_Mobile" width=3D"342" style=3D"width:100%; max-wid=
+th: 342px;  display:block;" src=3D"https://braze-images.com/appboy/communic=
+ation/assets/image_assets/images/66bafe71ab4b6f0065ea5da6/original.png?mi_u=
+=3D657314fd90a19b00015ec74a" alt=3D""></a>
+</td></tr></table>
+		=09
+</td>
+</tr>
+</table>
+<!-- / IMAGE -->
+
+
+<table align=3D"center" width=3D"560" border=3D"0" cellspacing=3D"0" cellpa=
+dding=3D"0" style=3D"width:100%; max-width: 560px;" class=3D"drop">
+<!-- Copy -->
+<tr>
+<td>
+=09
+		<table align=3D"center" width=3D"100%" border=3D"0" cellspacing=3D"0" cel=
+lpadding=3D"0">
+		<!-- Headline -->
+		<tr>
+		<td height=3D"60" align=3D"left" style=3D"font-size: 50px !important; lin=
+e-height:60px; padding-top: 15px; font-weight: bold;" class=3D"mobHeadlineF=
+ont37 darkModeTextWhite">
+		Your order=E2=80=99s been processed
+		</td>
+		</tr>
+		<!-- Sub Copy -->
+		<tr>
+		<td align=3D"left" style=3D"font-size:24px; line-height:28px; padding-top=
+:21px;" class=3D"mobFont18 darkModeTextWhite">=20
+
+   You=E2=80=99re all set to start learning. Ready to jump in?
+
+		</td>
+		</tr>
+=09
+	<!-- / Copy -->
+	</table>
+</td>
+</tr>
+</table>
+<table align=3D"center" width=3D"100%" border=3D"0" cellspacing=3D"0" cellp=
+adding=3D"0">
+<!-- CTA -->
+		<tr>
+		<td align=3D"center" valign=3D"top" style=3D"padding:40px 0px 50px 0px;">
+			<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+			<tr>
+			<td align=3D"center" valign=3D"top" style=3D"text-align:center; vertical=
+-align: middle; background-color:#000000; height:50px;" class=3D"ctaButton"=
+>
+<!--[if (gte mso 9)|(IE)]><table align=3D"center" cellpadding=3D"0" cellspa=
+cing=3D"0" border=3D"0" ><tr><td valign=3D"middle" background=3D"#000000" s=
+tyle=3D"text-align:center; height:50px; padding: 0 26px;" class=3D"ctaButto=
+n"><![endif]-->
+				<a href=3D"https://ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKf=
+OWucilOG4GS8lj4g-2BwO2YYasAh0hb-2FAhYwagXsgA3YNvQtsSe1AjitpnhXIL7Rp8qVXWEOU=
+CGmBzmtsxPFtLyPtz0HoSJoYyJwu3BTUVSOIo0ZxosNME1Zzg-2FPgHg0DV2mgt-2FcJLp8p6Wr=
+-2FULo-2FkKmtZ7PFeKdhtyNR9MR-2BDukvNoED0vSqpynDIIxsMDSGreqmo9uV8EMSa3CPw2Nj=
+iLivV5-2FYReVPr-2Bcen6TF8f3ksTZk9IoZGe9i1anNuhwWwW87WxpECVMXqJSpadRfc9x-2B9=
+fAADcHCJ5tqLhQKi45Y7WChYzNAkj-2BkEVxVr_F-2BBDh37bplPUhH9FbpP4x-2BcuUs-2B-2F=
+z4mqZ3rIgXX1iGcrKBEin5N-2F5-2F-2FISI5nMYzmPBpRk41Vz6oynZ3b7itCYEv5O0TRHvk96=
+yLWK7nSf1KKQK-2B7lW1e6wZO7hzHZUP9-2FhnqspXEKWl2rNGKQR3oP7KG0YJtjKYwmO5bOcjt=
+F284VbaBMpmTHv2Rv4GWznoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4AIWkw16o4toHAtJCQ2u5PmI7X=
+VM1SU-2BrlCH6AsGkhRk2ejQFEU6McGnUioQoeibzp9KAF5G5vcueh0APxMcbqJcEZHNRaBnXTP=
+LbESJxyb50k9tn-2BORQQbsfnwUWPWYzPqiIrYjlMErkrL-2BDfmmvxiYsqIYcqMzvSqasjDoT1=
+s-2B1RHXXDe9nnCfALymcL0SYTTJZfcPGhHMBjvhdqDzDaoscbSK9TXPZ5SsRtFX330bCmghP2i=
+UWbgtd9YRjsZUwYhqIQP6UU1tDYWmI3STOj5rjxikOl-2BkJiWXXY5FNAzMA9XQahnIcOrFrQ74=
+w5Viqi5Vzrxf7kAfBbVBp9cxdeU3wOQ4JLLE-2Bh4tUVPnXoq5tUFd0eB7bk91EqQeddspiWlsD=
+jmGaQAuiOK0tLp9uc-2Fp5jZE1pB-2FsId6H49UOqX6FEO83B7ntvtzEJ0ug-3D-3D" style=
+=3D"background-color:#000000;color:#ffffff;display:inline-block;font-family=
+: sans-serif; font-size:16px; line-height:28px; padding: 12px 26px; text-al=
+ign:center; text-decoration:none; -webkit-text-size-adjust:none;" class=3D"=
+ctaButton">Start learning</a>
+            <!--[if (gte mso 9)|(IE)]></td></tr></table><![endif]-->
+</td>
+			</tr>
+			</table>
+		</td>
+        </tr>=09
+		<!-- /CTA -->
+		</table>=09
+<!--// Gradient Hero -->
+
+<!--- Receipt section -->
+
+
+
+<!-- Receipt Assigns -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+=20
+<!-- // End Receipt Assigns -->
+
+
+ <table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"560" clas=
+s=3D"resize_table_to_360" role=3D"presentation" align=3D"center">
+  <tr>
+    <td><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"10=
+0%" role=3D"presentation">
+        <tr>
+          <td bgcolor=3D"f8f9fa" style=3D"background-color:#f8f9fa; padding=
+:40px 19px 0px 19px" class=3D"recieptWrapper"><table cellpadding=3D"0" cell=
+spacing=3D"0" border=3D"0" width=3D"100%" role=3D"presentation">
+             =20
+              <!-- // Receipt_Date_Num -->
+              <tr>
+                <td colspan=3D"3" style=3D"padding-bottom:24px;" class=3D"d=
+arkModeBorderWhite Subtotal" align=3D"left"><table width=3D"100%" cellpaddi=
+ng=3D"0" cellspacing=3D"0" border=3D"0" role=3D"presentation" align=3D"left=
+">
+                    <tbody>
+                      <tr>
+                        <td align=3D"left" style=3D"font-size: 20px; line-h=
+eight:20px; text-align:left;padding-right:40px;padding-top:5px;">
+<strong>Transaction date:</strong> 01/10/2024</td>
+                      </tr>
+                      <tr>
+                        <td align=3D"left" style=3D"font-size: 20px; line-h=
+eight:20px; text-align:left;padding-right:40px;padding-top:5px;">
+<strong>Transaction number:</strong> PD-CC-666D476C5A484B676C36794461413D3D=
+</td>
+                      </tr>
+                    </tbody>
+                  </table></td>
+              </tr>
+              <tr>
+                <td class=3D"darkModeBorderWhite" height=3D"20" style=3D"bo=
+rder-bottom:2px solid #000000;"><table cellpadding=3D"0" cellspacing=3D"0" =
+border=3D"0" width=3D"100%" role=3D"presentation">
+                    <tr>
+                      <td width=3D"298" height=3D"29" align=3D"left" valign=
+=3D"top" style=3D"font-size: 20px;font-weight: bold;letter-spacing: 0; line=
+-height: 20px;height:35px;" class=3D"drop mobileCoursePadding">Course name<=
+/td>
+                      <td class=3D"nomobile" valign=3D"top" align=3D"left" =
+style=3D"text-align: left;"><table cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0" width=3D"100%" role=3D"presentation">
+                          <tr>
+                            <td width=3D"110" height=3D"29" align=3D"left" =
+valign=3D"top" class=3D"drop" style=3D"font-size: 18px;line-height:20px;fon=
+t-weight: bold;letter-spacing: 0;min-width:90px;"><strong>List price</stron=
+g></td>
+                          </tr>
+                        </table></td>
+                      <td class=3D"nomobile" valign=3D"top" align=3D"left" =
+style=3D"text-align: left;"><table cellpadding=3D"0" cellspacing=3D"0" bord=
+er=3D"0" width=3D"100%" role=3D"presentation">
+                          <tr>
+                            <td width=3D"110" height=3D"29" align=3D"left" =
+valign=3D"top" class=3D"drop" style=3D"font-size: 18px;line-height:20px;fon=
+t-weight: bold;letter-spacing: 0;min-width:90px;"><strong>Your price</stron=
+g></td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td colspan=3D"3"><table width=3D"100%" cellpadding=3D"0" c=
+ellspacing=3D"0" align=3D"center">
+                    <tr>
+                      <td height=3D"10"></td>
+                    </tr>
+                  </table></td>
+              </tr>
+             =20
+              <tr>
+                <td style=3D"padding-top:10px; padding-bottom:20px;" class=
+=3D"bottomBorder"><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" w=
+idth=3D"100%" role=3D"presentation">
+                    <tr>
+                      <td width=3D"297" valign=3D"top" class=3D"drop titleP=
+addingMob" style=3D"text-align:left;font-size: 18px;font-weight: bold;lette=
+r-spacing: 0; line-height: 20px;word-wrap: break-word" align=3D"left;">Flut=
+ter UI Bootcamp | Build Beautiful Apps using Flutter</td>
+                      <td class=3D"drop" width=3D"109" valign=3D"top" align=
+=3D"left" style=3D"padding-top:20px"><table width=3D"100%" border=3D"0" cel=
+lpadding=3D"0" cellspacing=3D"0" role=3D"presentation">
+                          <tr>
+                            <td align=3D"right" style=3D"padding-left:30px;=
+"><table width=3D"225" cellpadding=3D"0" cellspacing=3D"0" border=3D"0" rol=
+e=3D"presentation" align=3D"right" class=3D"both_price_mob" style=3D"min-wi=
+dth:170px">
+                                <tbody>
+                                  <tr>
+                                    <td width=3D"80" height=3D"20" valign=
+=3D"top" class=3D"show darkModeTextWhite courseHeadingMob" style=3D"font-si=
+ze:16px; line-height: 20px;  display: none;text-align:left;padding-right:15=
+px !important;"><strong>List Price:</strong></td>
+                                    <td width=3D"56" align=3D"left" class=
+=3D"darkModeTextWhite courseHeadingMob" style=3D"font-family: 'Source Sans =
+Pro', Helvetica, Arial, sans-serif;font-size: 16px;letter-spacing: 0;line-h=
+eight:20px; text-align: left;padding-right:8px;">=E2=82=B92,299.00</td>
+                                    <td width=3D"80" height=3D"20" valign=
+=3D"top" class=3D"show darkModeTextWhite courseHeadingMob" style=3D"font-si=
+ze:16px; line-height: 20px;  display: none;text-align:left;padding-right:15=
+px !important;"><strong>Your Price:</strong></td>
+                                    <td width=3D"56" align=3D"left" class=
+=3D"darkModeTextWhite courseHeadingMob" style=3D"font-family: 'Source Sans =
+Pro', Helvetica, Arial, sans-serif;font-size: 16px;letter-spacing: 0;line-h=
+eight:20px; text-align: left;">=E2=82=B90.00</td>
+                                  </tr>
+                                </tbody>
+                              </table></td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              =20
+              <!-- Spacer -->
+              <tr>
+                <td><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ width=3D"100%" role=3D"presentation">
+                    <tr>
+                      <td height=3D"10"></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <!-- Spacer -->
+              <tr>
+                <td colspan=3D"3" style=3D" border-bottom:2px solid #000000=
+;padding-bottom:30px; padding-top: 15px;" class=3D"darkModeBorderWhite Subt=
+otal" align=3D"right"><table width=3D"160" cellpadding=3D"0" cellspacing=3D=
+"0" border=3D"0" role=3D"presentation" align=3D"right">
+                    <tbody>
+                      <tr>
+                        <td height=3D"20" valign=3D"top" class=3D"darkModeT=
+extWhite courseHeadingMob" style=3D"font-size:16px; line-height: 20px; text=
+-align:right;padding-right: 18px;min-width: 73px"><strong>Subtotal:</strong=
+></td>
+                        <td width=3D"56" align=3D"left" class=3D"darkModeTe=
+xtWhite courseHeadingMob" style=3D"font-family: 'Source Sans Pro', Helvetic=
+a, Arial, sans-serif;font-size: 16px;letter-spacing: 0;line-height:20px; te=
+xt-align: left;">=E2=82=B90.00</td>
+                      </tr>
+                      <!-- Spacer -->
+                      <tr>
+                        <td colspan=3D"3"><table width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" align=3D"center">
+                            <tr>
+                              <td height=3D"10"></td>
+                            </tr>
+                          </table></td>
+                      </tr>
+                      <tr>
+                        <td height=3D"20" valign=3D"top" class=3D"darkModeT=
+extWhite courseHeadingMob" style=3D"font-size:16px; line-height: 20px; text=
+-align:right;padding-right: 18px;"><strong>Tax rate:</strong></td>
+                        <td width=3D"56" align=3D"left" class=3D"darkModeTe=
+xtWhite courseHeadingMob" style=3D"font-family: 'Source Sans Pro', Helvetic=
+a, Arial, sans-serif;font-size: 16px;letter-spacing: 0;line-height:20px; te=
+xt-align: left;">18%</td>
+                      </tr>
+                    </tbody>
+                  </table></td>
+              </tr>
+              <tr>
+                <td colspan=3D"3" style=3D"border-top:1px solid #0d0d0d; bo=
+ttom:25px;padding-bottom:30px; padding-top: 15px;" class=3D"darkModeBorderW=
+hite total" align=3D"right"><table width=3D"160" cellpadding=3D"0" cellspac=
+ing=3D"0" border=3D"0" role=3D"presentation" align=3D"right">
+                    <tbody>
+                      <tr>
+                        <td height=3D"20" valign=3D"top" class=3D"darkModeT=
+extWhite courseHeadingMob" style=3D"font-size:16px; line-height: 20px; text=
+-align:right;padding-right:18px !important;"><strong>Tax:</strong></td>
+                        <td width=3D"56" align=3D"left" class=3D"darkModeTe=
+xtWhite courseHeadingMob" style=3D"font-family: 'Source Sans Pro', Helvetic=
+a, Arial, sans-serif;font-size: 18px;letter-spacing: 0;line-height:20px; te=
+xt-align: left;">=E2=82=B90.00</td>
+                      </tr>
+                     =20
+                      <!-- Spacer -->
+                      <tr>
+                        <td colspan=3D"3"><table width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" align=3D"center">
+                            <tr>
+                              <td height=3D"10"></td>
+                            </tr>
+                          </table></td>
+                      </tr>
+                      <!-- Spacer -->
+                     =20
+                      <tr>
+                        <td height=3D"20" valign=3D"top" class=3D"darkModeT=
+extWhite courseHeadingMob" style=3D"font-size:16px; line-height: 20px; text=
+-align:right;padding-right:18px !important;"><strong>Credits:</strong></td>
+                        <td width=3D"56" align=3D"left" class=3D"darkModeTe=
+xtWhite courseHeadingMob" style=3D"font-family: 'Source Sans Pro', Helvetic=
+a, Arial, sans-serif;font-size: 18px;letter-spacing: 0;line-height:20px; te=
+xt-align: left;">=E2=82=B90.00</td>
+                      </tr>
+                     =20
+                      <!-- Spacer -->
+                      <tr>
+                        <td colspan=3D"3"><table width=3D"100%" cellpadding=
+=3D"0" cellspacing=3D"0" align=3D"center">
+                            <tr>
+                              <td height=3D"10"></td>
+                            </tr>
+                          </table></td>
+                      </tr>
+                      <!-- Spacer -->
+                     =20
+                      <tr>
+                        <td height=3D"20" valign=3D"top" class=3D"darkModeT=
+extWhite courseHeadingMob" style=3D"font-size:16px; line-height: 20px; text=
+-align:right;padding-right:18px !important;"><strong>Total:</strong></td>
+                        <td width=3D"56" align=3D"left" class=3D"darkModeTe=
+xtWhite courseHeadingMob" style=3D"font-family: 'Source Sans Pro', Helvetic=
+a, Arial, sans-serif;font-size: 18px;letter-spacing: 0;line-height:20px; te=
+xt-align: left;">=E2=82=B90.00</td>
+                      </tr>
+                    </tbody>
+                  </table></td>
+              </tr>
+              <tr>
+                <td><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"=
+0" align=3D"center">
+                  </table></td>
+              </tr>
+              <tr>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+              </tr>
+            </table></td>
+        </tr>
+        <tr>
+          <td bgcolor=3D"f8f9fa" style=3D"background-color:#f8f9fa; padding=
+:0px 19px 40px 19px" class=3D"recieptWrapper"><table cellpadding=3D"0" cell=
+spacing=3D"0" border=3D"0" width=3D"100%" role=3D"presentation">
+              <tr>
+                <td><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ width=3D"100%" role=3D"presentation">
+                    <tr>
+                      <td width=3D"251" class=3D"drop" style=3D"text-align:=
+left; padding:px 0px 0px 0px;font-size: 16px; line-height: 20px;  word-wrap=
+: break-word;" valign=3D"top"><table width=3D"100%" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0" valign=3D"top">
+                          <tr>
+                            <td width=3D"251" height=3D"24" style=3D"font-f=
+amily: 'Source Sans Pro', Helvetica, Arial, sans-serif;font-size: 20px;font=
+-weight: bold;letter-spacing: 0;padding-bottom:8px;" class=3D"mobileCourseP=
+adding"><strong>Purchased by</strong></td>
+                          </tr>
+                         =20
+                          <!-- Divider -->
+                          <tr>
+                            <td width=3D"251"><table width=3D"100%" border=
+=3D"0" cellspacing=3D"0" cellpadding=3D"0">
+                                <tr>
+                                  <td style=3D" border-bottom: 1px solid #0=
+00000;" class=3D"darkModeBorderWhite"></td>
+                                </tr>
+                                <tr>
+                                  <td height=3D"9"></td>
+                                </tr>
+                              </table></td>
+                          </tr>
+                          <!--/divider-->
+                         =20
+                          <tr>
+                            <td width=3D"251" style=3D"text-align:left; fon=
+t-size: 16px; line-height: 20px;  word-wrap: break-word; font-weight: norma=
+l;padding-bottom:4px;">
+<strong>Tamil&nbsp;selvan</strong><br>
+                              <br>
+                              <br>
+                              <span style=3D"font-size: 16px; line-height:2=
+0px;padding-bottom:4px;"><strong>Payment method:&nbsp;</strong>free-method<=
+/span>
+</td>
+                          </tr>
+                        </table></td>
+                      <td class=3D"drop">&nbsp;</td>
+                      <td width=3D"251" class=3D"drop" style=3D"text-align:=
+left; padding:px 0px 0px 0px;font-size: 16px; line-height: 20px;  word-wrap=
+: break-word;" valign=3D"top"><table cellpadding=3D"0" cellspacing=3D"0" bo=
+rder=3D"0" width=3D"100%" role=3D"presentation">
+                          <tr>
+                            <td style=3D"font-family:Arial, Helvetica, sans=
+-serif;font-size:15px;line-height:22px;font-weight:bold; align:left"><table=
+ width=3D"100%" border=3D"0" cellpadding=3D"0" cellspacing=3D"0" valign=3D"=
+top">
+                                <tr>
+                                  <td height=3D"24" style=3D"font-family: '=
+Source Sans Pro', Helvetica, Arial, sans-serif;font-size: 20px;font-weight:=
+ bold;letter-spacing: 0;padding-bottom:8px;" class=3D"mobileCoursePadding">=
+<strong>Sold by</strong></td>
+                                </tr>
+                                <!-- Divider -->
+                                <tr>
+                                  <td><table width=3D"100%" border=3D"0" ce=
+llspacing=3D"0" cellpadding=3D"0">
+                                      <tr>
+                                        <td style=3D" border-bottom: 1px so=
+lid #000000;" class=3D"darkModeBorderWhite"></td>
+                                      </tr>
+                                      <tr>
+                                        <td height=3D"9"></td>
+                                      </tr>
+                                    </table></td>
+                                </tr>
+                                <!--/divider-->
+                                <tr>
+                                  <td style=3D"text-align:left; font-size: =
+16px; line-height: 20px;   word-wrap: break-word; font-weight: normal;paddi=
+ng-bottom:4px;">Udemy, Inc.</td>
+                                </tr>
+                                <tr>
+                                  <td style=3D"text-align:left; font-size: =
+16px; line-height: 20px;  word-wrap: break-word; font-weight: normal;paddin=
+g-bottom:4px;">600 Harrison Street, 3rd Floor <br>
+                                    San Francisco, CA 94107, US</td>
+                                </tr>
+                              </table></td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td height=3D"60" class=3D"HeightMob">&nbsp;</td>
+              </tr>
+              <tr>
+                <td><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0"=
+ width=3D"100%" role=3D"presentation">
+                    <tr>
+                      <td width=3D"251" class=3D"drop" style=3D"text-align:=
+left; padding:px 0px 0px 0px;font-size: 16px; line-height: 20px;  word-wrap=
+: break-word;" valign=3D"top"><table width=3D"100%" border=3D"0" cellpaddin=
+g=3D"0" cellspacing=3D"0">
+                          <tr>
+                            <td height=3D"24" style=3D"font-size: 20px;font=
+-weight: bold;letter-spacing: 0;padding-bottom:8px;padding-bottom:1px solid=
+ #000000;" class=3D"mobileCoursePadding"><strong>Need help?</strong></td>
+                          </tr>
+                          <!-- Divider -->
+                          <tr>
+                            <td><table width=3D"100%" border=3D"0" cellspac=
+ing=3D"0" cellpadding=3D"0">
+                                <tr>
+                                  <td style=3D" border-bottom: 1px solid #0=
+00000;" class=3D"darkModeBorderWhite"></td>
+                                </tr>
+                                <tr>
+                                  <td height=3D"9"></td>
+                                </tr>
+                              </table></td>
+                          </tr>
+                          <!--/divider-->
+                          <tr>
+                            <td style=3D"font-size: 16px; line-height:20px;=
+word-break: break-word;">Visit our <a href=3D"https://ablink.alerts.udemy.c=
+om/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8lu3YomVGrfz3oxvOve8qE3NV1UtKBBe1=
+BGirU-2BIWLniFOdBz_F-2BBDh37bplPUhH9FbpP4x-2BcuUs-2B-2Fz4mqZ3rIgXX1iGcrKBEi=
+n5N-2F5-2F-2FISI5nMYzmPBpRk41Vz6oynZ3b7itCYEv5O0TRHvk96yLWK7nSf1KKQK-2B7lW1=
+e6wZO7hzHZUP9-2FhnqspXEKWl2rNGKQR3oP7KG0YJtjKYwmO5bOcjtF284VbaBMpmTHv2Rv4GW=
+znoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4AIWkw16o4toHAtJCQ2u5PmI7XVM1SU-2BrlCH6AsGkhRk=
+2ejQFEU6McGnUioQoeibzp9KAF5G5vcueh0APxMcbqJcEZHNRaBnXTPLbESJxyb50k9tn-2BORQ=
+QbsfnwUWPWYzPqiIrYjlMErkrL-2BDfmmvxiYsqIYcqMzvSqasjDoT1s-2B1RHXXDe9nnCfALym=
+cL0SYTTJZfcPGhHMBjvhdqDzDaoscbSK9TXPZ5SsRtFX330bCmghP2iUWbgtd9YRjsZUwYhqIQP=
+6UU1tDYWmI3STOj5rjxikOl-2BkJiWXXY5V9QMZjvo40R33Nr8Ha6lGxZYp-2F-2F8FDZzUF3-2=
+B9RTJbMVFw3H0MPCo5Orxi6YluBZ1cbeioaBHcmg5guNPRwHxowd-2BJcsIDYqaaBP1ZE4Fka7k=
+HliAPEmDHPtSOa8OuRJLyl7JRQ70kvpcWVA4XCpDAQ-3D-3D" style=3D"text-decoration:=
+underline;color:#000000;">Help Center</a> for support.</td>
+                          </tr>
+                        </table></td>
+                      <td class=3D"drop">&nbsp;</td>
+                      <td width=3D"251" align=3D"left" valign=3D"top" class=
+=3D"drop" style=3D"text-align: left;max-width: 261px;;"><table cellpadding=
+=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" role=3D"presentation">
+                          <tr>
+                            <td style=3D"font-family:Arial, Helvetica, sans=
+-serif;font-size:15px;line-height:22px;font-weight:bold; align:left"></td>
+                          </tr>
+                        </table></td>
+                    </tr>
+                  </table></td>
+              </tr>
+              <tr>
+                <td></td>
+              </tr>
+              <tr>
+                <td></td>
+              </tr>
+            </table></td>
+        </tr>
+      </table></td>
+  </tr>
+</table>
+<!-- // Receipt section -->
+
+
+<style>
+.removebluelinks a {
+    color: #ffffff !important;
+}
+td[class=3D"removebluelinks"] a {
+    color: #ffffff !important;
+}
+@font-face {
+    font-family: 'suisseworks';
+    font-style: normal;
+    font-weight: 600;
+    src: local('suisseworks'), url('https://business.udemy.com/wp-content/t=
+hemes/udemy-business-child/assets/webfonts/SuisseWorks-Bold-WebS.woff') for=
+mat('woff');
+    mso-font-alt: 'Georgia';
+}
+@font-face {
+    font-family: 'udemysans';
+    font-style: normal;
+    font-weight: 400;
+    src: local('udemysans'), url('https://business.udemy.com/wp-content/the=
+mes/udemy-business-child/assets/webfonts/UdemySansWeb-Regular.woff') format=
+('woff');
+    mso-font-alt: 'Arial';
+}
+@font-face {
+    font-family: 'udemysans-bold';
+    font-style: normal;
+    font-weight: 600;
+    src: local('udemysans-bold'), url('https://business.udemy.com/wp-conten=
+t/themes/udemy-business-child/assets/webfonts/UdemySansWeb-Bold.woff') form=
+at('woff');
+}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+=20
+
+<!-- localized button / image / href -->=20
+=20
+<!-- // localized button / image / href -->=20
+
+<!-- FOOTER-->
+
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"660" class=
+=3D"deviceWidth" role=3D"presentation" align=3D"center">
+<tr>
+  <td>
+<table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" role=
+=3D"presentation">
+      <tr>
+        <td style=3D"background-color:#000000; padding:50px 50px 0px 50px
+         " class=3D"footerPadding"><table cellpadding=3D"0" cellspacing=3D"=
+0" border=3D"0" width=3D"100%" role=3D"presentation">
+            <tr>
+              <td style=3D"color:#000000;" valign=3D"top"><table cellpaddin=
+g=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" role=3D"presentation"=
+ align=3D"left">
+                  <tr>
+                    <td width=3D"238" class=3D"deviceWidth" style=3D"vertic=
+al-align: top;text-align:left; padding:px 0px 0px 0px;font-size: 16px; line=
+-height: 20px; color: #000000; word-wrap: break-word;" valign=3D"top" heigh=
+t=3D"80"><table width=3D"100%" border=3D"0" cellspacing=3D"0" cellpadding=
+=3D"0" valign=3D"top">
+                        <tr>
+                          <td style=3D"vertical-align: bottom;font-family: =
+'Source Sans Pro', Helvetica, Arial, sans-serif;font-size: 32px;font-weight=
+: bold;letter-spacing: 0;padding-bottom:5px;padding-bottom:1px solid #00000=
+0; text-align: left"><span style=3D"vertical-align: bottom; text-align:left=
+; font-size: 16px; line-height: 20px; color: #000000; word-wrap: break-word=
+; font-weight: normal;padding-bottom:4px;"><a href=3D"https://ablink.alerts=
+.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8lgwUIXaCv5sLUpJA-2Fl-2F0=
+scavixj7wWylFxcPpv2QPP9xJCJPajlTu35h9XJiBmn80gX6sRi4gSx2khkguIFwPNMu65I62xp=
+QlTJwkfhu66EKufuj5yW-2B6oaien2SfaY5hrwP8BB9PQA2g-2Bn6KxgHEvvhFRrEwFEbXVi6pY=
+-2FaBJUo4Fjw26zHa8lV0nVFKqfp3SkEozpjtNRiJG3fFaUCtt-2B44eWpi0wjPylm06qI-2B1d=
+uCQuHO14Y7alFqXdhOjTPSAeDb9rTsbI9VWg5mqOR1MW57LQv64jf959c-2FPFpDmbjEdSL_F-2=
+BBDh37bplPUhH9FbpP4x-2BcuUs-2B-2Fz4mqZ3rIgXX1iGcrKBEin5N-2F5-2F-2FISI5nMYzm=
+PBpRk41Vz6oynZ3b7itCYEv5O0TRHvk96yLWK7nSf1KKQK-2B7lW1e6wZO7hzHZUP9-2FhnqspX=
+EKWl2rNGKQR3oP7KG0YJtjKYwmO5bOcjtF284VbaBMpmTHv2Rv4GWznoGnq4uSTlwfK0Ml2cQKA=
+5a4IwFQ4AIWkw16o4toHAtJCQ2u5PmI7XVM1SU-2BrlCH6AsGkhRk2ejQFEU6McGnUioQoeibzp=
+9KAF5G5vcueh0APxMcbqJcEZHNRaBnXTPLbESJxyb50k9tn-2BORQQbsfnwUWPWYzPqiIrYjlME=
+rkrL-2BDfmmvxiYsqIYcqMzvSqasjDoT1s-2B1RHXXDe9nnCfALymcL0SYTTJZfcPGhHMBjvhdq=
+DzDaoscbSK9TXPZ5SsRtFX330bCmghP2iUWbgtd9YRjsZUwYhqIQP6UU1tDYWmI3STOj5rjxikO=
+l-2BkJiWXXY5dK6XNksJYsnHg1QC5MUE8emP3YWUSbDcdvxAM3me1i6CmYBmNMTqrd9rLvmNLBU=
+kRddwIzZYychogmp1dYYAX80R-2BM3Nsvo6oRqqvauTDqmqwePVRcIW2be59pwUxQPyJajeVmHv=
+sMY4lDYO4pbmXA-3D-3D"><img src=3D"https://braze-images.com/appboy/communica=
+tion/assets/image_assets/images/66c7b998dac3f20063d5e174/original.png"></a>=
+</span></td>
+                        </tr>
+                      </table></td>
+                    <td class=3D"deviceWidth" width=3D"28" style=3D"min-wid=
+th: 20px;">&nbsp;</td>
+                    <td width=3D"310" align=3D"left" valign=3D"top" class=
+=3D"deviceWidth" style=3D"text-align: left;min-width: 310px;"><table cellpa=
+dding=3D"0" cellspacing=3D"0" border=3D"0" width=3D"100%" role=3D"presentat=
+ion">
+                        <tr>
+                          <td style=3D"font-family:Arial, Helvetica, sans-s=
+erif;font-size:15px;line-height:22px;font-weight:bold; align:left; min-widt=
+h: 300px !important;" width=3D"293"><table width=3D"100%" border=3D"0" cell=
+spacing=3D"0" cellpadding=3D"0" valign=3D"top">
+                              <tr>
+                                <td class=3D"deviceWidth" colspan=3D"3" sty=
+le=3D"font-family: 'udemysans', Helvetica, Arial, sans-serif; font-style: n=
+ormal; font-weight: 400;font-weight: bold; font-size: 16px;letter-spacing: =
+-0.25px;;padding-bottom:1px solid #000000;padding-top:10px;color:#ffffff;pa=
+dding-left:7px;">Download our app and learn anywhere</td>
+                              </tr>
+                              <!-- Divider -->
+                             =20
+                              <tr>
+                                <td height=3D"15" colspan=3D"2" style=3D"fo=
+nt-size: 15px;">&nbsp;</td>
+                              </tr>
+                              <tr>
+                                <td class=3D"Download_app" style=3D"text-al=
+ign:left; font-size: 16px; line-height: 20px; color: #000000; word-wrap: br=
+eak-word; font-weight: normal;padding-bottom:4px;padding-left:7px;"><a href=
+=3D"https://ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS=
+8lvQcUKdzeedEn1epjly7okwQRYyJT4my19UpD254WDONMffb6WeHAfsp53asvhAcJ15fL341Dw=
+ALG4PjGZ6xOVSu-2BHtSnYEMzEJ16mmTMINqGj8yRufek199E67HIJ1Z-2FuAvSF9mj-2F2uZ5e=
+ArpaEI-2BE-2FYOgHPlKWvglBzdos4asFc2M6ru-2BIFBvyQ2LUkGgoU4e5uKt1vEZDnXOu6sDy=
+mROYfdomZ9FCkPCoPA4lr58dJ5CI-2BmHJZhW31Jbidh3CCUVmHaOMPHxuJiZkM76dOjmjGJYzk=
+rMVMjq9w0LX1SkeBDRUqeP04kQLRhCl3zot3Q-3D-3DyjHz_F-2BBDh37bplPUhH9FbpP4x-2Bc=
+uUs-2B-2Fz4mqZ3rIgXX1iGcrKBEin5N-2F5-2F-2FISI5nMYzmPBpRk41Vz6oynZ3b7itCYEv5=
+O0TRHvk96yLWK7nSf1KKQK-2B7lW1e6wZO7hzHZUP9-2FhnqspXEKWl2rNGKQR3oP7KG0YJtjKY=
+wmO5bOcjtF284VbaBMpmTHv2Rv4GWznoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4AIWkw16o4toHAtJC=
+Q2u5PmI7XVM1SU-2BrlCH6AsGkhRk2ejQFEU6McGnUioQoeibzp9KAF5G5vcueh0APxMcbqJcEZ=
+HNRaBnXTPLbESJxyb50k9tn-2BORQQbsfnwUWPWYzPqiIrYjlMErkrL-2BDfmmvxiYsqIYcqMzv=
+SqasjDoT1s-2B1RHXXDe9nnCfALymcL0SYTTJZfcPGhHMBjvhdqDzDaoscbSK9TXPZ5SsRtFX33=
+0bCmghP2iUWbgtd9YRjsZUwYhqIQP6UU1tDYWmI3STOj5rjxikOl-2BkJiWXXY58xgi5vB-2Bcg=
+m-2Fxriymi57G841Fb0Kxq1MljBmNaBAS0SECr-2BSAGkFahNqcBFx-2FZokYYGT4MG-2BBrz9g=
+G-2FWduZQfuORyRJhjXkPfxjQmDvB77k7afXbeNSCgGQOGsLlcR14RU-2FGgpocB1FRzhjppkIt=
+uQ-3D-3D"><img src=3D"https://braze-images.com/appboy/communication/assets/=
+image_assets/images/66b598f9f5d16800634215cb/original.png" height=3D"42" wi=
+dth=3D"130" style=3D"max-width: 131px; max-height:44px"></a></td>
+                                <td align=3D"left" class=3D"Download_app" s=
+tyle=3D"text-align:left; font-size: 16px; line-height: 20px; color: #000000=
+; word-wrap: break-word; font-weight: normal;padding-bottom:4px;padding-lef=
+t:12px;"><a href=3D"https://ablink.alerts.udemy.com/ls/click?upn=3Du001.MPW=
+QNoKfOWucilOG4GS8lvQcUKdzeedEn1epjly7okwQRYyJT4my19UpD254WDONMffb6WeHAfsp53=
+asvhAcJ15fL341DwALG4PjGZ6xOVSu-2BHtSnYEMzEJ16mmTMINqGj8yRufek199E67HIJ1Z-2F=
+uAvSF9mj-2F2uZ5eArpaEI-2BE-2FYOgHPlKWvglBzdos4asFc2M6ru-2BIFBvyQ2LUkGgoU4e5=
+uKt1vEZDnXOu6sDymROYfdomZ9FCkPCoPA4lr58dJ5CI-2BmHJZhW31Jbidh3CCUVmHaOMPHxuJ=
+iZkM76dOjmjGJYzkrMVMjq9w0LX1SkeBDRUqeP04kQLRhCl3zot3Q-3D-3DKDCV_F-2BBDh37bp=
+lPUhH9FbpP4x-2BcuUs-2B-2Fz4mqZ3rIgXX1iGcrKBEin5N-2F5-2F-2FISI5nMYzmPBpRk41V=
+z6oynZ3b7itCYEv5O0TRHvk96yLWK7nSf1KKQK-2B7lW1e6wZO7hzHZUP9-2FhnqspXEKWl2rNG=
+KQR3oP7KG0YJtjKYwmO5bOcjtF284VbaBMpmTHv2Rv4GWznoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4=
+AIWkw16o4toHAtJCQ2u5PmI7XVM1SU-2BrlCH6AsGkhRk2ejQFEU6McGnUioQoeibzp9KAF5G5v=
+cueh0APxMcbqJcEZHNRaBnXTPLbESJxyb50k9tn-2BORQQbsfnwUWPWYzPqiIrYjlMErkrL-2BD=
+fmmvxiYsqIYcqMzvSqasjDoT1s-2B1RHXXDe9nnCfALymcL0SYTTJZfcPGhHMBjvhdqDzDaoscb=
+SK9TXPZ5SsRtFX330bCmghP2iUWbgtd9YRjsZUwYhqIQP6UU1tDYWmI3STOj5rjxikOl-2BkJiW=
+XXY5lt3BkraoIVkxxrwwD8LGnnYsfcpFF8y47m-2BwJQdnIuO7jEsMeBlbG72-2FOjWZjSdN8QO=
+43aeN-2Fd3d6dFInouoC1GS5yJhvcGUe41tptCWGZDB6Qit-2BGGwc5raPocT41-2FoF1Cv5FTK=
+43qG8lj3NIwhUw-3D-3D"><img src=3D"https://braze-images.com/appboy/communica=
+tion/assets/image_assets/images/66b598f93e04760063a64971/original.png" heig=
+ht=3D"42" width=3D"130" style=3D"max-width:131px; max-height:44px"></a></td=
+>
+                              </tr>
+                            </table></td>
+                        </tr>
+                      </table></td>
+                  </tr>
+                </table></td>
+            </tr>
+            <tr>
+              <td height=3D"60">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><table cellpadding=3D"0" cellspacing=3D"0" border=3D"0" w=
+idth=3D"100%" role=3D"presentation">
+                  <tr>
+                    <td style=3D"text-align:left; padding:px 0px 0px 0px;fo=
+nt-size: 16px; line-height: 20px; color: #000000; word-wrap: break-word;" v=
+align=3D"top"><table width=3D"250" border=3D"0" cellspacing=3D"0" cellpaddi=
+ng=3D"0" align=3D"left" class=3D"SocialIcons">
+                        <tr>
+                          <td width=3D"40" align=3D"left"><a href=3D"https:=
+//ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8lktWZ0B95=
+nyX-2BvXv1D5fPmLkzh5KJmePHJp6YvEGr7MkPZGeEGBfqEfwpWjUIOqBWXWp-2Bzkm-2FLsvSe=
+Cp6KY21Jgv-2BXDC-2F49ARkX2UJ0dbP7LvOXKA-2FYcxqIWF-2Fz3gt855WTV56mgx1YpZSvi5=
+DNLxW9U78snAth55FtvKekP9RQnpmGOdAsIgDY8QBZCPw91maX6tvuop9yBdFPGnZBMtgKfxAF8=
+ANmfNseU-2BzCobzcezHf2WD2D6Gc-2BZgZksWMyZJbWD12I-2FlerOS-2BN3-2BV4Tq9I8GLMH=
+Exi4YC-2FIH-2FiRnkfvqpk_F-2BBDh37bplPUhH9FbpP4x-2BcuUs-2B-2Fz4mqZ3rIgXX1iGc=
+rKBEin5N-2F5-2F-2FISI5nMYzmPBpRk41Vz6oynZ3b7itCYEv5O0TRHvk96yLWK7nSf1KKQK-2=
+B7lW1e6wZO7hzHZUP9-2FhnqspXEKWl2rNGKQR3oP7KG0YJtjKYwmO5bOcjtF284VbaBMpmTHv2=
+Rv4GWznoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4AIWkw16o4toHAtJCQ2u5PmI7XVM1SU-2BrlCH6As=
+GkhRk2ejQFEU6McGnUioQoeibzp9KAF5G5vcueh0APxMcbqJcEZHNRaBnXTPLbESJxyb50k9tn-=
+2BORQQbsfnwUWPWYzPqiIrYjlMErkrL-2BDfmmvxiYsqIYcqMzvSqasjDoT1s-2B1RHXXDe9nnC=
+fALymcL0SYTTJZfcPGhHMBjvhdqDzDaoscbSK9TXPZ5SsRtFX330bCmghP2iUWbgtd9YRjsZUwY=
+hqIQP6UU1tDYWmI3STOj5rjxikOl-2BkJiWXXY5Am-2BIEEZxF-2FuMUZb3aBYzxnZDyKRtW-2F=
+ugS5hZodOFai-2BsMXV5xTl8GR-2BDQbmeC34D1nOzHCHSApdSO1M-2BxL4Qp1N0dVeE68wwZnf=
+GFgMAZGr9yN645pHsoDXS8gUADmWLDRL9Tl05zZd9n9JUUvdDLw-3D-3D"><img src=3D"http=
+s://braze-images.com/appboy/communication/assets/image_assets/images/66c7b9=
+984df4c7006328fd42/original.png" width=3D"40" alt=3D"Instagram"></a></td>
+                          <td width=3D"10" align=3D"left">&nbsp;</td>
+                          <td width=3D"40" align=3D"left"><a href=3D"https:=
+//ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8lj0ugqiqY=
+3U-2B0vmeePH1L2-2F0UZh839hWq8gcdL3yKNNpu2OluX5T-2B1uYw3UgNiaNhue69STlgUtTV3=
+J4YFNqM7TvUPvxzPuCSNjSu3U5wgKly0-2FeOipo6yxhn39-2BtaAuXx-2Belv9gG4oHHifTEU-=
+2BjRXxGjv43KyPVrkYJANBQXQfDeQIpQkzlB-2BBPFnJSOqFuZMkB-2FIFe06wDxe-2F5vrlD1R=
+p9-2FebzwzyLJ3Rwp3FsgfC9MbfaeJN8rNDvzroblk9DFtfdG0C8sFJlMlO9BfBn1LaZHIYNcFM=
+BPt3pXDG7PrV1gynFV-2F-2BThAVH1t5-2FntBqpw-3D-3DxbbN_F-2BBDh37bplPUhH9FbpP4x=
+-2BcuUs-2B-2Fz4mqZ3rIgXX1iGcrKBEin5N-2F5-2F-2FISI5nMYzmPBpRk41Vz6oynZ3b7itC=
+YEv5O0TRHvk96yLWK7nSf1KKQK-2B7lW1e6wZO7hzHZUP9-2FhnqspXEKWl2rNGKQR3oP7KG0YJ=
+tjKYwmO5bOcjtF284VbaBMpmTHv2Rv4GWznoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4AIWkw16o4toH=
+AtJCQ2u5PmI7XVM1SU-2BrlCH6AsGkhRk2ejQFEU6McGnUioQoeibzp9KAF5G5vcueh0APxMcbq=
+JcEZHNRaBnXTPLbESJxyb50k9tn-2BORQQbsfnwUWPWYzPqiIrYjlMErkrL-2BDfmmvxiYsqIYc=
+qMzvSqasjDoT1s-2B1RHXXDe9nnCfALymcL0SYTTJZfcPGhHMBjvhdqDzDaoscbSK9TXPZ5SsRt=
+FX330bCmghP2iUWbgtd9YRjsZUwYhqIQP6UU1tDYWmI3STOj5rjxikOl-2BkJiWXXY5oSap8xS7=
+UdmBGG5cIqn-2BeprY0dDxIbW15nI9AO1Jg4WdMiWJOohGl0yPav8I6OylhNLZCsarZ4nNGRZUE=
+V3mzAAzo27S3cOnWeSMC-2BV9KyP5bcIYKRVc-2BD7Vx6bOsoPrPk6UQjyJBzyy8Crhwd7wZQ-3=
+D-3D"><img src=3D"https://braze-images.com/appboy/communication/assets/imag=
+e_assets/images/66c7b998ba63da006329eb46/original.png" width=3D"40"></a></t=
+d>
+                          <td width=3D"10" align=3D"left" style=3D"font-fam=
+ily: 'Source Sans Pro', Helvetica, Arial, sans-serif;font-size: 20px;font-w=
+eight: bold;letter-spacing: 0;padding-bottom:5px;padding-bottom:1px solid #=
+000000;">&nbsp;</td>
+                          <td width=3D"40" align=3D"left"><a href=3D"https:=
+//ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8lsOdOeexW=
+MtyhjU-2Ffnhbi2amEgTquIPcazXkz35m-2BVPBQDO-2BdOlksVfYgR6IfZHJTdv-2FiG9e6pUi=
+y8TKt5u6R5aGW1QlyZpIOY52bZSo-2BbGxW8gjRa9LBLjBBTiVb2TrjofjoUgCGdYJ-2Fkvz516=
+ymA0ewuQhdOZkEDoA2a804f8mx6vUwlWOVYcWrzaXlSgwB4NGTjLskol3VlbGWVw26EgQtXZeMv=
+UQnynuXdUPFixLrJjAUQHIYKWkW0h1JwUZZK9OU3XTpkduE2fPsJvofcP6HyYtmzYuJtzxh8kKO=
+dzCsVY7_F-2BBDh37bplPUhH9FbpP4x-2BcuUs-2B-2Fz4mqZ3rIgXX1iGcrKBEin5N-2F5-2F-=
+2FISI5nMYzmPBpRk41Vz6oynZ3b7itCYEv5O0TRHvk96yLWK7nSf1KKQK-2B7lW1e6wZO7hzHZU=
+P9-2FhnqspXEKWl2rNGKQR3oP7KG0YJtjKYwmO5bOcjtF284VbaBMpmTHv2Rv4GWznoGnq4uSTl=
+wfK0Ml2cQKA5a4IwFQ4AIWkw16o4toHAtJCQ2u5PmI7XVM1SU-2BrlCH6AsGkhRk2ejQFEU6McG=
+nUioQoeibzp9KAF5G5vcueh0APxMcbqJcEZHNRaBnXTPLbESJxyb50k9tn-2BORQQbsfnwUWPWY=
+zPqiIrYjlMErkrL-2BDfmmvxiYsqIYcqMzvSqasjDoT1s-2B1RHXXDe9nnCfALymcL0SYTTJZfc=
+PGhHMBjvhdqDzDaoscbSK9TXPZ5SsRtFX330bCmghP2iUWbgtd9YRjsZUwYhqIQP6UU1tDYWmI3=
+STOj5rjxikOl-2BkJiWXXY5uSywOlgTUK-2Bd2cNPt4FjMspc4dX0tAWD0-2F9ME3YFyg4ZDXCA=
+tns2rbVKVHWtIznJAZIYfWf2EaFaqe25r4w37T-2BHKu-2FSuoXTxGhWCNGLWAUgQAXnlDhfEPG=
+B551eXQ7kIVgZS-2Bsj1-2FQBkOszr36xGQ-3D-3D"><img src=3D"https://braze-images=
+.com/appboy/communication/assets/image_assets/images/66c7b99817b8980063ac7b=
+9d/original.png" width=3D"36"></a></td>
+                          <td width=3D"10" align=3D"left" style=3D"font-fam=
+ily: 'Source Sans Pro', Helvetica, Arial, sans-serif;font-size: 20px;font-w=
+eight: bold;letter-spacing: 0;padding-bottom:5px;padding-bottom:1px solid #=
+000000;">&nbsp;</td>
+                          <td width=3D"40" align=3D"left"><a href=3D"https:=
+//ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8lkE7uN4GA=
+Lu4qwDrYxhQKcEyCAgevywPW8D5AIAvEY5osuprkmHbwFSSH34t1lySYOk9hBBLAMbqNUGcN-2F=
+Ce2ypAenovGMlC0BscIpmQ1pIcU-2BTLaPwcx9dGHs6I970AQcVJqEYrz0JFBn29VKo-2BTWTUy=
+mxLsp7OC4HPLgeQz8JLbPSHUL5fu1chE3jS0D7vqBEC4Gq0wSys-2FV2k9na-2BL3W5FFR5P8DJ=
+F-2BCa9xw8650mGFAioB5ZmIubC4sT5YoDLQKG-2FmDtFU5LeNNjQvv932dbY3zu5K9zg76LdMy=
+3wnXKPY8RwE09oHYcP2Lu8WHJXQ-3D-3DOEuV_F-2BBDh37bplPUhH9FbpP4x-2BcuUs-2B-2Fz=
+4mqZ3rIgXX1iGcrKBEin5N-2F5-2F-2FISI5nMYzmPBpRk41Vz6oynZ3b7itCYEv5O0TRHvk96y=
+LWK7nSf1KKQK-2B7lW1e6wZO7hzHZUP9-2FhnqspXEKWl2rNGKQR3oP7KG0YJtjKYwmO5bOcjtF=
+284VbaBMpmTHv2Rv4GWznoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4AIWkw16o4toHAtJCQ2u5PmI7XV=
+M1SU-2BrlCH6AsGkhRk2ejQFEU6McGnUioQoeibzp9KAF5G5vcueh0APxMcbqJcEZHNRaBnXTPL=
+bESJxyb50k9tn-2BORQQbsfnwUWPWYzPqiIrYjlMErkrL-2BDfmmvxiYsqIYcqMzvSqasjDoT1s=
+-2B1RHXXDe9nnCfALymcL0SYTTJZfcPGhHMBjvhdqDzDaoscbSK9TXPZ5SsRtFX330bCmghP2iU=
+Wbgtd9YRjsZUwYhqIQP6UU1tDYWmI3STOj5rjxikOl-2BkJiWXXY5XDs5ABVzusFF2BDlQJe5-2=
+BJqmmaHZ7GWxfjzQEk7kqVHV1efmTofi5-2FFNUUf7zJCNLROS1vRYhw3i7BS47TT73wjMzjIFj=
+43r1qUDTxZTzbM1Ix36QgStpXUSxUAipv1oAUVeqCtbkuY9ZjqCA-2BzOFg-3D-3D"><img sty=
+le=3D"padding-bottom:2px;" width=3D"40" src=3D"https://braze-images.com/app=
+boy/communication/assets/image_assets/images/66c7b998903e720064aaf1d7/origi=
+nal.png" valign=3D"top"></a></td>
+                          <td width=3D"10" align=3D"left" style=3D"font-fam=
+ily: 'Source Sans Pro', Helvetica, Arial, sans-serif;font-size: 20px;font-w=
+eight: bold;letter-spacing: 0;padding-bottom:5px;padding-bottom:1px solid #=
+000000;">&nbsp;</td>
+                          <td width=3D"40" align=3D"left"><a href=3D"https:=
+//ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8lguLLBbPR=
+ONAPVNgdA4KZXA-2FWIXLDQW-2FlpJHT-2BLBjXV9MJqAsT5XPwG8ZTfMPnCyw9ztmmejk4rUtU=
+h43baNxCWKeSSd3LYfXSoWrFd-2FEL1TPYUN1imHybwlUevJrchrwr4M6-2BFjUXnTTPThQloQN=
+z0SPyFKsr8wfJESErysBcZvbrHw5hO1-2FtQCK-2BqrVgUS-2BeY98nfGHBaxHZ9cDc3hQcW1a9=
+5TFx3swyOxBcVldIG0tMWwu1IKb0LGUiV5XDlNXMYaw7Uo1GObPywbCtMzLpdwf-2B6wWIxWSJn=
+WWW-2F7jw5EFNA9_F-2BBDh37bplPUhH9FbpP4x-2BcuUs-2B-2Fz4mqZ3rIgXX1iGcrKBEin5N=
+-2F5-2F-2FISI5nMYzmPBpRk41Vz6oynZ3b7itCYEv5O0TRHvk96yLWK7nSf1KKQK-2B7lW1e6w=
+ZO7hzHZUP9-2FhnqspXEKWl2rNGKQR3oP7KG0YJtjKYwmO5bOcjtF284VbaBMpmTHv2Rv4GWzno=
+Gnq4uSTlwfK0Ml2cQKA5a4IwFQ4AIWkw16o4toHAtJCQ2u5PmI7XVM1SU-2BrlCH6AsGkhRk2ej=
+QFEU6McGnUioQoeibzp9KAF5G5vcueh0APxMcbqJcEZHNRaBnXTPLbESJxyb50k9tn-2BORQQbs=
+fnwUWPWYzPqiIrYjlMErkrL-2BDfmmvxiYsqIYcqMzvSqasjDoT1s-2B1RHXXDe9nnCfALymcL0=
+SYTTJZfcPGhHMBjvhdqDzDaoscbSK9TXPZ5SsRtFX330bCmghP2iUWbgtd9YRjsZUwYhqIQP6UU=
+1tDYWmI3STOj5rjxikOl-2BkJiWXXY5S-2FWMyDmx29GQPFy7ltZTxntQnpb1MOGH5CvkOA-2Bp=
+Lsq1DUYVbvKi74Z0KF4qdZsnkXEUBk4E5mRBKjzqxwfBZqP7SZIyQZoxcuQBOQUSL8N7OhkeHjc=
+jBvRZItAVLOS-2Fr-2B0Qoi10V6qsdXJHII82Dw-3D-3D"><img src=3D"https://braze-im=
+ages.com/appboy/communication/assets/image_assets/images/66c7b998a528220063=
+c9b06d/original.png" width=3D"40"></a></td>
+                          <td width=3D"10" align=3D"left">&nbsp;</td>
+                        </tr>
+                        <!-- Divider -->
+                        <tr>
+                          <td height=3D"20" colspan=3D"10">&nbsp;</td>
+                        </tr>
+                        <!--/divider-->
+                       =20
+                      </table></td>
+                  </tr>
+                  <tr>
+                    <td style=3D"text-align:left; font-size: 16px; line-hei=
+ght: 20px; color: #000000; word-wrap: break-word;" valign=3D"top" height=3D=
+"45"><table width=3D"auto" border=3D"0" cellspacing=3D"0" cellpadding=3D"0"=
+ align=3D"left">
+                       =20
+                        <!--/divider-->
+                        <tr>
+                          <td align=3D"left" style=3D"font-size:17px; line-=
+height:20px; word-break:break-all; color:#ffffff;  min-width:50px;padding-l=
+eft:8px;"><strong><a style=3D"color:#fffFff; text-decoration:none;" href=3D=
+"?lid=3D&amp;utm_source=3Demail-pro&amp;utm_campaign=3D220401_Student-MX_EM=
+_Transactional_Receipt_Paid_V2&amp;utm_medium=3DEmail&amp;utm_term=3DFooter=
+_Transactional_2023&amp;utm_content=3Dudemy_braze.4a8074691eef9a731e24d3526=
+6457f3c">About us</a></strong></td>
+                          <td width=3D"18" align=3D"center" style=3D"font-s=
+ize:19px; line-height:20px; word-break:break-all; color:#ffffff;">&nbsp;|&n=
+bsp;</td>
+                          <td width=3D"auto" align=3D"left" style=3D" font-=
+family: 'udemysans', Helvetica, Arial, sans-serif; font-style: normal; font=
+-weight: 400;font-size:19px; line-height:20px; word-break:break-all; color:=
+#ffffff; min-width:90px;"><strong><a href=3D"?lid=3D&amp;utm_source=3Demail=
+-pro&amp;utm_campaign=3D220401_Student-MX_EM_Transactional_Receipt_Paid_V2&=
+amp;utm_medium=3DEmail&amp;utm_term=3DFooter_Transactional_2023&amp;utm_con=
+tent=3Dudemy_braze.4a8074691eef9a731e24d35266457f3c" style=3D"color:#ffffff=
+; text-decoration:none;">Udemy Business</a></strong></td>
+                        </tr>
+                      </table></td>
+                  </tr>
+                  <tr>
+                    <td colspan=3D"3" height=3D"50"><table width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0">
+                        <tr>
+                          <td colspan=3D"3" height=3D"50"><table width=3D"1=
+00%" cellpadding=3D"0" cellspacing=3D"0">
+                              <tr>
+                                <td colspan=3D"3" style=3D"padding-top:70px=
+;" class=3D"Pt-50"><table width=3D"100%" cellpadding=3D"0" cellspacing=3D"0=
+" align=3D"center">
+                                    <tr>
+                                      <td align=3D"left" style=3D"font-fami=
+ly: 'udemysans', Helvetica, Arial, sans-serif; font-style: normal; font-wei=
+ght: 400;font-size: 13px; letter-spacing:0.25px;line-height:20px; padding-b=
+ottom:25px;border-bottom:1px solid #ffffff;color:#ffffff;padding-left:8px;"=
+ class=3D"removebluelinks">You are receiving this email because you signed =
+up on Udemy.com with this email address.</td>
+                                    </tr>
+                                  </table></td>
+                              </tr>
+                             =20
+                              <tr>
+                    <td style=3D"text-align:left; font-size: 16px; line-hei=
+ght: 20px; color: #000000; word-wrap: break-word;padding-top:36px;" valign=
+=3D"top" height=3D"45"><table width=3D"auto" border=3D"0" cellspacing=3D"0"=
+ cellpadding=3D"0" align=3D"center">
+                       =20
+                        <!--/divider-->
+                        <tr>
+                          <td align=3D"center" valign=3D"top" style=3D"font=
+-family: 'udemysans', Helvetica, Arial, sans-serif; font-size: 14px;
+font-style: normal;
+font-weight: 700; padding-right:10px; padding-bottom:0px;color:#ffffff;"><a=
+ href=3D"https://ablink.alerts.udemy.com/ls/click?upn=3Du001.MPWQNoKfOWucil=
+OG4GS8lu3YomVGrfz3oxvOve8qE3NwpItgY885qmlrg8mb9pTwX0Q1SOtvV99nQyJAdGsUyaII6=
+hZS-2FPYf-2BpbdJ0-2BKwdmY6W-2FPhyI4ThYNhKYwnx1Q6uZwNX7q36YwWk3RVc0L12ajnj8S=
+L-2BFruuN9RvkTOPo0GaJLLv3LJIGmnVmoaftP0YI-2FVJqFq1yg566Wi6-2FLKe7u3r5pm-2F-=
+2Bmoa2JPbVtQGaLEOaK0qQiy-2F7hmm0DhQ7fxwSjoKZ-2Bw-2B4UsqBPh1zHVj3fV6lJKNNExB=
+I44-2BEsJjYy-2BHuWxLnohba0Hi7KQaaKnPz1FkVT-2BtEFznQkA3h-2B1Q-3D-3DnUGu_F-2B=
+BDh37bplPUhH9FbpP4x-2BcuUs-2B-2Fz4mqZ3rIgXX1iGcrKBEin5N-2F5-2F-2FISI5nMYzmP=
+BpRk41Vz6oynZ3b7itCYEv5O0TRHvk96yLWK7nSf1KKQK-2B7lW1e6wZO7hzHZUP9-2FhnqspXE=
+KWl2rNGKQR3oP7KG0YJtjKYwmO5bOcjtF284VbaBMpmTHv2Rv4GWznoGnq4uSTlwfK0Ml2cQKA5=
+a4IwFQ4AIWkw16o4toHAtJCQ2u5PmI7XVM1SU-2BrlCH6AsGkhRk2ejQFEU6McGnUioQoeibzp9=
+KAF5G5vcueh0APxMcbqJcEZHNRaBnXTPLbESJxyb50k9tn-2BORQQbsfnwUWPWYzPqiIrYjlMEr=
+krL-2BDfmmvxiYsqIYcqMzvSqasjDoT1s-2B1RHXXDe9nnCfALymcL0SYTTJZfcPGhHMBjvhdqD=
+zDaoscbSK9TXPZ5SsRtFX330bCmghP2iUWbgtd9YRjsZUwYhqIQP6UU1tDYWmI3STOj5rjxikOl=
+-2BkJiWXXY54F2bokYNbcOL2ulzcHeI3TGARf7nerqo4nJpx3tfiV6XRCZsQ9hIRk2asZTK5Yjb=
+HHpCobDtbyxgxr-2FVPCjvJ1vHIQ5ARmWxq8JcnRRDx9-2BHWl-2BvEp4HuivYCcDfsYFkJHis6=
+4IKqjhFi8GspZEUvw-3D-3D" style=3D"color:#ffffff;text-decoration: none;">Sup=
+port</a></td>
+                          <td width=3D"18" align=3D"center" style=3D"font-s=
+ize:17px; line-height:20px; word-break:break-all; color:#ffffff;">&nbsp;</t=
+d>
+                          <td align=3D"center" valign=3D"top" style=3D"font=
+-family: 'udemysans', Helvetica, Arial, sans-serif; font-size: 14px;
+font-style: normal;
+font-weight: 700; color:#ffffff;"><a href=3D"https://ablink.alerts.udemy.co=
+m/ls/click?upn=3Du001.MPWQNoKfOWucilOG4GS8llZZXCvPhpO2-2Fr1B92MXjE3gQaT6Vz-=
+2BxTBBQcGb6HVygJaZl9ngs1h2qrC5kFGltKvpHYTBcn2-2F-2B5o619-2BbON7F05CJh0qOrfX=
+O72HA01x02yx2VrruRGjocdt6IO1J-2FOLuoN50MeFNa6i-2B6JYcxQbZFJVO84hkBWl43BqoOF=
+IdgMPG-2BJIH947iJmJbzwOypM6XEj9kQZMfQ2Ic1Jlg-2FYSuNX47nUfmMsOoHkKUVvuGuPldp=
+IKheVNDo5H71fa7-2BBza719BwGeJ3cO752DqWjvJHY-2F4PtLNAvaRJdvDY5CXgnja0Owq7TiB=
+n7CHvIdzM5Q-3D-3Duo3m_F-2BBDh37bplPUhH9FbpP4x-2BcuUs-2B-2Fz4mqZ3rIgXX1iGcrK=
+BEin5N-2F5-2F-2FISI5nMYzmPBpRk41Vz6oynZ3b7itCYEv5O0TRHvk96yLWK7nSf1KKQK-2B7=
+lW1e6wZO7hzHZUP9-2FhnqspXEKWl2rNGKQR3oP7KG0YJtjKYwmO5bOcjtF284VbaBMpmTHv2Rv=
+4GWznoGnq4uSTlwfK0Ml2cQKA5a4IwFQ4AIWkw16o4toHAtJCQ2u5PmI7XVM1SU-2BrlCH6AsGk=
+hRk2ejQFEU6McGnUioQoeibzp9KAF5G5vcueh0APxMcbqJcEZHNRaBnXTPLbESJxyb50k9tn-2B=
+ORQQbsfnwUWPWYzPqiIrYjlMErkrL-2BDfmmvxiYsqIYcqMzvSqasjDoT1s-2B1RHXXDe9nnCfA=
+LymcL0SYTTJZfcPGhHMBjvhdqDzDaoscbSK9TXPZ5SsRtFX330bCmghP2iUWbgtd9YRjsZUwYhq=
+IQP6UU1tDYWmI3STOj5rjxikOl-2BkJiWXXY5xmS9i5gqRvVDvzdDRzXtQ2YJG75eZRR-2Bh8Ua=
+VgwmpMsIfaT-2B-2FDLAhOucbRbtR2XfoHwQSwXxBfpj-2BaaVV0haVYWMdzcMPyeIyfvP4RDBr=
+TLz4PSlKGli7OBUlwqHx-2FQU5Go2U-2FkrfA9GkMlky9OmgQ-3D-3D" style=3D"color:#ff=
+ffff;text-decoration: none;">Privacy terms</a></td>
+                        </tr>
+                      </table></td>
+                  </tr>
+                             =20
+                             =20
+                             =20
+                              <tr>
+                                <td style=3D"padding-top:60px;"><table widt=
+h=3D"100%" cellpadding=3D"0" cellspacing=3D"0" align=3D"center">
+                                    <tr>
+                                      <td width=3D"15%" align=3D"left" styl=
+e=3D"font-size: 14px; line-height:20px; text-align: left;padding-bottom:0px=
+;">&nbsp;</td>
+                                      <td width=3D"70%" align=3D"center" st=
+yle=3D"font-family: 'udemysans', Helvetica, Arial, sans-serif; font-style: =
+normal; font-weight: 400;font-size: 12px; line-height:20px; text-align: cen=
+ter;padding-bottom:0px;color:#ffffff;" class=3D"removebluelinks">Udemy.com =
+600 Harrison Street, 3rd Floor San Francisco, CA 94107 USA</td>
+                                      <td width=3D"15%" align=3D"left" styl=
+e=3D"font-size: 14px; line-height:20px; text-align: left;padding-bottom:0px=
+;">&nbsp;</td>
+                                    </tr>
+                                  </table></td>
+                              </tr>
+                              <tr>
+                                <td style=3D"padding-top:5px;"><table width=
+=3D"100%" cellpadding=3D"0" cellspacing=3D"0" align=3D"center">
+                                    <tr>
+                                      <td width=3D"15%" align=3D"left" styl=
+e=3D"font-size: 14px; line-height:20px; text-align: left;padding-bottom:0px=
+;">&nbsp;</td>
+                                      <td width=3D"70%" align=3D"center" st=
+yle=3D"font-family: 'udemysans', Helvetica, Arial, sans-serif; font-style: =
+normal; font-weight: 400;font-size: 12px; line-height:20px; text-align: cen=
+ter;padding-bottom:0px;color:#ffffff;">&nbsp;</td>
+                                      <td width=3D"15%" align=3D"left" styl=
+e=3D"font-size: 14px; line-height:20px; text-align: left;padding-bottom:0px=
+;">&nbsp;</td>
+                                    </tr>
+                                  </table></td>
+                              </tr>
+                            </table></td>
+                        </tr>
+                      </table></td>
+                  </tr>
+                  <tr>
+                    <td>&nbsp;</td>
+                  </tr>
+                  <tr>
+                    <td style=3D"padding:8px 30px"><table cellpadding=3D"0"=
+ cellspacing=3D"0" border=3D"0" width=3D"100%" role=3D"presentation">
+                      </table></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                  </tr>
+                </table></td>
+            </tr>
+          </table></td>
+      </tr>
+    </table>
+    </td>
+    </tr>
+</table>
+     =20
+
+   =20
+    <!-- // FOOTER -->
+
+<!-- // CONTENT BLOCKS -->
+              </td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+    </table>
+ =20
+</body>
+</html>
+
+--50bd7ba51cd55c322eb158585d9e8b998a726fbc7f6bccc911f08b438cd4--

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "InvoiceProcessing",
+  "Type": "Screen",
+  "Id": "6Qr4X6Ootke80MRV0KGROA",
+  "Reference": "dNeTHvO8h02TA0mp4Mwm7w/6Qr4X6Ootke80MRV0KGROA",
+  "ParentRef": "dNeTHvO8h02TA0mp4Mwm7w/SBevQ6TrWEel0d2SIr-ZJw",
+  "Created": "2025-04-22T14:30:24.2969406Z",
+  "Updated": "2025-04-22T14:30:24.2969406Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,46 @@
+BEGIN:VCALENDAR
+PRODID:-//Google Inc//Google Calendar 70.9054//EN
+VERSION:2.0
+CALSCALE:GREGORIAN
+METHOD:REQUEST
+BEGIN:VEVENT
+DTSTART:20231123T133000Z
+DTEND:20231123T153000Z
+DTSTAMP:20231123T003233Z
+ORGANIZER;CN=Team Scaler:mailto:calendar@scaler.com
+UID:["vsrikanthoffl@gmail.com"]2023-11-23 13:30:00 UTC
+ATTENDEE;CUTYPE=INDIVIDUAL;ROLE=REQ-PARTICIPANT;PARTSTAT=NEEDS-ACTION;RSVP=
+ TRUE;CN=vsrikanthoffl@gmail.com;X-NUM-GUESTS=0:mailto:vsrikanthoffl@gmail.c
+ om
+X-MICROSOFT-CDO-OWNERAPPTID:1543743103
+CREATED:20231123T003232Z
+DESCRIPTION:<p>Dear Srikanth\,<br><br>With this email we confirm your regis
+ tration for Scaler Academy Masterclass on <strong> How to Become a Great So
+ ftware Developer </strong>  that would be held on <strong>23rd November </s
+ trong> from <strong>07:00PM</strong> to <strong> 09:00PM IST</strong>.<br> 
+   The Masterclass would be taken by <strong>  <a href=" https://www.linkedi
+ n.com/in/anshumansingh26/">Anshuman Singh</a> (Co-Founder at Scaler Academy
+ ) </strong><br></p><p><strong><em>Join Our Whatsapp Group's for extra learn
+ ing material\, notes\, bonuses and updates</em></strong></p><p></p><p><span
+  style="color: #339966\;"><a style="color: #339966\;" href="https://bit.ly/
+ 40dXgTr"><strong>Join Now</strong></a></span></p><p></p><p><em>To join the 
+ session\, visit the&nbsp\;<a href="scaler.com/event/how-to-become-a-great-s
+ oftware-developer-eb32194a-1062-4027-a1ca-938fb0187a42"><strong>event page<
+ /strong></a></em><em>&nbsp\;any time post 10am on the day of the Masterclas
+ s and click on &lsquo\;Join Masterclass&rsquo\; button that you would see o
+ n the registration page.</em></p><p>&nbsp\;<em>For any questions\, email us
+  at hello@scaler.com.</em></p><p><em>See you there\,</em></p><p><em>Team Sc
+ aler</em></p>
+LAST-MODIFIED:20231123T003232Z
+LOCATION:https://www.scaler.com/redirect?token=eyJhbGciOiJIUzI1NiJ9.eyJyZWR
+ pcmVjdF91cmwiOiJodHRwczovL3d3dy5zY2FsZXIuY29tL2V2ZW50L2hvdy10by1iZWNvbWUtYS
+ 1ncmVhdC1zb2Z0d2FyZS1kZXZlbG9wZXItZWIzMjE5NGEtMTA2Mi00MDI3LWExY2EtOTM4ZmIwM
+ Tg3YTQyIiwiYWN0aW9uIjoiaW52aXRlX2xpbmtfY2xpY2tlZCIsIm93bmVyX3R5cGUiOiJFdmVu
+ dCIsIm93bmVyX2lkIjoyMjc3LCJ0cmFja19mb3IiOiJHb29nbGVDYWxlbmRhckV2bnQiLCJleHA
+ iOjE3MDMyOTA0MzB9.9r73GtK0xMU0G77LdGDORgwl5QWu0p1A9sFzAClnpus
+SEQUENCE:0
+STATUS:CONFIRMED
+SUMMARY:How to Become a Great Software Developer
+TRANSP:OPAQUE
+END:VEVENT
+END:VCALENDAR

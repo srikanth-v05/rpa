@@ -1,0 +1,334 @@
+Delivered-To: vsrikanthoffl@gmail.com
+Received: by 2002:a05:7301:4e02:b0:13b:2e45:96aa with SMTP id rv2csp47390dyb;
+        Mon, 16 Sep 2024 23:27:33 -0700 (PDT)
+X-Forwarded-Encrypted: i=4; AJvYcCUHNJ/UUmqk+m41LFWBsHuVIEzxRpPHkI+DP7br1ammbtja9dp/clX+pX4eaLNKFJufn3lqTRliZcEWI/5h@gmail.com
+X-Received: by 2002:a05:6902:100b:b0:e1d:4516:9e35 with SMTP id 3f1490d57ef6-e1db017df3amr8360313276.38.1726554452951;
+        Mon, 16 Sep 2024 23:27:32 -0700 (PDT)
+ARC-Seal: i=3; a=rsa-sha256; t=1726554452; cv=pass;
+        d=google.com; s=arc-20160816;
+        b=RgxkAD4W5jPBy4En8OTGvBgiPlG3ECKRUsBEbBqBwBsL9RtNclWN2z57wwi/XujnRr
+         0rQVZbVkNxwx9RZnZ9YPuso6UeOjDxCT/sfHq86assi6UKEH9pQhNa9sRbuLEPJuAsli
+         CIYGDEbFuLR1Cy/4ouJcHy2Zq2OebuuTMmD0VPkgJl6U2l/j6j9gP7OJRbQS6yEAsrjq
+         DCOu9K5Hwu1E/yENnJF+zX4ljVheJmo+dZRkiXQMQEcgElGYsPtH4EIJZk9K8fN1kT3G
+         A8gqV/b06HujZrhDreTNTxzpTWZMPU0GKiZeEEtYBzR8j3IKVmzsqyIwZMBedLgyMf3o
+         /aFg==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=list-subscribe:list-unsubscribe:list-archive:list-help:list-post
+         :list-id:mailing-list:precedence:to:subject:message-id:date:from
+         :mime-version:dkim-signature;
+        bh=itG0JqLbFZr9ofgv5MV/bZ869TsfqQGvyZhb4fONEwM=;
+        fh=uRWrlcwAzMTS1ZsF3q5sPoQ2LpXsF1fYq5MXqgMqxTg=;
+        b=b4Vww/LseiDIeKYppW40oc2dxxCPY8eXti5Fb1A/xxJ6HevuQSGnEZzkWO1P2Muy/1
+         mAqfkK3LbgGQcSpE7jOpw1Mzk6kdfETRDS3Og4jPX2hBODyQCA6O0hH6dqg19nGLADv7
+         Rb3wNkOsY18hnCbIweGQh07dhCa5llGdlfc3uEwz6rXXqarsFH23s7Gbhv+QXoEZcMfb
+         /zNNKfMekfV8oS0CGW/EqAv6gJX3ErPMtsGtnH/Nc89xwENtRsJGy7eN4L6MfmASWBIH
+         /S9El6Yhpupi6TZjNp8ckQND3hzy29NtBk55XbX8cKroWs8u5jRy1JWLgdfP+AurOr+X
+         AVlQ==;
+        dara=google.com
+ARC-Authentication-Results: i=3; mx.google.com;
+       dkim=pass header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=gBBDJ4uH;
+       arc=pass (i=2 spf=pass spfdomain=nptel.iitm.ac.in dkim=pass dkdomain=nptel-iitm-ac-in.20230601.gappssmtp.com dmarc=pass fromdomain=iitm.ac.in);
+       spf=pass (google.com: domain of noc24-cs67-announce+bncbcz5rxnbuuobbwwbus3qmgqeoklh2ci@nptel.iitm.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=noc24-cs67-announce+bncBCZ5RXNBUUOBBWWBUS3QMGQEOKLH2CI@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@gmail.com
+Return-Path: <noc24-cs67-announce+bncBCZ5RXNBUUOBBWWBUS3QMGQEOKLH2CI@nptel.iitm.ac.in>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id 3f1490d57ef6-e1dc112b709sor2386094276.5.2024.09.16.23.27.32
+        for <vsrikanthoffl@gmail.com>
+        (Google Transport Security);
+        Mon, 16 Sep 2024 23:27:32 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noc24-cs67-announce+bncbcz5rxnbuuobbwwbus3qmgqeoklh2ci@nptel.iitm.ac.in designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=gBBDJ4uH;
+       arc=pass (i=2 spf=pass spfdomain=nptel.iitm.ac.in dkim=pass dkdomain=nptel-iitm-ac-in.20230601.gappssmtp.com dmarc=pass fromdomain=iitm.ac.in);
+       spf=pass (google.com: domain of noc24-cs67-announce+bncbcz5rxnbuuobbwwbus3qmgqeoklh2ci@nptel.iitm.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=noc24-cs67-announce+bncBCZ5RXNBUUOBBWWBUS3QMGQEOKLH2CI@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@gmail.com
+ARC-Seal: i=2; a=rsa-sha256; t=1726554452; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=KDyYNjPPYf4sHQSFtVE2M0PmP0zOLk+K6xqWF2P3GmNCYgMFGtDZZ2x0D4kmUkH+sa
+         EqTQ0v3EsnWtnFGllVytp9tMLLFvyXipGatRC2/Hb3XNa2PYqQhsgzMrh/YEJxYvmnKE
+         GNBfgtSvX9mWlYOqBq2zxZioUsCeGHFfFJYEtLT//lecPITOGvfqUqWnlFirqyK3Si1z
+         PBxNyRt/he3Nee2EQ3x1yL5ZVypR5Ebe7DVOX+2WzUN9lKMHoR7Y2ibqHxJQyy3wNHHQ
+         DbVVoqpm1M7lY5W7QtgmgMiFG2V5KZl23HY0JJdf6Z/Y07wPyYLsk9XJnKEoXZsB0ekO
+         InAQ==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-subscribe:list-unsubscribe:list-archive:list-help:list-post
+         :list-id:mailing-list:precedence:to:subject:message-id:date:from
+         :mime-version:dkim-signature;
+        bh=itG0JqLbFZr9ofgv5MV/bZ869TsfqQGvyZhb4fONEwM=;
+        fh=uRWrlcwAzMTS1ZsF3q5sPoQ2LpXsF1fYq5MXqgMqxTg=;
+        b=Im++vb93X0m7J8sXaQsgsMUOpGCdphTdumxrtl14x9IcAPCtD6irpch5L0ZYPm959q
+         /J49z0q5VfDg/0FhaQvc+Tl58NYTXMZy3KqoTb1Db05J2d6zwd00o0og2K/QNgFm4gVo
+         Dd2kYbyhBJcbDfJ3hHdF7KrrZ4uxJbkh3+ZTdlplg6ykqbIlc5fZ9YtwRYvR3mYxxEV1
+         h9Dz6X4AwDKaxvkofQUJaSRvM2zE5sZO6CvcAnU2jEfqac0OY2K0uzo4CeLydeHvMK5p
+         o5R9DMfYkhwWUYgs4TZtvu8cVqecnzaG22vGnQkm+CD2ae2BG9qC7C52QX6vK20C4ykq
+         UgHQ==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=hXdPNHM6;
+       spf=pass (google.com: domain of onlinecourses@nptel.iitm.ac.in designates 209.85.220.41 as permitted sender) smtp.mailfrom=onlinecourses@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@nptel.iitm.ac.in
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=nptel-iitm-ac-in.20230601.gappssmtp.com; s=20230601; t=1726554452; x=1727159252; dara=google.com;
+        h=list-subscribe:list-unsubscribe:list-archive:list-help:list-post
+         :list-id:mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:to:subject:message-id:date:from:mime-version:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=itG0JqLbFZr9ofgv5MV/bZ869TsfqQGvyZhb4fONEwM=;
+        b=gBBDJ4uH/1/JD9MkSWxQvaJ0W0+qjcHPDYjQiOzjXEn0TSDx5svqgmvYg0KqHa4PbH
+         qIdVZinuSPLPbE6pbocvwFnxvXBenP7xoHuy2TGbeF3esZF/0tmVuRKTugf2Wtvdq0Y3
+         TDf7J+s/vORP2WKQOR/LEbUHKKWsmXkQ+9P5UMK6PJs44XdZ7GySWwS6gs5xDFTdZ50j
+         gXKdt/FzYk6kqO2GM05cVcV9/1TGK3Bn4mvXiT/mGtRck4oQFGZjZnQdnRVPxx4WDLro
+         7cB/TiMlT9AjQ+4yQPfTeYyGCvckw7Dc1UJlYXANKQnrBaKmcd8EEMDYGf1fhK1t7TEv
+         u4Zw==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1726554452; x=1727159252;
+        h=list-subscribe:list-unsubscribe:list-archive:list-help:list-post
+         :x-spam-checked-in-group:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender:to:subject
+         :message-id:date:from:mime-version:x-beenthere:x-beenthere
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=itG0JqLbFZr9ofgv5MV/bZ869TsfqQGvyZhb4fONEwM=;
+        b=v/6ZxreMkqxQ3sE+LmhZBkBytBfBHcQIEvMWQj4GSGa0g/DasHzpKfS2i+e9mz5HIa
+         YwY5TxHgFPWwYMeGbspVTF14jgIInlEwMUBptESU79R+C4rxiwoQFfUqFZSDh9NqGa7V
+         Jf+VbsnnagemppuxCLBw2mG6HYqOAOJvLMA7kHMQIhrmvROrrXkVou/SaQBV5nPt8VEx
+         YgsJ7IV5/0iD/2UIz7W39GNUXRhu1GZzLem3aIoOqTDsKxzr9kP58qwxzDPW0pVmLv2L
+         xmRMbPWGTyP6dfMyLOYL2aJCUhCdxsSMcVgzQnseNb0KXtCqCZN//fYKuiM1Ki1/H108
+         W7tg==
+X-Forwarded-Encrypted: i=2; AJvYcCUh6DpMiH+/9ojZhNQF9bR/vIEL2+sDHGroutgULgAYPymhxP/zre0zn9HFgUpeGwkgo15Ape2YGF0aN3uY@gmail.com
+X-Gm-Message-State: AOJu0YwrDC1zy4UwZL9fGuSlI2NjgM+tGp1H3WfP10lO4M0LMlsc+h+D
+	tFtGlrNG5mFG2fQFm/s1DycDB0amlMsY7fiVOOJEKt1cfPqMZcKlfS1J7yAheyw=
+X-Google-Smtp-Source: AGHT+IEttv4JYZxPQcjzy9RrlF38a+ZJmequfM3Scb1BmvA7fnT1XgQ4p6xM+Lv0xWl/xFAaF/QBsg==
+X-Received: by 2002:a05:6902:1242:b0:e16:6aba:f3d with SMTP id 3f1490d57ef6-e1db00a6b54mr11039791276.8.1726554452326;
+        Mon, 16 Sep 2024 23:27:32 -0700 (PDT)
+X-BeenThere: noc24-cs67-announce@nptel.iitm.ac.in
+Received: by 2002:a05:6214:f09:b0:6bf:60fd:c203 with SMTP id
+ 6a1803df08f44-6c5734f3b64ls57450806d6.1.-pod-prod-05-us; Mon, 16 Sep 2024
+ 23:25:29 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCUj43UIKGkun50iKrsp7+QQhVvSQr77uSaWj7Uah3STH4KDc3YPIl2oX1FQqpYQgHhWB/yzEEB+GSNcggAw5s6SCOKb@nptel.iitm.ac.in
+X-Received: by 2002:a05:6214:3bca:b0:6c3:5c39:45e1 with SMTP id 6a1803df08f44-6c57df93091mr210768146d6.12.1726554329084;
+        Mon, 16 Sep 2024 23:25:29 -0700 (PDT)
+X-BeenThere: exam-registration-reminder-jul24-set1-4-8@nptel.iitm.ac.in
+Received: by 2002:a05:6214:f09:b0:6bf:60fd:c203 with SMTP id
+ 6a1803df08f44-6c5734f3b64ls57450056d6.1.-pod-prod-05-us; Mon, 16 Sep 2024
+ 23:25:28 -0700 (PDT)
+X-Received: by 2002:a05:6102:38d2:b0:497:7b07:8d08 with SMTP id ada2fe7eead31-49d4f613c39mr9682815137.17.1726554328073;
+        Mon, 16 Sep 2024 23:25:28 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1726554328; cv=none;
+        d=google.com; s=arc-20160816;
+        b=iHOM5saCKFIPN+2g4KHzr6JHRe6TTChE9CiI3yIH8sF9IEFBYbLbQL4zkfn/RbPfsx
+         QqasHbGeCYR9vTjyN5OkOeG8SuT5AM3WWMPHNA3fUpVgGTt+Z357LCWaWFqaCTR/PWLg
+         npRxYTrBZ+t0tqMHbappiZAGWBIj28uhgoKNG8V6gL37TXaAEACelePqFzlmXMGM2z8g
+         LSvTSaxSR19byVzAqLzTRRYshyVbbVxF12z938lYAkanhgTjjV6SGlsVcH0Gy1qEyXDO
+         Zgqul0pgiZ7CmkktepyWAlBuWJPaQnlebUKBoX/QsMOtdpfD20S+P3zMwqVwKMF20D7j
+         hV+g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20160816;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=BlVtA9WuUBoem2JmpTTtOZuSBUs25G4s/cFjmk0qd0w=;
+        fh=lWmyaviyjkZvl4OOpnlClDy7nNoiBlop9Z8HtoofCWg=;
+        b=nn2vsCIBIwCzrre1pBd2oZhBeSAMn2tKIVCyzb+EqCt2+dknSWJnNHaRxLfSESkmsw
+         AbP2QZkxI9AImxzvKO7tt4vr/YZx4DBJlS0fzlvWlHbhCD1k2LTt8c7SKWPma3rElik5
+         x0qOQ0WA/52t7nyJGRigXS5GIuz9rPoJ2yNCuHMBrGSIjI9rB6zciyuqdg75tNET0DFX
+         Huix4A5QKDoBQ5brTxig9xRE3+mlRId0icYmv1XiqjpMaX06JpdX+xUvBIzIbePi3zYC
+         A5kbwi2wci8YquBWkDki1q1ynjSvypewuHMf1zA+ELJeA46VlY997n1jdqJgoSvbjBji
+         3Ptg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=hXdPNHM6;
+       spf=pass (google.com: domain of onlinecourses@nptel.iitm.ac.in designates 209.85.220.41 as permitted sender) smtp.mailfrom=onlinecourses@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@nptel.iitm.ac.in
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id a1e0cc1a2514c-84939920169sor727633241.4.2024.09.16.23.25.28
+        for <exam-registration-reminder-jul24-set1-4-8@nptel.iitm.ac.in>
+        (Google Transport Security);
+        Mon, 16 Sep 2024 23:25:28 -0700 (PDT)
+Received-SPF: pass (google.com: domain of onlinecourses@nptel.iitm.ac.in designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Received: by 2002:a05:6102:2912:b0:493:9781:11a7 with SMTP id
+ ada2fe7eead31-49d4f5bbe44mr9606081137.1.1726554327509; Mon, 16 Sep 2024
+ 23:25:27 -0700 (PDT)
+MIME-Version: 1.0
+From: NPTEL <onlinecourses@nptel.iitm.ac.in>
+Date: Tue, 17 Sep 2024 11:55:15 +0530
+Message-ID: <CAFi4wK-nbmObS75bT5x58E5CSquWc_APqFQDP-+XuT67vHJjdw@mail.gmail.com>
+Subject: September 2024 NPTEL Exams - Hall Tickets Released!
+To: exam-registration-reminder-jul24-set1-4-8@nptel.iitm.ac.in
+Content-Type: multipart/alternative; boundary="00000000000060a48d06224ac160"
+X-Original-Sender: onlinecourses@nptel.iitm.ac.in
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601
+ header.b=hXdPNHM6;       spf=pass (google.com: domain of onlinecourses@nptel.iitm.ac.in
+ designates 209.85.220.41 as permitted sender) smtp.mailfrom=onlinecourses@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@nptel.iitm.ac.in
+Precedence: list
+Mailing-list: list noc24-cs67-announce@nptel.iitm.ac.in; contact noc24-cs67-announce+owners@nptel.iitm.ac.in
+List-ID: <noc24-cs67-announce.nptel.iitm.ac.in>
+X-Spam-Checked-In-Group: exam-registration-reminder-jul24-set1-4-8@nptel.iitm.ac.in
+X-Google-Group-Id: 519804842199
+List-Post: <https://groups.google.com/a/nptel.iitm.ac.in/group/noc24-cs67-announce/post>,
+ <mailto:noc24-cs67-announce@nptel.iitm.ac.in>
+List-Help: <https://support.google.com/a/nptel.iitm.ac.in/bin/topic.py?topic=25838>,
+ <mailto:noc24-cs67-announce+help@nptel.iitm.ac.in>
+List-Archive: <https://groups.google.com/a/nptel.iitm.ac.in/group/noc24-cs67-announce/>
+List-Unsubscribe: <mailto:googlegroups-manage+519804842199+unsubscribe@googlegroups.com>,
+ <https://groups.google.com/a/nptel.iitm.ac.in/group/noc24-cs67-announce/subscribe>
+List-Subscribe: <https://groups.google.com/a/nptel.iitm.ac.in/group/noc24-cs67-announce/subscribe>,
+ <mailto:noc24-cs67-announce+subscribe@nptel.iitm.ac.in>
+
+--00000000000060a48d06224ac160
+Content-Type: text/plain; charset="UTF-8"
+
+****THIS ANNOUNCEMENT IS ONLY FOR THOSE WHO HAVE REGISTERED AND PAID FOR
+THE SEPTEMBER 2024 EXAM****
+
+Dear Candidate,
+
+Your Hall Ticket / admit card for the NPTEL Exam(s) in September, 2024 has
+been released.
+
+You may have received an email with a link to download the Hall ticket to
+your registered email ID. Please refer to it for further details.
+
+*It is the responsibility of the candidate to download the hall ticket at
+their end. Please check your registered email ID.*
+
+*Note:* Requests for changes in exam city, exam center, exam date, session,
+or course will NOT be entertained.
+
+Please write to *support@nptel.iitm.ac.in <support@nptel.iitm.ac.in>* for
+any further queries.
+
+All the best for your exams!
+
+Thanks and Regards,
+NPTEL TEAM.
+
+-- 
+You received this message because you are subscribed to the Google Groups "NPTEL Jul 22 2024 (4 and 8 week) course Exam Registration updates" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to exam-registration-reminder-jul24-set1-4-8+unsubscribe@nptel.iitm.ac.in.
+To view this discussion on the web visit https://groups.google.com/a/nptel.iitm.ac.in/d/msgid/exam-registration-reminder-jul24-set1-4-8/CAFi4wK-nbmObS75bT5x58E5CSquWc_APqFQDP-%2BXuT67vHJjdw%40mail.gmail.com.
+
+-- 
+You received this message because you are subscribed to the Google Groups "Announcement list for IntroductiontoQuantumComputing" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to noc24-cs67-announce+unsubscribe@nptel.iitm.ac.in.
+To view this discussion on the web visit https://groups.google.com/a/nptel.iitm.ac.in/d/msgid/noc24-cs67-announce/CAFi4wK-nbmObS75bT5x58E5CSquWc_APqFQDP-%2BXuT67vHJjdw%40mail.gmail.com.
+For more options, visit https://groups.google.com/a/nptel.iitm.ac.in/d/optout.
+
+--00000000000060a48d06224ac160
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><span style=3D"box-sizing:border-box;font-family:&quot;Hel=
+vetica Neue&quot;,Helvetica,Arial,sans-serif;font-size:12.6px;background-co=
+lor:rgb(249,249,249);color:rgb(244,67,54)"><b style=3D"box-sizing:border-bo=
+x">***THIS ANNOUNCEMENT IS ONLY FOR THOSE WHO HAVE REGISTERED AND PAID FOR =
+THE SEPTEMBER 2024 EXAM***</b></span><br style=3D"box-sizing:border-box;col=
+or:rgb(51,51,51);font-family:&quot;Helvetica Neue&quot;,Helvetica,Arial,san=
+s-serif;font-size:12.6px;background-color:rgb(249,249,249)"><span style=3D"=
+box-sizing:border-box;font-family:&quot;Helvetica Neue&quot;,Helvetica,Aria=
+l,sans-serif;font-size:12.6px;background-color:rgb(249,249,249);color:rgb(2=
+44,67,54)"><b style=3D"box-sizing:border-box"><br style=3D"box-sizing:borde=
+r-box"></b></span><span style=3D"color:rgb(51,51,51);font-family:&quot;Helv=
+etica Neue&quot;,Helvetica,Arial,sans-serif;font-size:12.6px;background-col=
+or:rgb(249,249,249)">Dear Candidate,</span><br style=3D"box-sizing:border-b=
+ox;color:rgb(51,51,51);font-family:&quot;Helvetica Neue&quot;,Helvetica,Ari=
+al,sans-serif;font-size:12.6px;background-color:rgb(249,249,249)"><br style=
+=3D"box-sizing:border-box;color:rgb(51,51,51);font-family:&quot;Helvetica N=
+eue&quot;,Helvetica,Arial,sans-serif;font-size:12.6px;background-color:rgb(=
+249,249,249)"><span style=3D"color:rgb(51,51,51);font-family:&quot;Helvetic=
+a Neue&quot;,Helvetica,Arial,sans-serif;font-size:12.6px;background-color:r=
+gb(249,249,249)">Your Hall Ticket / admit card for the NPTEL Exam(s) in Sep=
+tember, 2024 has been released.</span><br style=3D"box-sizing:border-box;co=
+lor:rgb(51,51,51);font-family:&quot;Helvetica Neue&quot;,Helvetica,Arial,sa=
+ns-serif;font-size:12.6px;background-color:rgb(249,249,249)"><br style=3D"b=
+ox-sizing:border-box;color:rgb(51,51,51);font-family:&quot;Helvetica Neue&q=
+uot;,Helvetica,Arial,sans-serif;font-size:12.6px;background-color:rgb(249,2=
+49,249)"><span style=3D"color:rgb(51,51,51);font-family:&quot;Helvetica Neu=
+e&quot;,Helvetica,Arial,sans-serif;font-size:12.6px;background-color:rgb(24=
+9,249,249)">You may have received an email with a link to download the Hall=
+ ticket to your registered email ID. Please refer to it for further details=
+.</span><br style=3D"box-sizing:border-box;color:rgb(51,51,51);font-family:=
+&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;font-size:12.6px;back=
+ground-color:rgb(249,249,249)"><br style=3D"box-sizing:border-box;color:rgb=
+(51,51,51);font-family:&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-seri=
+f;font-size:12.6px;background-color:rgb(249,249,249)"><b style=3D"box-sizin=
+g:border-box;color:rgb(51,51,51);font-family:&quot;Helvetica Neue&quot;,Hel=
+vetica,Arial,sans-serif;font-size:12.6px;background-color:rgb(249,249,249)"=
+>It is the responsibility of the candidate to download the hall ticket at t=
+heir end.=C2=A0Please check your registered email ID.</b><br style=3D"box-s=
+izing:border-box;color:rgb(51,51,51);font-family:&quot;Helvetica Neue&quot;=
+,Helvetica,Arial,sans-serif;font-size:12.6px;background-color:rgb(249,249,2=
+49)"><br style=3D"box-sizing:border-box;color:rgb(51,51,51);font-family:&qu=
+ot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;font-size:12.6px;backgro=
+und-color:rgb(249,249,249)"><b style=3D"box-sizing:border-box;color:rgb(51,=
+51,51);font-family:&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;fo=
+nt-size:12.6px;background-color:rgb(249,249,249)">Note:</b><span style=3D"c=
+olor:rgb(51,51,51);font-family:&quot;Helvetica Neue&quot;,Helvetica,Arial,s=
+ans-serif;font-size:12.6px;background-color:rgb(249,249,249)">=C2=A0Request=
+s for changes in exam city, exam center, exam date, session, or course will=
+ NOT be entertained.</span><br style=3D"box-sizing:border-box;color:rgb(51,=
+51,51);font-family:&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;fo=
+nt-size:12.6px;background-color:rgb(249,249,249)"><br style=3D"box-sizing:b=
+order-box;color:rgb(51,51,51);font-family:&quot;Helvetica Neue&quot;,Helvet=
+ica,Arial,sans-serif;font-size:12.6px;background-color:rgb(249,249,249)"><s=
+pan style=3D"color:rgb(51,51,51);font-family:&quot;Helvetica Neue&quot;,Hel=
+vetica,Arial,sans-serif;font-size:12.6px;background-color:rgb(249,249,249)"=
+>Please write to=C2=A0</span><b style=3D"box-sizing:border-box;color:rgb(51=
+,51,51);font-family:&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;f=
+ont-size:12.6px;background-color:rgb(249,249,249)"><a href=3D"mailto:suppor=
+t@nptel.iitm.ac.in">support@nptel.iitm.ac.in</a></b><span style=3D"color:rg=
+b(51,51,51);font-family:&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-ser=
+if;font-size:12.6px;background-color:rgb(249,249,249)">=C2=A0for any furthe=
+r queries.</span><br style=3D"box-sizing:border-box;color:rgb(51,51,51);fon=
+t-family:&quot;Helvetica Neue&quot;,Helvetica,Arial,sans-serif;font-size:12=
+.6px;background-color:rgb(249,249,249)"><br style=3D"box-sizing:border-box;=
+color:rgb(51,51,51);font-family:&quot;Helvetica Neue&quot;,Helvetica,Arial,=
+sans-serif;font-size:12.6px;background-color:rgb(249,249,249)"><span style=
+=3D"color:rgb(51,51,51);font-family:&quot;Helvetica Neue&quot;,Helvetica,Ar=
+ial,sans-serif;font-size:12.6px;background-color:rgb(249,249,249)">All the =
+best for your exams!</span><br clear=3D"all"><div><div dir=3D"ltr" class=3D=
+"gmail_signature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div>=
+<div dir=3D"ltr"><div dir=3D"ltr"><div><div style=3D"font-size:12.8px"><br>=
+</div></div><div>Thanks and Regards,</div><div>NPTEL TEAM.</div></div></div=
+></div></div></div></div></div>
+
+<p></p>
+
+-- <br />
+You received this message because you are subscribed to the Google Groups &=
+quot;NPTEL Jul 22 2024 (4 and 8 week) course Exam Registration updates&quot=
+; group.<br />
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:exam-registration-reminder-jul24-set1-4-8+unsubsc=
+ribe@nptel.iitm.ac.in">exam-registration-reminder-jul24-set1-4-8+unsubscrib=
+e@nptel.iitm.ac.in</a>.<br />
+To view this discussion on the web visit <a href=3D"https://groups.google.c=
+om/a/nptel.iitm.ac.in/d/msgid/exam-registration-reminder-jul24-set1-4-8/CAF=
+i4wK-nbmObS75bT5x58E5CSquWc_APqFQDP-%2BXuT67vHJjdw%40mail.gmail.com?utm_med=
+ium=3Demail&utm_source=3Dfooter">https://groups.google.com/a/nptel.iitm.ac.=
+in/d/msgid/exam-registration-reminder-jul24-set1-4-8/CAFi4wK-nbmObS75bT5x58=
+E5CSquWc_APqFQDP-%2BXuT67vHJjdw%40mail.gmail.com</a>.<br />
+
+<p></p>
+
+-- <br />
+You received this message because you are subscribed to the Google Groups &=
+quot;Announcement list for IntroductiontoQuantumComputing&quot; group.<br /=
+>
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:noc24-cs67-announce+unsubscribe@nptel.iitm.ac.in"=
+>noc24-cs67-announce+unsubscribe@nptel.iitm.ac.in</a>.<br />
+To view this discussion on the web visit <a href=3D"https://groups.google.c=
+om/a/nptel.iitm.ac.in/d/msgid/noc24-cs67-announce/CAFi4wK-nbmObS75bT5x58E5C=
+SquWc_APqFQDP-%2BXuT67vHJjdw%40mail.gmail.com?utm_medium=3Demail&utm_source=
+=3Dfooter">https://groups.google.com/a/nptel.iitm.ac.in/d/msgid/noc24-cs67-=
+announce/CAFi4wK-nbmObS75bT5x58E5CSquWc_APqFQDP-%2BXuT67vHJjdw%40mail.gmail=
+.com</a>.<br />
+For more options, visit <a href=3D"https://groups.google.com/a/nptel.iitm.a=
+c.in/d/optout">https://groups.google.com/a/nptel.iitm.ac.in/d/optout</a>.<b=
+r />
+
+--00000000000060a48d06224ac160--

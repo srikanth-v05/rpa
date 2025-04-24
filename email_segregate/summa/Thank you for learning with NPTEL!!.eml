@@ -1,0 +1,220 @@
+Delivered-To: vsrikanthoffl@gmail.com
+Received: by 2002:a05:7300:e128:b0:143:b0c3:d5bb with SMTP id hd40csp1493127dyb;
+        Thu, 10 Oct 2024 06:50:51 -0700 (PDT)
+X-Forwarded-Encrypted: i=4; AJvYcCUUJ2/REduR1wjLTsHPSZTZp9DcSiwE7c/W/9LjooEKlDnDDNeasC2+unXqi19VOnWwBNuWlSXbFag9HI74@gmail.com
+X-Received: by 2002:a05:6902:906:b0:e28:ea9c:5cf with SMTP id 3f1490d57ef6-e28fe47e483mr5737035276.34.1728568251559;
+        Thu, 10 Oct 2024 06:50:51 -0700 (PDT)
+ARC-Seal: i=3; a=rsa-sha256; t=1728568251; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=F/ka88WrRRT3hrNEQhU3XFGsrrVB8acGOan2N20SNvjt2jFisHTBRbrih/HuHf51S/
+         TL/10OL2stWodq7boZeEKM9zm2n6QX8hYpgIJinMHkMkFP3hDVovuZMY7nVV1Ucqk8Wn
+         9CuOSEX24dBU8t6JOLs+NPCTmsYDXaPebzQX2J2v2jWKeHwK0b3/RnhNXlSvRDLa7Wwk
+         RdrRenZyEaII5W6O6tQFq5v/d0KUie5BwtYI28mZ0FaHYOuWxCDj2DmU9UrlX94HQoX+
+         z7Gn7ZPgtkf0Pi6FzrrFtJzrQrfvy/f8VLb2BnV6/xmilmlPakReRMgWvUpBhCkmzc6L
+         zo0Q==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
+         :list-id:mailing-list:precedence:to:subject:message-id:mime-version
+         :from:date:content-transfer-encoding:dkim-signature;
+        bh=WqkZtYBZ2rorvHNfWLthQTwnzirAR32yXAwe2a9Lng0=;
+        fh=IvvT20Rk2iUjZKho6aChjek1KTLcmsctyUiIv7Tdjog=;
+        b=BPEX7ZIVe5xNJmCZuumEY1WURCbfnWwjDeO3qj+GsMngmmLHe61IoN9B1lo4tRuIrg
+         s0iGK+iX8s905uZplp5pJcn8dei1p4f3MRvL1GHad131RYTPLDN7sTiD2m4dPf8ZJJOD
+         dnBC5mXBbDkI5MCRzW2HCMBH4dmqlIvRhdPrmWuzusOOVnCJ5QshoRVYNUr0zAGphSgh
+         l7qyC3Qw1SiiJvp73jxRf6eutrerDyOo0e0e8Q+ubpUtCsKeR5qJPjUwjT0u+cXZ8IpB
+         ZTFASh4wVHsWp5nzCRfnDsenntctOu5nMmMdLwXTv2TO65yIAo8UV0OFA72h+X4FVJsu
+         DsoA==;
+        dara=google.com
+ARC-Authentication-Results: i=3; mx.google.com;
+       dkim=pass header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=VMcAbZl+;
+       arc=pass (i=2 spf=pass spfdomain=mail.nptel.iitm.ac.in dkim=pass dkdomain=nptel.iitm.ac.in dmarc=pass fromdomain=iitm.ac.in);
+       spf=pass (google.com: domain of noc24-cs67-announce+bncbcz5rxnbuuobbmvxt64amgqejnc6lay@nptel.iitm.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=noc24-cs67-announce+bncBCZ5RXNBUUOBBMVXT64AMGQEJNC6LAY@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@gmail.com
+Return-Path: <noc24-cs67-announce+bncBCZ5RXNBUUOBBMVXT64AMGQEJNC6LAY@nptel.iitm.ac.in>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id 3f1490d57ef6-e290ef5e088sor535460276.13.2024.10.10.06.50.51
+        for <vsrikanthoffl@gmail.com>
+        (Google Transport Security);
+        Thu, 10 Oct 2024 06:50:51 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noc24-cs67-announce+bncbcz5rxnbuuobbmvxt64amgqejnc6lay@nptel.iitm.ac.in designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=VMcAbZl+;
+       arc=pass (i=2 spf=pass spfdomain=mail.nptel.iitm.ac.in dkim=pass dkdomain=nptel.iitm.ac.in dmarc=pass fromdomain=iitm.ac.in);
+       spf=pass (google.com: domain of noc24-cs67-announce+bncbcz5rxnbuuobbmvxt64amgqejnc6lay@nptel.iitm.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=noc24-cs67-announce+bncBCZ5RXNBUUOBBMVXT64AMGQEJNC6LAY@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@gmail.com
+ARC-Seal: i=2; a=rsa-sha256; t=1728568251; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=e8iyY3Zh5csWZ1YQ0bPqyz2gHskHYRMe/RAthBxvOvsbqnVP/rdUduZX1x9wDvfbub
+         gLBZ+5qcVE4hrpwvLfTqzLn62n/VoIrKAh9eKXt1hGWMRpRQQ2aqDwO4NfXdnQxL4euE
+         VwWTTvJrA7kXNXITp+ut9mDBM15VSoqqKo2Q1EYuGHluADw8FQ/LNslDuKG8fF/Mg1SX
+         6FiO7MXEzuPrOFwmQHchkrs2rpc+IgkogV8T0xYBSe2EymZ/9jhIMDSw3ij0dIbSFD4/
+         e+3kXI1rhx4EJ+O7GA8BdA4gI2opdjQttcthWI0/v6ZudCT/IQOfrXauDnwMinQenTzK
+         SeIw==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
+         :list-id:mailing-list:precedence:to:subject:message-id:mime-version
+         :from:date:content-transfer-encoding:dkim-signature;
+        bh=WqkZtYBZ2rorvHNfWLthQTwnzirAR32yXAwe2a9Lng0=;
+        fh=IvvT20Rk2iUjZKho6aChjek1KTLcmsctyUiIv7Tdjog=;
+        b=TK+zcZ+GW9hQxWX3zs9MsEJKSmr3+/WZ3GfwvPfodXChlEfJSaWeBvSJ/ASyN7mkMN
+         91WP/ocMHJPTgYv1ygvwe6Z0hVMK/PeEg9rp92ouHVPpwYVUu2IPJyX9K9AyKRZKI4tC
+         Jqodhho57i4zLAOrQxNYrCp397DI435ItYwZYVp2lgCIdegnFjtv+BNVDlUGEtgInzQw
+         bcYQ8ArZGVinJxY7ExH/qHTT8N0M5meqPSlW/y89AjGrh4i5rAgDySA+l3pC5sML2hY9
+         MdFYZwhNI9cSM6O97ZrldcQYeScu/BJN1UHKPubuOzBm2do6vChAWSBMXCsmBCX6kZjC
+         y1cA==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@nptel.iitm.ac.in header.s=s1 header.b=isvhGZfg;
+       spf=pass (google.com: domain of bounces+3447072-50d6-noc24-cs67-announce=nptel.iitm.ac.in@mail.nptel.iitm.ac.in designates 149.72.153.35 as permitted sender) smtp.mailfrom="bounces+3447072-50d6-noc24-cs67-announce=nptel.iitm.ac.in@mail.nptel.iitm.ac.in";
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=nptel-iitm-ac-in.20230601.gappssmtp.com; s=20230601; t=1728568251; x=1729173051; dara=google.com;
+        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
+         :list-id:mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:to:subject:message-id:mime-version:from:date
+         :content-transfer-encoding:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=WqkZtYBZ2rorvHNfWLthQTwnzirAR32yXAwe2a9Lng0=;
+        b=VMcAbZl+0clgb0hnz89Mt9rPxfXFp8uwKWJKfqD50LFz2dopE84QajBo5OQZLeQFBc
+         GNteFgAAza9Ygxbi/ZxGhq8m2vO82xfjW1Fz0iiA3CnafOpbZnFCzYuiMhul8Mx7I+vQ
+         vqnv/RTl0brqrkPGKyi0506Qt6ZST+a5DIwqdhzNCGpU5xxmwVQY6bIP1pcSfkMgAFex
+         Sii366EjFwUz9xq2tW3psqi7rND0V59BWDAudVyVTjQevBojpXrWAqM/wDrz6rxdcOrq
+         DeTfrVAeoi/YFD4AKj9a7ZF0e8F2QbohOob/LkolLiGjW10h+GsKm0l20yqB3/npLNdQ
+         D/pg==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1728568251; x=1729173051;
+        h=list-unsubscribe:list-subscribe:list-archive:list-help:list-post
+         :x-spam-checked-in-group:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender:to:subject
+         :message-id:mime-version:from:date:content-transfer-encoding
+         :x-beenthere:x-gm-message-state:from:to:cc:subject:date:message-id
+         :reply-to;
+        bh=WqkZtYBZ2rorvHNfWLthQTwnzirAR32yXAwe2a9Lng0=;
+        b=EktyEH6Q3p7cmv35Cm8q8Ji0+3XW+Y7LaRkD2me7erZEz7Ho7MLWtZ4JPz4KDqb+x9
+         CMks2nvdwg0CucoiVK9r/3mDQowdqdcwGtnb3FSskZLwmXfknN1bShTKUSSB6wCw1rO5
+         Is6bG2j/yiLCYkUcEsQ33gWALVLEQ/Jgq9Ch7RashGCoTB7W2JgJflK3ypT9b35ZmX5R
+         FsAX+ktGFl6VisSfbVY4TQ6jI7svwYgFkdruuVKjNPDDV70XW6sLXwaTc7ynH8wITRHT
+         RdPCEBKfuBtJvsC43z2HAZEsxvrpw1qXOiPJ3AeMnAcdhKvpFjpE6/jUYqnW+ts5UFL9
+         2ntA==
+X-Forwarded-Encrypted: i=2; AJvYcCUT3IsW26A9olR9E/OCIEc9sQuA5Ajj3VIoHnEn79wO+uyIfHcuvkvr2NYvLiAFaxSXUKjBGJdjsiMkchck@gmail.com
+X-Gm-Message-State: AOJu0YzWyp6mUcHpO1RTj3Nfny9lknFYwRSqxI5s235n1KffIIAPhZDk
+	8t4dDV5PTbaqOj3df1e0y9fFr8gw8fPu/EIsl8FR8t6IUe8f4unuUxr8SMVsM+s=
+X-Google-Smtp-Source: AGHT+IFLCZH3smukH2nIK8ZxJyH8z4jeDPi0tliOrvlit8Ef7NcLArVfV3KmuJRcGQetEbrCkgWYqw==
+X-Received: by 2002:a05:6902:114f:b0:e28:f0e5:37fc with SMTP id 3f1490d57ef6-e28fe419f62mr4811940276.4.1728568250847;
+        Thu, 10 Oct 2024 06:50:50 -0700 (PDT)
+X-BeenThere: noc24-cs67-announce@nptel.iitm.ac.in
+Received: by 2002:a05:6902:18d4:b0:e28:ff06:8c22 with SMTP id
+ 3f1490d57ef6-e290b87a653ls1204453276.0.-pod-prod-04-us; Thu, 10 Oct 2024
+ 06:50:42 -0700 (PDT)
+X-Received: by 2002:a05:6902:124e:b0:e16:6c22:8112 with SMTP id 3f1490d57ef6-e28fe41a24dmr5055684276.1.1728568241966;
+        Thu, 10 Oct 2024 06:50:41 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1728568241; cv=none;
+        d=google.com; s=arc-20240605;
+        b=jAe6SDvzmEwRnricF6skdUi6zghjlMAd8vZs95oDtqeWYS1lCsrRBvuCX+gVMUFkgr
+         dlX9GtbV15v5QOcd3gU8IgtyULYgBNiOdUch155nVMafZBnW+PH7yG9JHBDf3/+t7iE5
+         dD61JyGuc+3tAQUp4i8dpFWRjbxzS2GM8Bg58SRTxed721wPGXoyE9RrPjNF0gSEbxmb
+         hzzc9y4QnjNRIWNiyCsK+5VmGju6+NXPlMi4XEXL72IypElza9aLpBNP3h3hRhT1xZ/a
+         m9DsghLIdZAP5AG7X/H0oRcW/H58ecEg19RS7R1HKAq5ym8ZYHVHfDvmlWDyS2lexb6D
+         0V8g==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:mime-version:from:date
+         :content-transfer-encoding:dkim-signature;
+        bh=2ev5wmUw9NQ6hIEt0MOc46dHDBs1EA45kb3ekAq9C0c=;
+        fh=0Vajywn1jVin3cuDQXS6wGAioVVsPkXO3mnEThIhnHA=;
+        b=NIrV+RYGsPw1n4o4M83IJmyJVBwaMK69FOpuL899D48oDIvbo/IR3o0OM6dd8rHYkU
+         ENzfUpNDDdgDXTyH9/z3wRMojDjOhaagQ+8zj7Y+VowJyNUEHSihJF5mEA6/H872SXlD
+         T9gVZidlFdGGSKiTbkpq2ut491q6kq/sMLUJBq0MXzVvfgjSawZDPXnRgp4Q2vf2MLer
+         h6FrZCJJASDTP/Skn2N2I037q77tYB3Wi4q81TG8GPG5SMTbHapiAIGjs+wEovmnVSXX
+         4eHCOUqEfCakBVZjH9hv2UkwMrt6rROiJ5OeJzI9g75E6RzQM4G4Xqkn06YJElSV9DUd
+         ufzA==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@nptel.iitm.ac.in header.s=s1 header.b=isvhGZfg;
+       spf=pass (google.com: domain of bounces+3447072-50d6-noc24-cs67-announce=nptel.iitm.ac.in@mail.nptel.iitm.ac.in designates 149.72.153.35 as permitted sender) smtp.mailfrom="bounces+3447072-50d6-noc24-cs67-announce=nptel.iitm.ac.in@mail.nptel.iitm.ac.in";
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in
+Received: from wrqvwwnp.outbound-mail.sendgrid.net (wrqvwwnp.outbound-mail.sendgrid.net. [149.72.153.35])
+        by mx.google.com with ESMTPS id 3f1490d57ef6-e290ee00eebsi929547276.214.2024.10.10.06.50.41
+        for <noc24-cs67-announce@nptel.iitm.ac.in>
+        (version=TLS1_3 cipher=TLS_AES_128_GCM_SHA256 bits=128/128);
+        Thu, 10 Oct 2024 06:50:41 -0700 (PDT)
+Received-SPF: pass (google.com: domain of bounces+3447072-50d6-noc24-cs67-announce=nptel.iitm.ac.in@mail.nptel.iitm.ac.in designates 149.72.153.35 as permitted sender) client-ip=149.72.153.35;
+Received: by recvd-7fc45b474-ghsd8 with SMTP id recvd-7fc45b474-ghsd8-1-6707DBB0-24
+	2024-10-10 13:50:40.194576514 +0000 UTC m=+2404445.958765672
+Received: from MzQ0NzA3Mg (unknown)
+	by geopod-ismtpd-13 (SG) with HTTP
+	id FKxKevE8RpmFNulrbOkPPA
+	Thu, 10 Oct 2024 13:50:40.120 +0000 (UTC)
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html; charset="UTF-8"
+Date: Thu, 10 Oct 2024 13:50:40 +0000 (UTC)
+From: onlinecourses@nptel.iitm.ac.in
+Mime-Version: 1.0
+Message-ID: <FKxKevE8RpmFNulrbOkPPA@geopod-ismtpd-13>
+Subject: Thank you for learning with NPTEL!!
+X-SG-EID: =?us-ascii?Q?u001=2ECy97o+G3dpioWtVM3nT0GExua41CJ0GgSfGBd1qDDdZS41s8nCrCsN+BD?=
+ =?us-ascii?Q?d+GhFEJwuP3nsCw=2FaZiYz4omEFzmWqL417KO1wo?=
+ =?us-ascii?Q?QCsB+9g+4bwphoxBlWYICJVoBa2wYeJYRlsPsEn?=
+ =?us-ascii?Q?a8MGQ5t9YImgVR7Gda4ALEvvEt2M3Av3NJsB352?=
+ =?us-ascii?Q?qmuXGeWOa+Wyvc5eKtAmqkdQWF0bLtqpCUKVgmj?=
+ =?us-ascii?Q?thxbl1v2vdDq5RHdo4OudE=3D?=
+To: noc24-cs67-announce@nptel.iitm.ac.in
+X-Entity-ID: u001.9pMz6c+bWKJStfXaRXTPOg==
+X-Original-Sender: onlinecourses@nptel.iitm.ac.in
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@nptel.iitm.ac.in header.s=s1 header.b=isvhGZfg;       spf=pass
+ (google.com: domain of bounces+3447072-50d6-noc24-cs67-announce=nptel.iitm.ac.in@mail.nptel.iitm.ac.in
+ designates 149.72.153.35 as permitted sender) smtp.mailfrom="bounces+3447072-50d6-noc24-cs67-announce=nptel.iitm.ac.in@mail.nptel.iitm.ac.in";
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in
+Precedence: list
+Mailing-list: list noc24-cs67-announce@nptel.iitm.ac.in; contact noc24-cs67-announce+owners@nptel.iitm.ac.in
+List-ID: <noc24-cs67-announce.nptel.iitm.ac.in>
+X-Spam-Checked-In-Group: noc24-cs67-announce@nptel.iitm.ac.in
+X-Google-Group-Id: 519804842199
+List-Post: <https://groups.google.com/a/nptel.iitm.ac.in/group/noc24-cs67-announce/post>,
+ <mailto:noc24-cs67-announce@nptel.iitm.ac.in>
+List-Help: <https://support.google.com/a/nptel.iitm.ac.in/bin/topic.py?topic=25838>,
+ <mailto:noc24-cs67-announce+help@nptel.iitm.ac.in>
+List-Archive: <https://groups.google.com/a/nptel.iitm.ac.in/group/noc24-cs67-announce/>
+List-Subscribe: <https://groups.google.com/a/nptel.iitm.ac.in/group/noc24-cs67-announce/subscribe>,
+ <mailto:noc24-cs67-announce+subscribe@nptel.iitm.ac.in>
+List-Unsubscribe: <mailto:googlegroups-manage+519804842199+unsubscribe@googlegroups.com>,
+ <https://groups.google.com/a/nptel.iitm.ac.in/group/noc24-cs67-announce/subscribe>
+
+<div>Dear Learner,<br></div><div><br></div><div>Thank you for taking the co=
+urse with NPTEL!!</div><div>Hope you enjoyed the journey with us.</div><div=
+>The results for this course have been published and we are closing this co=
+urse now.&nbsp;</div><div>You will still have access to the contents and as=
+signments of this course, if you click on the course name from the "Mycours=
+es" tab on swayam.gov.in.</div><div><br></div><div>For any further queries =
+please write to <a href=3D"mailto:support@nptel.iitm.ac.in" target=3D"_blan=
+k" title=3D"">support@nptel.iitm.ac.in</a>.</div><div><br></div><div><br></=
+div><div>- Team NPTEL</div><img src=3D"https://u3447072.ct.sendgrid.net/wf/=
+open?upn=3Du001.FZAJ-2BOnMd0JMIxfxGjfge0tq4r6NWEfeGxlMsJylrvPVLdyQAV0xWOgWK=
+gTvgF9a-2BPPcGIPvjM7jzc6qoG0PBfcqmwiNGG7d-2F6Gxe9KprauSgyh6ft4RzVFrhM7iY3qW=
+yRStaU3FHLO-2BpOBnSGQCDMlOZTDnYqiWI2tyLvlpD-2FZz7EiXUPRxCNhGhH4qVMvu-2BDXGx=
+cAUMg9ptMYJVwFnLhZqbLKoNOM7-2BprmZQSjAzc-3D" alt=3D"" width=3D"1" height=3D=
+"1" border=3D"0" style=3D"height:1px !important;width:1px !important;border=
+-width:0 !important;margin-top:0 !important;margin-bottom:0 !important;marg=
+in-right:0 !important;margin-left:0 !important;padding-top:0 !important;pad=
+ding-bottom:0 !important;padding-right:0 !important;padding-left:0 !importa=
+nt;"/>
+
+<p></p>
+
+-- <br />
+You received this message because you are subscribed to the Google Groups &=
+quot;Announcement list for IntroductiontoQuantumComputing&quot; group.<br /=
+>
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:noc24-cs67-announce+unsubscribe@nptel.iitm.ac.in"=
+>noc24-cs67-announce+unsubscribe@nptel.iitm.ac.in</a>.<br />
+To view this discussion on the web visit <a href=3D"https://groups.google.c=
+om/a/nptel.iitm.ac.in/d/msgid/noc24-cs67-announce/FKxKevE8RpmFNulrbOkPPA%40=
+geopod-ismtpd-13?utm_medium=3Demail&utm_source=3Dfooter">https://groups.goo=
+gle.com/a/nptel.iitm.ac.in/d/msgid/noc24-cs67-announce/FKxKevE8RpmFNulrbOkP=
+PA%40geopod-ismtpd-13</a>.<br />
+For more options, visit <a href=3D"https://groups.google.com/a/nptel.iitm.a=
+c.in/d/optout">https://groups.google.com/a/nptel.iitm.ac.in/d/optout</a>.<b=
+r />

@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome (83) TechKmn  UIPATH  Automate Google ",
+  "Type": "Screen",
+  "Id": "9zKLKepRAkqAQ3hVl40yiw",
+  "Reference": "dNeTHvO8h02TA0mp4Mwm7w/9zKLKepRAkqAQ3hVl40yiw",
+  "ParentRef": "dNeTHvO8h02TA0mp4Mwm7w/ZIO4aoQN0U6bDORdB0d-1w",
+  "Created": "2025-04-22T14:56:52.2340618Z",
+  "Updated": "2025-04-22T14:56:52.2340618Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

@@ -1,0 +1,14 @@
+﻿{
+  "Name": "Submit another response",
+  "Type": "Element",
+  "TaxonomyType": "Label",
+  "Id": "skr89MKqqUW4SJtXIf6pgA",
+  "Reference": "dNeTHvO8h02TA0mp4Mwm7w/skr89MKqqUW4SJtXIf6pgA",
+  "ParentRef": "dNeTHvO8h02TA0mp4Mwm7w/P6YEuNBTR0-0RoDCZJeKug",
+  "Created": "2025-04-22T15:23:43.537992Z",
+  "Updated": "2025-04-22T15:23:43.537992Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

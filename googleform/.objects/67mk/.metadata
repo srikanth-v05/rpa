@@ -1,0 +1,12 @@
+﻿{
+  "Name": "InvoiceProcessing",
+  "Type": "App",
+  "Id": "67mkmvp7s0um-AEr8Eovog",
+  "Reference": "dNeTHvO8h02TA0mp4Mwm7w/67mkmvp7s0um-AEr8Eovog",
+  "Created": "2025-04-22T14:30:24.0989763Z",
+  "Updated": "2025-04-22T14:30:24.0989763Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

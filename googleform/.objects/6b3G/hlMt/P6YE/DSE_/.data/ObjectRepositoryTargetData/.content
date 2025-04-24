@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="TIrhze4j00SFRH2EDHqblQ" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="docs.google.com/forms/d/e/1FAIpQLSfPHUOXMeuCQTnQViUpjwgmE2yBx6WX9rpCzxHsW6gbP6z_Mg/viewform" CVScreenId="1cd3e31a-e515-4228-bc70-5f54e49c2cac" CvElementArea="585, 591, 377, 42" CvType="InputBox" DesignTimeRectangle="591, 602, 99, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Your answer' tag='DIV' type='' class='ndJi5d snByac' check:innerText='Your answer' /&gt;" Guid="d711f95e-3fc8-440c-a1b9-e2ce32219be2" ScopeSelectorArgument="&lt;html app='chrome.exe' title='bus ticket booking' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="1cd3e31a-e515-4228-bc70-5f54e49c2cac" CvTextArea="589, 506, 51, 20" CvTextArgument="Email" CvType="Text" DesignTimeRectangle="591, 502, 49, 60" FuzzySelectorArgument="&lt;webctrl parentid='i1' tag='SPAN' type='' class='M7eMe' aaname='Email' check:innerText='Email' /&gt;" Guid="bc4ea560-b6a2-4d8d-b768-ea8088c0c9d0" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="254632ad870df11b9feb6fd45090aaaa.png" xmlns="">0OuON2j2fP0ettpRscTGlrw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,771 @@
+Delivered-To: vsrikanthoffl@gmail.com
+Received: by 2002:a05:7300:7495:b0:160:1ab0:82c8 with SMTP id l21csp1242958dyd;
+        Sat, 12 Apr 2025 23:15:44 -0700 (PDT)
+X-Forwarded-Encrypted: i=4; AJvYcCX02LkmDxpBqXMcmmrJCO2TQBnEV1ei3P+CvywiQ3cCFQH4NXsx8cy7OcsiXKTTu/+YmMHBAbRZa0GrfqWR@gmail.com
+X-Received: by 2002:a05:6808:2293:b0:3fb:eb1c:2a83 with SMTP id 5614622812f47-4008502e21amr6074865b6e.9.1744524944114;
+        Sat, 12 Apr 2025 23:15:44 -0700 (PDT)
+ARC-Seal: i=3; a=rsa-sha256; t=1744524944; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=YArHsbT77kkkZyvL0M9Y3T1ydd5ci5b0aIxhGoHwxSDO0psR0rUD4aH/J7phlsfDKa
+         I2gSIpMPONUo7nlQaS/i+ZgHKvjw0fEjigBQ75odB5kU5OMrLWNODJVSWslAKleNHkSV
+         YVyGgl1FU/o6htEkslp73yMlfHdBz10RmHAgZqC6psprWi5Z2wilakC9wqR9JiXqVuGP
+         ZYO6M7PA6JUR5UaupMofr6Vh8KXmwmNEV0+SHjnxJ7ie/yiJbw44bwOCWTZMm1iJnhPt
+         9ickWSFUaoHv9O46a4OalpIKD9VeE1Nd6EyHtJGKVAwTrfBiHtKimRRgBepZPAtWuzNd
+         ejRQ==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-subscribe:list-unsubscribe:list-archive:list-help:list-post
+         :list-id:mailing-list:precedence:reply-to:to:subject:message-id:date
+         :from:mime-version;
+        bh=HI3RXIT/Y/Ep4+ZQEbI6zTEuhOj2KIUFHYFBjxleIMM=;
+        fh=CqSpkTI/cHk0frK9abJz37KiQQjVqPKz0orBbgT0PZs=;
+        b=fKf/MAcHjbaqvPEB2qucSJ8WhCv1d9PpMb6bXCLdtC1rFnhqL8GOLTkpWFCj020AXP
+         5xM6uA/d62trxaYxQa+292xScU5eXkqKpeK8GB+9iOQu5/TfJuoit0G1FMgLKapXnRZX
+         EUKaXuZXmfDB1M5vW5+wSW1JTuBPtaoWy+fr+X6mXU/0uVIBZstXsgKGJ/DT8mRKFQQx
+         zrRGl1u4xRz9niFRiDtJ+TxhbeVeYbliZtqxOMBnFtytdI3hT8c2UybCTldlTikjJWDN
+         ieFLYRttewlucnQwreL6KY/5zZnpzKeiauZSk8ilvUAIVIafk5iTroz0Xhi8K4J4EvAH
+         kixA==;
+        dara=google.com
+ARC-Authentication-Results: i=3; mx.google.com;
+       arc=pass (i=2 spf=pass spfdomain=nptel.iitm.ac.in dkim=pass dkdomain=nptel-iitm-ac-in.20230601.gappssmtp.com dmarc=pass fromdomain=iitm.ac.in);
+       spf=pass (google.com: domain of noc24-cs101-announce+bncbcz5rxnbuuobboh45s7qmgqes7ncvda@nptel.iitm.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=noc24-cs101-announce+bncBCZ5RXNBUUOBBOH45S7QMGQES7NCVDA@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@gmail.com
+Return-Path: <noc24-cs101-announce+bncBCZ5RXNBUUOBBOH45S7QMGQES7NCVDA@nptel.iitm.ac.in>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id 5614622812f47-4007d8328absor2011956b6e.9.2025.04.12.23.15.44
+        for <vsrikanthoffl@gmail.com>
+        (Google Transport Security);
+        Sat, 12 Apr 2025 23:15:44 -0700 (PDT)
+Received-SPF: pass (google.com: domain of noc24-cs101-announce+bncbcz5rxnbuuobboh45s7qmgqes7ncvda@nptel.iitm.ac.in designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       arc=pass (i=2 spf=pass spfdomain=nptel.iitm.ac.in dkim=pass dkdomain=nptel-iitm-ac-in.20230601.gappssmtp.com dmarc=pass fromdomain=iitm.ac.in);
+       spf=pass (google.com: domain of noc24-cs101-announce+bncbcz5rxnbuuobboh45s7qmgqes7ncvda@nptel.iitm.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=noc24-cs101-announce+bncBCZ5RXNBUUOBBOH45S7QMGQES7NCVDA@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@gmail.com
+ARC-Seal: i=2; a=rsa-sha256; t=1744524944; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=ZeA2boydu0n9qH8aP/2FUac5UJq8HY/+Xg6N0GmjmO1ZGOmap/TqkicZvAMJuFpjEj
+         9a37Ke1No91x2vO681WiuNnQwm6mVep9RZGc4Li3KYIeLFA2lqXCzBS5+2xQkeY2oqR2
+         7hqVODWezCloxXAMCwZnc4Hcg0AT/nctbqq3HzNuJH2vOB24GYBAmLLEBh2PExKCLdRE
+         4nNmh3KgDp/l4rDU/fTQknC8xdJ++kRXcBOim2/m1J1kKcqBgd3VAutaPpIT/ZntfN7B
+         3lV7gsXJnaQKdyytQH119r+57pyMzhEE77JufMwCuysJyWNDR9/GllyWlDV7K+fuGGko
+         XQug==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-subscribe:list-unsubscribe:list-archive:list-help:list-post
+         :list-id:mailing-list:precedence:reply-to:to:subject:message-id:date
+         :from:mime-version;
+        bh=HI3RXIT/Y/Ep4+ZQEbI6zTEuhOj2KIUFHYFBjxleIMM=;
+        fh=CqSpkTI/cHk0frK9abJz37KiQQjVqPKz0orBbgT0PZs=;
+        b=MFiYk2OQu1YCOlP0w0UtF4FwJV3aS+tWb0k/v9bfpfpd7aAqqhGh8F59gBTirx1wdc
+         ItdrY7JeUeQWmfXfzaL0cizZ9jQcq1nP/pgfIorhRG4aJ+ekr4RNXosiAunjTHgsW2af
+         4DyF13LNTP5GI2/QBDEg051tPuZoCi3RjW9eHqFBbE8iieB1O3EYm6b9PWdWyBrgoNu/
+         IjyXn7V72bPeQEAvQdcKE4qCD7dZE8wQwbf6y+iQ6syuQ10p7DV/O9fkTb6LzD0LV8Pt
+         gs9qr9TypnAyaYZlifIE4EeslgvYeoQMw9eyxEljQvDVdG7OwVTTK9xBnecyIkUdeWrH
+         /QMA==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=NcuJmslA;
+       spf=pass (google.com: domain of onlinecourses@nptel.iitm.ac.in designates 209.85.220.41 as permitted sender) smtp.mailfrom=onlinecourses@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@nptel.iitm.ac.in
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744524944; x=1745129744;
+        h=list-subscribe:list-unsubscribe:list-archive:list-help:list-post
+         :x-spam-checked-in-group:list-id:mailing-list:precedence:reply-to
+         :x-original-authentication-results:x-original-sender:to:subject
+         :message-id:date:from:mime-version:x-beenthere:x-beenthere
+         :x-gm-message-state:from:to:cc:subject:date:message-id:reply-to;
+        bh=HI3RXIT/Y/Ep4+ZQEbI6zTEuhOj2KIUFHYFBjxleIMM=;
+        b=URc1Zf2nz7Sqrk4Wrw+UKbCvzuFAj13Da96GoAQNFGtlALfxcowq5l+NH5HmOvGRuk
+         KktDrLuGN3lr1nPE056rW+f7c5CYdv2BhfL96tHyjAHnIO3mCaH5jAI24n3UO5Oy/Aqu
+         pmyvxOYFuxRB6vseumHvdzF/ODGTjpBNSFbZVoYRi9364jRACmaHDP2X+IuDk53pO0O3
+         2xYrB0qpP4xKz8oM0lq6F1G/5aW2UbRxEFPkEyuSsfhHanklw/RrAWQVbFcli36Mgkpc
+         v0DH6/B+ceipvwJ4zQBRppoztrbiS6TiI5lmaIyuZ4QiNwhjJ/AtAkdGhs0y9wwbyhtV
+         8nxA==
+X-Forwarded-Encrypted: i=2; AJvYcCVIxq490xtSlgVRb4nY78VV5VtNs5MUlIMkFemPpvjOGueoUhOk91XPXk/WqPNhQuDvJWj0mevHzCtXLp8X@gmail.com
+X-Gm-Message-State: AOJu0YyVEHGVkxaOC8a8et2A/S8V2OZCtpde7pdTDuh0hzC9wV5H/mhN
+	mrt+9+XXJ4FxjDv1qlG7lJYO5xdQ+TMymBy/sSVlbv66NccmcxAEf+PdwR7efQ4=
+X-Google-Smtp-Source: AGHT+IH6YV+NgfsibKLXwmFcX5rfPfUhX3cERdI6xDhXxRIsiX7yG5B15mzu2iRg0XMeUCVOqj27ww==
+X-Received: by 2002:a05:620a:280a:b0:7c5:43c2:a8fd with SMTP id af79cd13be357-7c7af0b9719mr1260884485a.9.1744518821419;
+        Sat, 12 Apr 2025 21:33:41 -0700 (PDT)
+X-BeenThere: noc24-cs101-announce@nptel.iitm.ac.in; h=ARLLPAL5LWqQ/e2oGTu08EzXIO8OkwZ6QbaQSgrHr6tGburl6Q==
+Received: by 2002:a05:6214:1386:b0:6e8:f2bd:66b1 with SMTP id
+ 6a1803df08f44-6f0e4b0813dls29595646d6.2.-pod-prod-08-us; Sat, 12 Apr 2025
+ 21:31:51 -0700 (PDT)
+X-Forwarded-Encrypted: i=2; AJvYcCVDDZJVuPCRBsf1BRkKa3H/gbakW3/9elAnGnmBfGVwRl+TetNcKBQivOsVVl+LFfmCGDESJyu+tTHwUpbd4Efo64aJSA==@nptel.iitm.ac.in
+X-Received: by 2002:a05:6214:48b:b0:6ed:12b0:f181 with SMTP id 6a1803df08f44-6f230d152e2mr120682476d6.14.1744518711120;
+        Sat, 12 Apr 2025 21:31:51 -0700 (PDT)
+X-BeenThere: cs-announce@nptel.iitm.ac.in; h=ARLLPAKJsuE058BZeEnwNxvQZa7O1hnE6utacxGA6UYmRwFZpw==
+Received: by 2002:a05:6214:1386:b0:6e8:f2bd:66b1 with SMTP id
+ 6a1803df08f44-6f0e4b0813dls29594656d6.2.-pod-prod-08-us; Sat, 12 Apr 2025
+ 21:31:48 -0700 (PDT)
+X-Received: by 2002:a05:6122:8c6:b0:526:720:704 with SMTP id 71dfb90a1353d-527c359743fmr4973173e0c.7.1744518707803;
+        Sat, 12 Apr 2025 21:31:47 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1744518707; cv=none;
+        d=google.com; s=arc-20240605;
+        b=gUPjlD/BZlEAs+svWfDpZ4kPYDGh5w4Da0yEe/B4HR7br/DGWgWRDnQDF+AU6yguoV
+         QFfQ8sA0nddgMFMQwm6R3VwrLLhX2XoJaQarwexrHnpDg+tMKIDo2tytf6rx0ziqhp+p
+         hnrUV1XzIvlikXHsZtr6aVu3kRSFiATT9LZUK+hXRFXw0gIiCPQcPnLtHWUKSUOObLOg
+         DF7nl5/WaJkOEvMAu/sxBFHKkSmQP2j48tpk14oiBDkUATjsv3qK+M/44fMNRnK0jRJo
+         XO0/19xK6SLfju4aKi1HeqeVqdu1Ly9FdR0O0CaF2oB/mFnijrTxwLrQK0NgffYiOH4B
+         gtxQ==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=HqepzXENvDbcSylbF3GH0GsSqVU8kEWmtXUmroa8z9s=;
+        fh=tUI/guNxk0m7bLjEW659dRxSTgL8PohrCJmgult2y0s=;
+        b=F/4z7onZt0kKFS/jwCIp3pGLOyqAugnK11PZOU1B6AwkI3Xf30p1RjR7b2tMx0WRtE
+         ++XLS6OVkzPtobXUHkHBNtRQ/jph/my8F27Xo4aJBU1mKGW7Oxfj727BZD6+KZnYcFli
+         OicSPTmNyheViZ5qFTSMmt8VV9V4cxAnSVD2XFX5fo+yRIl6OeR4kYl53wHNuShapnVn
+         VBElwnHZRY4vorCrf+gviN0fjgzGqBuUK4nQjf0CQRVgkwaVZhfCKc63QXYUHqnnzqwC
+         o1386BN+kEofhFB4tUxz2qFe0h8skfKV4uPPLcumNKbC+faxrZpXcIP7kq3102Afu8p6
+         onXQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=NcuJmslA;
+       spf=pass (google.com: domain of onlinecourses@nptel.iitm.ac.in designates 209.85.220.41 as permitted sender) smtp.mailfrom=onlinecourses@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@nptel.iitm.ac.in
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id 71dfb90a1353d-527b7d1777bsor695300e0c.6.2025.04.12.21.31.47
+        for <cs-announce@nptel.iitm.ac.in>
+        (Google Transport Security);
+        Sat, 12 Apr 2025 21:31:47 -0700 (PDT)
+Received-SPF: pass (google.com: domain of onlinecourses@nptel.iitm.ac.in designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Gm-Gg: ASbGncsx/01QeKmh6ryFKgNWIICKLJAv+iZpOWXzwhaGvylxVa44dYEx2P8nT+OgcHl
+	sEm6HaSWy70tAm1GZYgH8aY9bSeFu61951Nkom8aGGAqsrQw8NsAo3YslpdQNjU57b/yVPAdN6q
+	K2+Nk9A8XeXzaaTtHdiyPGPg==
+X-Received: by 2002:a05:6122:168e:b0:520:42d3:91aa with SMTP id
+ 71dfb90a1353d-527c347f3c2mr5229877e0c.2.1744518706364; Sat, 12 Apr 2025
+ 21:31:46 -0700 (PDT)
+MIME-Version: 1.0
+From: NPTEL <onlinecourses@nptel.iitm.ac.in>
+Date: Sun, 13 Apr 2025 10:00:00 +0530
+X-Gm-Features: ATxdqUEXxXtvaD9bZTYImvOWG9uJUJ3cG8CTqCOgIyPrCoFPh0lv1u5ag9LwYWY
+Message-ID: <CAFi4wK8gz5sKAvLgjeGPTr35amhU_-F2HwktO1SyqaN8BVjeZA@mail.gmail.com>
+Subject: NPTEL+ is now offering various workshops in different streams. Join
+ today and upskill for your Career growth!
+To: cs-announce@nptel.iitm.ac.in
+Content-Type: multipart/alternative; boundary="000000000000cc2fa60632a1699c"
+X-Original-Sender: onlinecourses@nptel.iitm.ac.in
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601
+ header.b=NcuJmslA;       spf=pass (google.com: domain of onlinecourses@nptel.iitm.ac.in
+ designates 209.85.220.41 as permitted sender) smtp.mailfrom=onlinecourses@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@nptel.iitm.ac.in
+Reply-To: cs-announce+owners@nptel.iitm.ac.in
+Precedence: list
+Mailing-list: list noc24-cs101-announce@nptel.iitm.ac.in; contact noc24-cs101-announce+owners@nptel.iitm.ac.in
+List-ID: <noc24-cs101-announce.nptel.iitm.ac.in>
+X-Spam-Checked-In-Group: cs-announce@nptel.iitm.ac.in
+X-Google-Group-Id: 629727701473
+List-Post: <https://groups.google.com/a/nptel.iitm.ac.in/group/noc24-cs101-announce/post>,
+ <mailto:noc24-cs101-announce@nptel.iitm.ac.in>
+List-Help: <https://support.google.com/a/nptel.iitm.ac.in/bin/topic.py?topic=25838>,
+ <mailto:noc24-cs101-announce+help@nptel.iitm.ac.in>
+List-Archive: <https://groups.google.com/a/nptel.iitm.ac.in/group/noc24-cs101-announce/>
+List-Unsubscribe: <mailto:googlegroups-manage+629727701473+unsubscribe@googlegroups.com>,
+ <https://groups.google.com/a/nptel.iitm.ac.in/group/noc24-cs101-announce/subscribe>
+List-Subscribe: <https://groups.google.com/a/nptel.iitm.ac.in/group/noc24-cs101-announce/subscribe>,
+ <mailto:noc24-cs101-announce+subscribe@nptel.iitm.ac.in>
+
+--000000000000cc2fa60632a1699c
+Content-Type: text/plain; charset="UTF-8"
+
+<https://elearn.nptel.ac.in/>
+<https://elearn.nptel.ac.in/shop/iit-workshops/ongoing/critical-natural-resources-exploration-and-exploitation-policy/?v=c86ee0d9d7ed>
+<https://elearn.nptel.ac.in/shop/iit-workshops/ongoing/the-emergence-of-the-c-h-functionalization-strategy-in-medicinal-chemistry-and-drug-discovery/?v=c86ee0d9d7ed>
+<https://elearn.nptel.ac.in/shop/iit-workshops/ongoing/deciphering-employee-ambidexterity/?v=c86ee0d9d7ed>
+<https://elearn.nptel.ac.in/shop/iit-workshops/ongoing/climate-resilient-plants-for-future-crpf-batch-2/?v=c86ee0d9d7ed>
+<https://elearn.nptel.ac.in/shop/iit-workshops/ongoing/design-essentials-for-impactful-scientific-illustrations/?v=c86ee0d9d7ed>
+<https://elearn.nptel.ac.in/shop/iit-workshops/ongoing/survey-research-and-experimentation-in-action/?v=c86ee0d9d7ed>
+
+Thanks and Regards,
+NPTEL TEAM.
+
+-- 
+You received this message because you are subscribed to the Google Groups "Announcements group for CS courses" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to cs-announce+unsubscribe@nptel.iitm.ac.in.
+To view this discussion visit https://groups.google.com/a/nptel.iitm.ac.in/d/msgid/cs-announce/CAFi4wK8gz5sKAvLgjeGPTr35amhU_-F2HwktO1SyqaN8BVjeZA%40mail.gmail.com.
+
+-- 
+You received this message because you are subscribed to the Google Groups "Announcement list for Introduction to Machine Learning" group.
+To unsubscribe from this group and stop receiving emails from it, send an email to noc24-cs101-announce+unsubscribe@nptel.iitm.ac.in.
+To view this discussion visit https://groups.google.com/a/nptel.iitm.ac.in/d/msgid/noc24-cs101-announce/CAFi4wK8gz5sKAvLgjeGPTr35amhU_-F2HwktO1SyqaN8BVjeZA%40mail.gmail.com.
+For more options, visit https://groups.google.com/a/nptel.iitm.ac.in/d/optout.
+
+--000000000000cc2fa60632a1699c
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div>
+
+
+
+ =20
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+  <meta name=3D"x-apple-disable-message-reformatting">
+ =20
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+ =20
+  <title></title>
+
+  <style type=3D"text/css">
+    @media only screen and (min-width: 670px) {
+      .u-row {
+        width: 650px !important;
+      }
+      .u-row .u-col {
+        vertical-align: top;
+      }
+      .u-row .u-col-50 {
+        width: 325px !important;
+      }
+      .u-row .u-col-100 {
+        width: 650px !important;
+      }
+    }
+   =20
+    @media only screen and (max-width: 670px) {
+      .u-row-container {
+        max-width: 100% !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+      }
+      .u-row {
+        width: 100% !important;
+      }
+      .u-row .u-col {
+        display: block !important;
+        width: 100% !important;
+        min-width: 320px !important;
+        max-width: 100% !important;
+      }
+      .u-row .u-col&gt;div {
+        margin: 0 auto;
+      }
+      .u-row .u-col img {
+        max-width: 100% !important;
+      }
+    }
+   =20
+    body {
+      margin: 0;
+      padding: 0
+    }
+   =20
+    table,
+    td,
+    tr {
+      border-collapse: collapse;
+      vertical-align: top
+    }
+   =20
+    .ie-container table,
+    .mso-container table {
+      table-layout: fixed
+    }
+   =20
+    * {
+      line-height: inherit
+    }
+   =20
+    a[x-apple-data-detectors=3Dtrue] {
+      color: inherit!important;
+      text-decoration: none!important
+    }
+   =20
+    table,
+    td {
+      color: #000000;
+    }
+  </style>
+
+
+
+
+
+
+ =20
+ =20
+  <table role=3D"presentation" id=3D"u_body" style=3D"border-collapse:colla=
+pse;table-layout:fixed;border-spacing:0;vertical-align:top;min-width:320px;=
+Margin:0 auto;background-color:#ffffff;width:100%" cellpadding=3D"0" cellsp=
+acing=3D"0">
+    <tbody>
+      <tr style=3D"vertical-align:top">
+        <td style=3D"word-break:break-word;border-collapse:collapse!importa=
+nt;vertical-align:top">
+         =20
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:650px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:650px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://elearn.nptel.ac.in/"=
+ target=3D"_blank" style=3D"color:rgb(0,0,238);text-decoration:underline;li=
+ne-height:inherit"><img align=3D"center" border=3D"0" src=3D"https://assets=
+.unlayer.com/projects/50932/1744363990240-6-in-One-Flyer_01.jpg?w=3D1300px"=
+ alt=3D"" title=3D"" style=3D"outline: none;text-decoration: none;-ms-inter=
+polation-mode: bicubic;clear: both;display: inline-block !important;border:=
+ none;height: auto;float: none;width: 100%;max-width: 650px;" width=3D"650"=
+>
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:650px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-50" style=3D"max-width:320px;min-=
+width:325px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://elearn.nptel.ac.in/s=
+hop/iit-workshops/ongoing/critical-natural-resources-exploration-and-exploi=
+tation-policy/?v=3Dc86ee0d9d7ed" target=3D"_blank" style=3D"color:rgb(0,0,2=
+38);text-decoration:underline;line-height:inherit"><img align=3D"center" bo=
+rder=3D"0" src=3D"https://assets.unlayer.com/projects/50932/1744363993727-6=
+-in-One-Flyer_02.jpg?w=3D650px" alt=3D"" title=3D"" style=3D"outline: none;=
+text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: =
+inline-block !important;border: none;height: auto;float: none;width: 100%;m=
+ax-width: 325px;" width=3D"325">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+                <div class=3D"u-col u-col-50" style=3D"max-width:320px;min-=
+width:325px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://elearn.nptel.ac.in/s=
+hop/iit-workshops/ongoing/the-emergence-of-the-c-h-functionalization-strate=
+gy-in-medicinal-chemistry-and-drug-discovery/?v=3Dc86ee0d9d7ed" target=3D"_=
+blank" style=3D"color:rgb(0,0,238);text-decoration:underline;line-height:in=
+herit"><img align=3D"center" border=3D"0" src=3D"https://assets.unlayer.com=
+/projects/50932/1744363997757-6-in-One-Flyer_03.jpg?w=3D650px" alt=3D"" tit=
+le=3D"" style=3D"outline: none;text-decoration: none;-ms-interpolation-mode=
+: bicubic;clear: both;display: inline-block !important;border: none;height:=
+ auto;float: none;width: 100%;max-width: 325px;" width=3D"325">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:650px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-50" style=3D"max-width:320px;min-=
+width:325px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://elearn.nptel.ac.in/s=
+hop/iit-workshops/ongoing/deciphering-employee-ambidexterity/?v=3Dc86ee0d9d=
+7ed" target=3D"_blank" style=3D"color:rgb(0,0,238);text-decoration:underlin=
+e;line-height:inherit"><img align=3D"center" border=3D"0" src=3D"https://as=
+sets.unlayer.com/projects/50932/1744364003621-6-in-One-Flyer_04.jpg?w=3D650=
+px" alt=3D"" title=3D"" style=3D"outline: none;text-decoration: none;-ms-in=
+terpolation-mode: bicubic;clear: both;display: inline-block !important;bord=
+er: none;height: auto;float: none;width: 100%;max-width: 325px;" width=3D"3=
+25">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+                <div class=3D"u-col u-col-50" style=3D"max-width:320px;min-=
+width:325px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://elearn.nptel.ac.in/s=
+hop/iit-workshops/ongoing/climate-resilient-plants-for-future-crpf-batch-2/=
+?v=3Dc86ee0d9d7ed" target=3D"_blank" style=3D"color:rgb(0,0,238);text-decor=
+ation:underline;line-height:inherit"><img align=3D"center" border=3D"0" src=
+=3D"https://assets.unlayer.com/projects/50932/1744364011658-6-in-One-Flyer_=
+05.jpg?w=3D650px" alt=3D"" title=3D"" style=3D"outline: none;text-decoratio=
+n: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !=
+important;border: none;height: auto;float: none;width: 100%;max-width: 325p=
+x;" width=3D"325">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:650px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-50" style=3D"max-width:320px;min-=
+width:325px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://elearn.nptel.ac.in/s=
+hop/iit-workshops/ongoing/design-essentials-for-impactful-scientific-illust=
+rations/?v=3Dc86ee0d9d7ed" target=3D"_blank" style=3D"color:rgb(0,0,238);te=
+xt-decoration:underline;line-height:inherit"><img align=3D"center" border=
+=3D"0" src=3D"https://assets.unlayer.com/projects/50932/1744364017598-6-in-=
+One-Flyer_06.jpg?w=3D650px" alt=3D"" title=3D"" style=3D"outline: none;text=
+-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: inli=
+ne-block !important;border: none;height: auto;float: none;width: 100%;max-w=
+idth: 325px;" width=3D"325">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+                <div class=3D"u-col u-col-50" style=3D"max-width:320px;min-=
+width:325px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://elearn.nptel.ac.in/s=
+hop/iit-workshops/ongoing/survey-research-and-experimentation-in-action/?v=
+=3Dc86ee0d9d7ed" target=3D"_blank" style=3D"color:rgb(0,0,238);text-decorat=
+ion:underline;line-height:inherit"><img align=3D"center" border=3D"0" src=
+=3D"https://assets.unlayer.com/projects/50932/1744364022116-6-in-One-Flyer_=
+07.jpg?w=3D650px" alt=3D"" title=3D"" style=3D"outline: none;text-decoratio=
+n: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !=
+important;border: none;height: auto;float: none;width: 100%;max-width: 325p=
+x;" width=3D"325">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+         =20
+        </td>
+      </tr>
+    </tbody>
+  </table>
+ =20
+ =20
+
+
+
+
+</div><div><div dir=3D"ltr" class=3D"gmail_signature" data-smartmail=3D"gma=
+il_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div dir=3D"ltr"><div>=
+<div style=3D"font-size:12.8px"><br></div></div><div>Thanks and Regards,</d=
+iv><div>NPTEL TEAM.</div></div></div></div></div></div></div></div>
+
+<p></p>
+
+-- <br />
+You received this message because you are subscribed to the Google Groups &=
+quot;Announcements group for CS courses&quot; group.<br />
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:cs-announce+unsubscribe@nptel.iitm.ac.in">cs-anno=
+unce+unsubscribe@nptel.iitm.ac.in</a>.<br />
+To view this discussion visit <a href=3D"https://groups.google.com/a/nptel.=
+iitm.ac.in/d/msgid/cs-announce/CAFi4wK8gz5sKAvLgjeGPTr35amhU_-F2HwktO1SyqaN=
+8BVjeZA%40mail.gmail.com?utm_medium=3Demail&utm_source=3Dfooter">https://gr=
+oups.google.com/a/nptel.iitm.ac.in/d/msgid/cs-announce/CAFi4wK8gz5sKAvLgjeG=
+PTr35amhU_-F2HwktO1SyqaN8BVjeZA%40mail.gmail.com</a>.<br />
+
+<p></p>
+
+-- <br />
+You received this message because you are subscribed to the Google Groups &=
+quot;Announcement list for Introduction to Machine Learning&quot; group.<br=
+ />
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:noc24-cs101-announce+unsubscribe@nptel.iitm.ac.in=
+">noc24-cs101-announce+unsubscribe@nptel.iitm.ac.in</a>.<br />
+To view this discussion visit <a href=3D"https://groups.google.com/a/nptel.=
+iitm.ac.in/d/msgid/noc24-cs101-announce/CAFi4wK8gz5sKAvLgjeGPTr35amhU_-F2Hw=
+ktO1SyqaN8BVjeZA%40mail.gmail.com?utm_medium=3Demail&utm_source=3Dfooter">h=
+ttps://groups.google.com/a/nptel.iitm.ac.in/d/msgid/noc24-cs101-announce/CA=
+Fi4wK8gz5sKAvLgjeGPTr35amhU_-F2HwktO1SyqaN8BVjeZA%40mail.gmail.com</a>.<br =
+/>
+For more options, visit <a href=3D"https://groups.google.com/a/nptel.iitm.a=
+c.in/d/optout">https://groups.google.com/a/nptel.iitm.ac.in/d/optout</a>.<b=
+r />
+
+--000000000000cc2fa60632a1699c--

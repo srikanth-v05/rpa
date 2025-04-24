@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="KyFd5h8O30-mEMoo_6MXNA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="docs.google.com/forms/d/e/1FAIpQLSfPHUOXMeuCQTnQViUpjwgmE2yBx6WX9rpCzxHsW6gbP6z_Mg/viewform" CVScreenId="14d4c056-d67c-45f6-8592-1b8d31a993b8" CvElementArea="557, 772, 123, 49" CvTextArea="586, 787, 63, 17" CvTextArgument="Submit" CvType="Button" DesignTimeRectangle="589, 774, 60, 45" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Submit' tag='SPAN' type='' class='NPEfkd RveJvd snByac' check:innerText='Submit' /&gt;" Guid="2abcea16-7b90-433d-b3a3-a33853b96daa" ScopeSelectorArgument="&lt;html app='chrome.exe' title='bus ticket booking' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="14d4c056-d67c-45f6-8592-1b8d31a993b8" CvElementArea="557, 772, 123, 49" CvTextArea="586, 787, 63, 17" CvTextArgument="Submit" CvType="Button" DesignTimeRectangle="559, 774, 120, 45" ElementType="Button" FuzzySelectorArgument="&lt;webctrl aria-label='Submit' aria-role='button' tag='DIV' type='' class='uArJ5e UQuaGc Y5sE8d VkkpIf QvWxOd' aaname='' check:innerText='Submit' /&gt;" Guid="ee00d449-091f-41d8-af07-d0de3998222b" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="337394055c78238c97e164a05ff38ab8.png" xmlns="">07HflsUBCbU6aP5lEqzfDFw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

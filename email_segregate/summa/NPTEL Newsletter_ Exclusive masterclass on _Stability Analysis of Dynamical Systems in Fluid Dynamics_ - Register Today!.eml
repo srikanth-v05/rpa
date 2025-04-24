@@ -1,0 +1,592 @@
+Delivered-To: vsrikanthoffl@gmail.com
+Received: by 2002:a05:7300:a99a:b0:160:1ab0:82c8 with SMTP id cl26csp7511970dyb;
+        Wed, 9 Apr 2025 03:05:59 -0700 (PDT)
+X-Forwarded-Encrypted: i=4; AJvYcCWr4DPtiAD2u5CLO2aDTplbjgHZsnL6xR8hD+nvsiOKWwjLOvAV2J3SIxAQEWUtl0vHKf5QC1f0F2M9bNoK@gmail.com
+X-Received: by 2002:a05:620a:2608:b0:7c5:6045:beb7 with SMTP id af79cd13be357-7c79cbe2d08mr358243285a.32.1744193159380;
+        Wed, 09 Apr 2025 03:05:59 -0700 (PDT)
+ARC-Seal: i=3; a=rsa-sha256; t=1744193159; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=jnYMQK4w+MNglnalg7UCnyjMZA1LJ8kC7EaZIslHor04RNoto1pXxx8VX0A/LsQIky
+         FmGNGLEysuIyY+ejg03ajzIXnwGvXYJYYOvMyXlxvJ5NrC/Wea8kiZastjl4qhGkqYRd
+         woKLsVSF5DMKC8VvT1SBDA83D9jnqJqtxtX77FtGWW8j8CLUAznxAut7G4/dcNG+9vYR
+         jrYpjD0I9fW5z8FPX4KVrkNLa63p3IaSOUpUgMDbNdoGERk1lv5Ghx9a12frfA7N3HWr
+         WPBdVpO7BZ8Wo+yx8BJ1HROq4/Cz0Jlt+RtRyz0cDHIyJGotX4PkxHsfxPrE28AICWbT
+         tMRw==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe:list-archive:list-help:list-post:list-id
+         :mailing-list:precedence:to:subject:message-id:date:from
+         :mime-version;
+        bh=ibVtoATeSVSPnbfXnCVf8PsjFrOa5EOZgDQ4GysBM2Q=;
+        fh=a78B0HgS426ogAtDPMeRqAkiILMYtRLz9q6jmLt4gR4=;
+        b=DrbbVuzbXCR9qAjuNFKpjSeFmVMPNvz7WhRkZoG3khuAYziBkQOV3UJoJDhmGFbuho
+         9ZK7pcPCliCyX0TlvX8mUlaWZFoGPb1z24//d2yMjVwW+GcwGnq4h2TwEPHAJqomSlNC
+         DCHuZxyHmjVsHwEibxH4955FFs9FbrQTShU/sCBs+9pgW14dL+JP7Bg9DHLfsXHSfUla
+         9iIuycaMB1eoiB4MXiz90TxKB0c5JiRn6vlNSOwOWqDXCQe0Ns6Xw6zHg7JSkdKs5Bu0
+         I1zBCRKPY6VQB0UhP4VC1jaJECAJTGe4aXHMBj2GjVmu4wswtRiRvFn5dUBX4cSnjAOC
+         usXQ==;
+        dara=google.com
+ARC-Authentication-Results: i=3; mx.google.com;
+       arc=pass (i=2 spf=pass spfdomain=nptel.iitm.ac.in dkim=pass dkdomain=nptel-iitm-ac-in.20230601.gappssmtp.com dmarc=pass fromdomain=iitm.ac.in);
+       spf=pass (google.com: domain of newsletter-announce+bncbcz5rxnbuuobbi7r3c7qmgqezi5t6ia@nptel.iitm.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=newsletter-announce+bncBCZ5RXNBUUOBBI7R3C7QMGQEZI5T6IA@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@gmail.com
+Return-Path: <newsletter-announce+bncBCZ5RXNBUUOBBI7R3C7QMGQEZI5T6IA@nptel.iitm.ac.in>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id af79cd13be357-7c7a11d1a6csor67876585a.14.2025.04.09.03.05.59
+        for <vsrikanthoffl@gmail.com>
+        (Google Transport Security);
+        Wed, 09 Apr 2025 03:05:59 -0700 (PDT)
+Received-SPF: pass (google.com: domain of newsletter-announce+bncbcz5rxnbuuobbi7r3c7qmgqezi5t6ia@nptel.iitm.ac.in designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       arc=pass (i=2 spf=pass spfdomain=nptel.iitm.ac.in dkim=pass dkdomain=nptel-iitm-ac-in.20230601.gappssmtp.com dmarc=pass fromdomain=iitm.ac.in);
+       spf=pass (google.com: domain of newsletter-announce+bncbcz5rxnbuuobbi7r3c7qmgqezi5t6ia@nptel.iitm.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=newsletter-announce+bncBCZ5RXNBUUOBBI7R3C7QMGQEZI5T6IA@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@gmail.com
+ARC-Seal: i=2; a=rsa-sha256; t=1744193159; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=M3VuMDobLr7568yzdnz0Di+xBiXKYsmspuUeMD8YcGSiEvsh18TiRQr6EBX9mkhiy4
+         aHw6H+Yticp6b2xWLCJ1kv0M/h9aVlo31LOJgyQRw9LGx5sLUgOLarQnFWhKOqebht39
+         sWM90qhhIVYn4UMsXPjq0QgEtbFKPKagMCJQirvl3GjS1ipxxbOTq1fztte7M6EKGEN3
+         5vwe4QFKcXJeUDltrhhR33qjo0O08mrgq6smsodVC2Qpnk0jpeq1oBXo/GvDcMR1vLNJ
+         9InuXR9y1mn52cveKv5TuwIfki2YyW8MD74sj7F/CBy9r9q4jEtnM8AZbPLvwiwYJ76v
+         E3VQ==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe:list-archive:list-help:list-post:list-id
+         :mailing-list:precedence:to:subject:message-id:date:from
+         :mime-version;
+        bh=ibVtoATeSVSPnbfXnCVf8PsjFrOa5EOZgDQ4GysBM2Q=;
+        fh=a78B0HgS426ogAtDPMeRqAkiILMYtRLz9q6jmLt4gR4=;
+        b=CHIvAJZJcguNwcTBK8Zd+6RpHxowLhNbtHVEgAIe1t/++WRFF6zkdKGIeWbYK9coi0
+         TvMemb155fH0MdFIoSBI+DXXPgsr2ekyaacKfUeU97JU26W029EBW4Bl0nmcyUEfGzGP
+         fPmW43tEzD7g2PG/1CmBvy8o6xmUZikUDVSHld3lRwVZm0oaqQdxUdE1Qvi0leQdXZMl
+         IG0Jc0W2ZDk7VMzN0ap/icAzncMaHQt7fau99uw2x8KUXa2F2WR8Rv+93A0da9UyQRi6
+         uogczyP9NjCJTd4j1CzRyV2TsKRWrf67ayu9BU0s0GN3xjWG2gKrtZ3/2iSUVRyFPOg3
+         31cQ==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=BNXCzBoe;
+       spf=pass (google.com: domain of onlinecourses@nptel.iitm.ac.in designates 209.85.220.41 as permitted sender) smtp.mailfrom=onlinecourses@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@nptel.iitm.ac.in
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744193159; x=1744797959;
+        h=list-unsubscribe:list-archive:list-help:list-post
+         :x-spam-checked-in-group:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender:to:subject
+         :message-id:date:from:mime-version:x-beenthere:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=ibVtoATeSVSPnbfXnCVf8PsjFrOa5EOZgDQ4GysBM2Q=;
+        b=Iz/ODs5pPZ3kB5uVWucE0CosAAOH57vNZWztipwfHt9prmoy3a3rlS4jX0CFXCjgrR
+         de+iicxbLqBh8EyY7/cQx0LVxXz/csO3gaAqBYJBxuHiF2L9TCUYcovBQSWEv8LABt2q
+         Z+r0wxFqXKzIRsf3EqeDrpkDBQ5NqJQVG9LtLgvUtbN1PqEn+04FX0iur5WZBmdpK+8T
+         /qrcgH/acm4wxIcJeH1QEgVgUkJAW0REIbzqOsTQZZszAJSupnmDRPsOTRpJeM8UUJMK
+         KjJh208APl0v9zZBsyo0k05/koH5fRwQAh4kHweSWQICbKHRyKuAc6lntZawdb+ONyes
+         Cldg==
+X-Forwarded-Encrypted: i=2; AJvYcCWyGbGm+B6WF3Nh6cz+YOWwNdM3SCKpaWmhZbR5RMqgNmE8H3gzL3ZjR9ZIkEPpDOWHQ1KN0gdSrSxlFyGY@gmail.com
+X-Gm-Message-State: AOJu0Yyt4CIpGhJWE7dfwabrPuFKDhhROJR90DfyAz3CBh3Bto2TGcRU
+	+6P4cQQxG3m6gEYJFjUcjqiGvTqY2bxb55kzXEk/PxA2Gq6LabDOUp2g1DpKGww=
+X-Google-Smtp-Source: AGHT+IEth8tTeLRdwJoIS5bHvq3XamrKBckaBMujTvuckyBO/1Z/QFnHn2kqKNlul7oBAEHd0V8szw==
+X-Received: by 2002:a05:6214:1c0e:b0:6d8:e5f4:b977 with SMTP id 6a1803df08f44-6f0dbb77670mr34451196d6.5.1744193158157;
+        Wed, 09 Apr 2025 03:05:58 -0700 (PDT)
+X-BeenThere: newsletter-announce@nptel.iitm.ac.in; h=ARLLPAIEic5IntA7js9B21OD/+889iOdMVylOz6o9XgyUEOKYw==
+Received: by 2002:a05:6214:2f81:b0:6ec:ed67:455d with SMTP id
+ 6a1803df08f44-6ef0bf7a668ls13904696d6.1.-pod-prod-07-us; Wed, 09 Apr 2025
+ 02:06:41 -0700 (PDT)
+X-Received: by 2002:a05:6102:3f12:b0:4bb:cf34:3757 with SMTP id ada2fe7eead31-4c9c445e155mr1576121137.17.1744189601216;
+        Wed, 09 Apr 2025 02:06:41 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1744189601; cv=none;
+        d=google.com; s=arc-20240605;
+        b=ROZHuCxHtRZQJ+crwmUdVCK8ELWj1ee39TLcXtrsszBS/veS026xXwSu9m8JYGydk4
+         +L4RTP7keGRKA9dcc/cNayQIT1L9OlzCPtxXqZ5DnkLAMakSn7GDGjP+9NP9SzCZ+zBt
+         yD0thb0o5a7gQDC4Ic+UUtrFXiLvfq5O0zmVsR5WmNhyVCYX+Baaf8mpcXB7z/F1gU/i
+         VCG/5H4t7d5s1IFDfGCPzu3uE721NlNOuSr0HpQ3WnLfgmloryMkUMN7Bwrm20F/YJU0
+         ODEzI9RBi0CfvtcoSHwFO3gV2Lt542T609gVcDdOPsEal6SbQgrshMc5NgtTZ8C2oPGm
+         Wz4Q==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=AtLClgfUViBz57xICyP3QHnYUv/drx6xBx7iyZDkLUI=;
+        fh=AOGeH7lFm2zf0K4xCbfWhVHs5/wGjaI4aTeqnl/IpcU=;
+        b=lWpt9MXwNqeCxpX/HBabznmf/zDZDhqsQkli4Ury/bhFDqXL2Ju7yW0lAIQAypUKso
+         s4QgQG/7ePGbjf9bUu1ieUs4EsfJfFgFIpAkuaZFH7a9FKGhyEMrCtRrb/6jr34Z3XRZ
+         u0CTYV/BsiWQ7rRt1datzvvyX26dG2GlxkMU3ZW4K6cuqgrpjU6l+TP9m3x8t9TH2FWd
+         wP0sWJpA/t9Py7efN0yn3kCWeqeBQPJUZ7iC7hLV0keZTj9/oailc+L/TKgajdd6l8xT
+         1S7wxOvcpuPiyEyr6oNYrwz3GHcXDRviQ7Dfh2npc5mETQGfK3ZkHT01I9dPF0RMQ754
+         wJGg==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=BNXCzBoe;
+       spf=pass (google.com: domain of onlinecourses@nptel.iitm.ac.in designates 209.85.220.41 as permitted sender) smtp.mailfrom=onlinecourses@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@nptel.iitm.ac.in
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id a1e0cc1a2514c-8755725e616sor274808241.5.2025.04.09.02.06.41
+        for <newsletter-announce@nptel.iitm.ac.in>
+        (Google Transport Security);
+        Wed, 09 Apr 2025 02:06:41 -0700 (PDT)
+Received-SPF: pass (google.com: domain of onlinecourses@nptel.iitm.ac.in designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Gm-Gg: ASbGncvbUtDbjd9AnkjhVP2Be16FNGvkd3sfr/0k+HVnHwimHK3E2S1e2nlT+3lln/7
+	b9xojBDUdKpGnRmRNw8C8MZye5HN2aMrWf5dOfeLYE20qw47dMMk5Ud1NsgPdVb8H8EnFdtScJD
+	0Y+wbDx6bnRIHUobCZdInrFw==
+X-Received: by 2002:a05:6102:1481:b0:4c1:b3a5:9fa with SMTP id
+ ada2fe7eead31-4c9c4459ac8mr1512362137.16.1744189600508; Wed, 09 Apr 2025
+ 02:06:40 -0700 (PDT)
+MIME-Version: 1.0
+From: NPTEL <onlinecourses@nptel.iitm.ac.in>
+Date: Wed, 9 Apr 2025 14:36:27 +0530
+X-Gm-Features: ATxdqUElpoxn-acyk2mXP1tHESdKeil4b-4kl1ipaTsKqzwcOHC9qaV-RjYApVE
+Message-ID: <CAFi4wK8FnZp2zrt=5Sgxs8HLo4hVmHt8+ds3te23geL1LcPaig@mail.gmail.com>
+Subject: NPTEL Newsletter: Exclusive masterclass on "Stability Analysis of
+ Dynamical Systems in Fluid Dynamics" - Register Today!
+To: newsletter-announce@nptel.iitm.ac.in
+Content-Type: multipart/alternative; boundary="0000000000008f5ccf063254c967"
+X-Original-Sender: onlinecourses@nptel.iitm.ac.in
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601
+ header.b=BNXCzBoe;       spf=pass (google.com: domain of onlinecourses@nptel.iitm.ac.in
+ designates 209.85.220.41 as permitted sender) smtp.mailfrom=onlinecourses@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@nptel.iitm.ac.in
+Precedence: list
+Mailing-list: list newsletter-announce@nptel.iitm.ac.in; contact newsletter-announce+owners@nptel.iitm.ac.in
+List-ID: <newsletter-announce.nptel.iitm.ac.in>
+X-Spam-Checked-In-Group: newsletter-announce@nptel.iitm.ac.in
+X-Google-Group-Id: 821389845798
+List-Post: <https://groups.google.com/a/nptel.iitm.ac.in/group/newsletter-announce/post>,
+ <mailto:newsletter-announce@nptel.iitm.ac.in>
+List-Help: <https://support.google.com/a/nptel.iitm.ac.in/bin/topic.py?topic=25838>,
+ <mailto:newsletter-announce+help@nptel.iitm.ac.in>
+List-Archive: <https://groups.google.com/a/nptel.iitm.ac.in/group/newsletter-announce/>
+List-Unsubscribe: <mailto:googlegroups-manage+821389845798+unsubscribe@googlegroups.com>,
+ <https://groups.google.com/a/nptel.iitm.ac.in/group/newsletter-announce/subscribe>
+
+--0000000000008f5ccf063254c967
+Content-Type: text/plain; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+Dear Candidate,
+
+We are excited to bring you an exclusive masterclass on *"Stability
+Analysis of Dynamical Systems in Fluid Dynamics" *by *Prof. Anirban Guha,
+Senior Lecturer (Associate Professor) in the School of Science and
+Engineering at the University of Dundee*.
+
+Prof. Anirban Guha's research focuses on developing reduced-order physical
+and mathematical models for complex problems in fluid dynamics. His work
+addresses geophysical and environmental flows with applications in ocean
+mixing, climate change, and aquatic pollution mitigation. He is a recipient
+of the Alexander von Humboldt Research Fellowship (2019), awarded by the
+Government of the Federal Republic of Germany.
+
+Spread across 4 sessions, timed at 2 hours each, this workshop is
+ideal for students,
+faculty members, industry professionals, academicians, and researchers who
+are working in different domains. Kindly share this masterclass in your
+network.
+
+*Session-1: **Introduction to Dynamical Systems and Stability
+Analysis*Introduction
+to dynamical systems =E2=80=93 linearizing nonlinear system of ODEs, Phase =
+Plane
+Analysis, fixed points and their stability, Bifurcation Analysis with the
+damped oscillator example, Lyapunov and Asymptotic stability.*Date: 14th
+June, 2025, 7 pm - 9 pm (IST)*
+
+*Session-2: **Stability Analysis of Fluid Dynamical Systems*
+Motivating linear stability analysis of generic Fluid Dynamical Systems,
+normal mode analysis, problems with density variation having exact
+solutions, e.g. Rayleigh- Taylor Instability and Rayleigh=E2=80=93B=C3=A9na=
+rd
+Convection, shear flow problem with exact solution =E2=80=93 Kelvin-Helmhol=
+tz
+instability.
+*Date:**15th June, 2025, 7 pm - 9 pm **(IST)*
+
+*Session-3: **Advanced Fluid Dynamics - Governing Equations and Theorems*
+Stability of smooth Velocity profiles, Rayleigh=E2=80=99s inflexion point T=
+heorem,
+Squire=E2=80=99s Theorem, deriving the governing equation for density strat=
+ified
+shear flows with Viscosity =E2=80=93 the density stratified Orr-Sommerfeld =
+equation
+(also known as the Viscous Taylor- Goldstein equation).
+*Date: 21st* June, 2025, 7 pm - 9 pm *(IST)*
+
+*Session-4: **Numerical Solutions and Real-World Applications*
+Exploring numerical solutions (using MATLAB) of the density stratified Orr-
+Sommerfeld equation with various examples =E2=80=93 boundary layer instabil=
+ities in
+channel (or pipe) flows, Kelvin-Helmholtz instability in mixing layers,
+discussion of applications in industry (e.g. combustion in IC engines,
+multiphase flows, industrial displacement flows) and geophysics (ocean
+mixing, barotropic instability of atmospheric jets). Limitations of normal
+mode theory and pointers to recent developments in linear stability
+analysis, including data-driven stability analysis.
+*Date:**22nd June, 2025, 7 pm - 9 pm **(IST)*
+
+*Date:* *14th June, 15th June, 21st June, 22nd June **(4 Days)*
+
+*Time: 7:00 pm =E2=80=93 9:00 pm (IST)*
+
+*Mode: Online*
+
+
+
+*Details of the session along with a short video about the session is
+available in the link provided.*
+
+
+*Link:** Masterclass -
+<https://elearn.nptel.ac.in/shop/masterclasss-workshops/masterclass-series-=
+ongoing/introduction-to-hydrodynamic-stability/?v=3Dc86ee0d9d7ed>**Introduc=
+tion
+to Hydrodynamic Stability
+<https://elearn.nptel.ac.in/shop/masterclasss-workshops/masterclass-series-=
+ongoing/introduction-to-hydrodynamic-stability/?v=3Dc86ee0d9d7ed>*
+
+
+*Last day of registration: 4th June,2025*
+
+
+*Special discounted price for students, faculty members and industry
+experts. *
+
+
+*Please Note: *There are limited seats available, and it is on a
+first-come, first-served basis.
+
+*Request you to kindly share the mail with your network, students, and
+research group.*
+
+<https://elearn.nptel.ac.in/shop/masterclasss-workshops/masterclass-series-=
+ongoing/introduction-to-hydrodynamic-stability/?v=3Dc86ee0d9d7ed>
+
+
+Thanks and Regards,
+
+Team NPTEL+
+
+--=20
+To unsubscribe from this group and stop receiving emails from it:
+Log in to Google Groups and click on My Groups seen in the left navigation =
+pane. You will see the list of your groups. Choose the group "NPTEL Newslet=
+ter"
+Click the Leave Group icon on the right side to leave the group or you can =
+choose the "No email" option under Subscription to stop receiving these ema=
+ils.
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to newsletter-announce+unsubscribe@nptel.iitm.ac.in.
+
+--0000000000008f5ccf063254c967
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div><div>Dear Candidate,</div><div><br>We are excited to =
+bring you an exclusive masterclass on=C2=A0<b>&quot;Stability Analysis of D=
+ynamical Systems in Fluid Dynamics&quot;=C2=A0</b>by=C2=A0<b><font color=3D=
+"#0000ff">Prof. Anirban Guha, Senior Lecturer (Associate Professor) in the =
+School of Science and Engineering at the University of Dundee</font></b>.<b=
+r><br>Prof. Anirban Guha&#39;s research focuses on developing reduced-order=
+ physical and mathematical models for complex problems in fluid dynamics. H=
+is work addresses geophysical and environmental flows with applications in =
+ocean mixing, climate change, and aquatic pollution mitigation. He is a rec=
+ipient of the Alexander von Humboldt Research Fellowship (2019), awarded by=
+ the Government of the Federal Republic of Germany.</div><div><div style=3D=
+"line-height:1.1;margin:0px 0px 10px;color:rgb(0,0,255)"><br></div><div sty=
+le=3D"line-height:1.1;margin:0px 0px 10px"><font face=3D"arial, sans-serif"=
+>Spread across 4 sessions, timed at 2 hours each, this workshop is ideal fo=
+r=C2=A0<span style=3D"color:rgb(255,0,0);font-weight:700">students, faculty=
+ members, industry professionals, academicians, and researchers</span>=C2=
+=A0who are working in different domains. Kindly share this masterclass in y=
+our network.</font></div><div style=3D"line-height:1.1;margin:0px 0px 10px"=
+><font face=3D"arial, sans-serif"><br></font></div><div style=3D"margin:0px=
+"><h4 style=3D"line-height:1.1;margin-top:10px;margin-bottom:10px;font-fami=
+ly:Montserrat,sans-serif"><u>Session-1:=C2=A0</u><span style=3D"font-family=
+:Arial,Helvetica,sans-serif"><u>Introduction to Dynamical Systems and Stabi=
+lity Analysis</u></span></h4><h4 style=3D"line-height:1.1;margin-top:10px;m=
+argin-bottom:10px;font-family:Montserrat,sans-serif"><span style=3D"font-we=
+ight:normal">Introduction to dynamical systems =E2=80=93 linearizing nonlin=
+ear system of ODEs, Phase Plane Analysis, fixed points and their stability,=
+ Bifurcation Analysis with the damped oscillator example, Lyapunov and Asym=
+ptotic stability.<i></i></span></h4><h4 style=3D"line-height:1.1;margin-top=
+:10px;margin-bottom:10px;font-family:Montserrat,sans-serif"><span style=3D"=
+font-weight:normal"><i>Date: 14th June, 2025, 7 pm - 9 pm (IST)</i></span><=
+/h4><div><i><br></i></div><div style=3D"margin:0px"><span style=3D"font-fam=
+ily:Montserrat,sans-serif"><b><u>Session-2:=C2=A0</u></b></span><b><u>Stabi=
+lity Analysis of Fluid Dynamical Systems</u></b></div><div style=3D"margin:=
+0px">Motivating linear stability analysis of generic Fluid Dynamical System=
+s, normal mode analysis, problems with density variation having exact solut=
+ions, e.g. Rayleigh- Taylor Instability and Rayleigh=E2=80=93B=C3=A9nard Co=
+nvection, shear flow problem with exact solution =E2=80=93 Kelvin-Helmholtz=
+ instability.<b><u></u></b></div><div style=3D"margin:0px;font-family:Monts=
+errat,sans-serif"><i>Date:</i><i>15th June, 2025, 7 pm - 9 pm=C2=A0</i><i>(=
+IST)</i></div><div style=3D"margin:0px;font-family:Montserrat,sans-serif"><=
+br></div><div style=3D"margin:0px"><span style=3D"font-family:Montserrat,sa=
+ns-serif"><b><u>Session-3:=C2=A0</u></b></span><b><u>Advanced Fluid Dynamic=
+s - Governing Equations and Theorems</u></b></div><div style=3D"margin:0px"=
+>Stability of smooth Velocity profiles, Rayleigh=E2=80=99s inflexion point =
+Theorem, Squire=E2=80=99s Theorem, deriving the governing equation for dens=
+ity stratified shear flows with Viscosity =E2=80=93 the density stratified =
+Orr-Sommerfeld equation (also known as the Viscous Taylor- Goldstein equati=
+on).<b><u></u></b></div><div style=3D"margin:0px;font-family:Montserrat,san=
+s-serif"><i>Date: 21st</i>=C2=A0June, 2025, 7 pm - 9 pm=C2=A0<i>(IST)</i></=
+div><div style=3D"margin:0px;font-family:Montserrat,sans-serif"><br></div><=
+div style=3D"margin:0px;font-family:Montserrat,sans-serif"><div style=3D"fo=
+nt-family:Arial,Helvetica,sans-serif;margin:0px"><span style=3D"font-family=
+:Montserrat,sans-serif"><b><u>Session-4:=C2=A0</u></b></span><span style=3D=
+"font-family:Montserrat,sans-serif"><b><u>Numerical Solutions and Real-Worl=
+d Applications</u></b></span></div><div style=3D"font-family:Arial,Helvetic=
+a,sans-serif;margin:0px">Exploring numerical solutions (using MATLAB) of th=
+e density stratified Orr- Sommerfeld equation with various examples =E2=80=
+=93 boundary layer instabilities in channel (or pipe) flows, Kelvin-Helmhol=
+tz instability in mixing layers, discussion of applications in industry (e.=
+g. combustion in IC engines, multiphase flows, industrial displacement flow=
+s) and geophysics (ocean mixing, barotropic instability of atmospheric jets=
+). Limitations of normal mode theory and pointers to recent developments in=
+ linear stability analysis, including data-driven stability analysis.<span =
+style=3D"font-family:Montserrat,sans-serif"><b><u></u></b></span></div><div=
+ style=3D"margin:0px"><i>Date:</i><i>22nd June, 2025, 7 pm - 9 pm=C2=A0</i>=
+<i>(IST)</i></div><div style=3D"margin:0px"><i><br></i></div></div><p style=
+=3D"line-height:normal;margin:0px 0px 0cm"><font face=3D"arial, sans-serif"=
+><b>Date:</b>=C2=A0</font><b>14th June<font face=3D"arial, sans-serif">,=C2=
+=A0</font>15th June<font face=3D"arial, sans-serif">,=C2=A0</font>21st June=
+, 22nd June=C2=A0</b><font face=3D"arial, sans-serif"><b>(4 Days)</b></font=
+></p><p style=3D"line-height:normal;margin:0px 0px 0cm"><b><font face=3D"ar=
+ial, sans-serif">Time: 7:00 pm =E2=80=93 9:00 pm (IST)</font></b></p><p sty=
+le=3D"line-height:normal;margin:0px 0px 0cm"><b><font face=3D"arial, sans-s=
+erif">Mode: Online</font></b></p><p style=3D"line-height:normal;margin:0px =
+0px 0cm"><b><font face=3D"arial, sans-serif"><br></font></b></p><p style=3D=
+"line-height:normal;margin:0px 0px 0cm"><span style=3D"color:rgb(0,0,255)">=
+<b><font face=3D"arial, sans-serif">Details of the session along with a sho=
+rt video about the session is available in the link provided.<br></font></b=
+></span></p><p style=3D"line-height:normal;margin:0px 0px 0cm"><span style=
+=3D"color:rgb(0,0,255)"><b><font face=3D"arial, sans-serif"><br></font></b>=
+</span></p><p style=3D"line-height:normal;margin:0px 0px 0cm"><font face=3D=
+"arial, sans-serif"><b>Link:</b><b style=3D"color:rgb(0,0,255)">=C2=A0<a hr=
+ef=3D"https://elearn.nptel.ac.in/shop/masterclasss-workshops/masterclass-se=
+ries-ongoing/introduction-to-hydrodynamic-stability/?v=3Dc86ee0d9d7ed" targ=
+et=3D"_blank">Masterclass -=C2=A0</a></b></font><font color=3D"#0000ff"><b>=
+<a href=3D"https://elearn.nptel.ac.in/shop/masterclasss-workshops/mastercla=
+ss-series-ongoing/introduction-to-hydrodynamic-stability/?v=3Dc86ee0d9d7ed"=
+ target=3D"_blank">Introduction to Hydrodynamic Stability</a></b></font></p=
+><p style=3D"line-height:normal;margin:0px 0px 0cm"><span style=3D"color:rg=
+b(0,0,255)"><b><font face=3D"arial, sans-serif"><br></font></b></span></p><=
+p style=3D"line-height:normal;margin:0px 0px 0cm;direction:ltr"><span style=
+=3D"background-color:rgb(255,255,0)"><b><font face=3D"arial, sans-serif">La=
+st day of registration: 4th June,2025</font></b></span></p><p style=3D"line=
+-height:normal;margin:0px 0px 0cm;direction:ltr"><span style=3D"background-=
+color:rgb(255,255,0)"><b><font face=3D"arial, sans-serif"><br></font></b></=
+span></p><p style=3D"line-height:normal;margin:0px 0px 0cm;direction:ltr"><=
+span style=3D"background-color:rgb(255,255,0)"><b><font face=3D"arial, sans=
+-serif">Special discounted price for students, faculty members and industry=
+ experts.=C2=A0</font></b></span></p><p style=3D"line-height:normal;margin:=
+0px 0px 0cm;direction:ltr"><span style=3D"background-color:rgb(255,255,0)">=
+<b><font face=3D"arial, sans-serif"><br></font></b></span></p><p style=3D"m=
+argin:0px 0px 10px;direction:ltr"><span style=3D"color:black"><font face=3D=
+"arial, sans-serif"><b>Please Note:=C2=A0</b>There are limited seats availa=
+ble, and it is on a first-come, first-served basis.</font></span></p><p sty=
+le=3D"margin:0px 0px 10px;direction:ltr"><span style=3D"font-family:Arial,s=
+ans-serif;font-size:18px"><b>Request you to kindly share the mail with your=
+ network, students, and research group.</b></span></p></div></div></div><di=
+v><br></div><div>
+
+
+
+ =20
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+  <meta name=3D"x-apple-disable-message-reformatting">
+ =20
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+ =20
+  <title></title>
+
+  <style type=3D"text/css">
+    @media only screen and (min-width: 670px) {
+      .u-row {
+        width: 650px !important;
+      }
+      .u-row .u-col {
+        vertical-align: top;
+      }
+      .u-row .u-col-100 {
+        width: 650px !important;
+      }
+    }
+   =20
+    @media only screen and (max-width: 670px) {
+      .u-row-container {
+        max-width: 100% !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+      }
+      .u-row {
+        width: 100% !important;
+      }
+      .u-row .u-col {
+        display: block !important;
+        width: 100% !important;
+        min-width: 320px !important;
+        max-width: 100% !important;
+      }
+      .u-row .u-col&gt;div {
+        margin: 0 auto;
+      }
+      .u-row .u-col img {
+        max-width: 100% !important;
+      }
+    }
+   =20
+    body {
+      margin: 0;
+      padding: 0
+    }
+   =20
+    table,
+    td,
+    tr {
+      border-collapse: collapse;
+      vertical-align: top
+    }
+   =20
+    .ie-container table,
+    .mso-container table {
+      table-layout: fixed
+    }
+   =20
+    * {
+      line-height: inherit
+    }
+   =20
+    a[x-apple-data-detectors=3Dtrue] {
+      color: inherit!important;
+      text-decoration: none!important
+    }
+   =20
+    table,
+    td {
+      color: #000000;
+    }
+  </style>
+
+
+
+
+
+
+ =20
+ =20
+  <table role=3D"presentation" id=3D"u_body" style=3D"border-collapse:colla=
+pse;table-layout:fixed;border-spacing:0;vertical-align:top;min-width:320px;=
+Margin:0 auto;background-color:#ffffff;width:100%" cellpadding=3D"0" cellsp=
+acing=3D"0">
+    <tbody>
+      <tr style=3D"vertical-align:top">
+        <td style=3D"word-break:break-word;border-collapse:collapse!importa=
+nt;vertical-align:top">
+         =20
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:650px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:650px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://elearn.nptel.ac.in/s=
+hop/masterclasss-workshops/masterclass-series-ongoing/introduction-to-hydro=
+dynamic-stability/?v=3Dc86ee0d9d7ed" target=3D"_blank" style=3D"color:rgb(0=
+,0,238);text-decoration:underline;line-height:inherit"><img align=3D"center=
+" border=3D"0" src=3D"https://assets.unlayer.com/projects/50932/17441877858=
+52-Poster.jpeg" alt=3D"" title=3D"" style=3D"outline: none;text-decoration:=
+ none;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !im=
+portant;border: none;height: auto;float: none;width: 100%;max-width: 650px;=
+" width=3D"650">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+         =20
+        </td>
+      </tr>
+    </tbody>
+  </table>
+ =20
+ =20
+
+
+
+
+</div><div><br></div><div><br></div><div><div dir=3D"ltr" class=3D"gmail_si=
+gnature" data-smartmail=3D"gmail_signature"><div dir=3D"ltr"><div dir=3D"lt=
+r"><div dir=3D"ltr"><div style=3D"font-size:12.8px"><div><div><div style=3D=
+"margin:0px"><p style=3D"margin:0px 0px 10px;direction:ltr"><span style=3D"=
+font-family:Montserrat,sans-serif;color:rgb(0,0,0)">Thanks and Regards,</sp=
+an></p><p style=3D"margin:0px 0px 10px;direction:ltr"><span style=3D"font-f=
+amily:Montserrat,sans-serif;color:rgb(0,0,0)">Team NPTEL+</span></p></div><=
+/div></div><div><div dir=3D"ltr" class=3D"gmail_signature"><div dir=3D"ltr"=
+><div dir=3D"ltr"><div dir=3D"ltr"><div><div style=3D"font-size:12.8px"><br=
+ style=3D"font-size:12.8px"></div></div></div></div></div></div></div></div=
+></div></div></div></div></div></div>
+
+<p></p>
+
+-- <br />
+To unsubscribe from this group and stop receiving emails from it:<br />
+Log in to Google Groups and click on My Groups seen in the left navigation =
+pane. You will see the list of your groups. Choose the group &quot;NPTEL Ne=
+wsletter&quot;<br />
+Click the Leave Group icon on the right side to leave the group or you can =
+choose the &quot;No email&quot; option under Subscription to stop receiving=
+ these emails.<br />
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:newsletter-announce+unsubscribe@nptel.iitm.ac.in"=
+>newsletter-announce+unsubscribe@nptel.iitm.ac.in</a>.<br />
+
+--0000000000008f5ccf063254c967--

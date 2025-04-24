@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="59Lmic_BhUSeRfLPccZY4A" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="docs.google.com/forms/u/0/d/e/1FAIpQLSfPHUOXMeuCQTnQViUpjwgmE2yBx6WX9rpCzxHsW6gbP6z_Mg/formResponse" CVScreenId="e2665eac-8c3a-42cb-951e-ac2cabc38db5" CvTextArea="599, 372, 195, 21" CvTextArgument="Submit another response" CvType="Text" DesignTimeRectangle="600, 371, 195, 21" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl tag='A' type='' class='' aaname='Submit another response' check:innerText='Submit another response' /&gt;" Guid="60b9476a-cefa-473f-87e0-905d7e095ef1" ScopeSelectorArgument="&lt;html app='chrome.exe' title='bus ticket booking' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <imageRef attrName="InformativeScreenshot" originalValue="a7e7231d83f859efcc26ff755c32f757.png" xmlns="">0lERinTRtx0G97KvAX50l8Q</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">Click</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

@@ -1,0 +1,393 @@
+Delivered-To: vsrikanthoffl@gmail.com
+Received: by 2002:a05:7300:7495:b0:160:1ab0:82c8 with SMTP id l21csp3240284dyd;
+        Wed, 16 Apr 2025 07:14:32 -0700 (PDT)
+X-Forwarded-Encrypted: i=4; AJvYcCWWXSl2uB0EUBeMNOVaoNlDHzj5WQNvvuS6drjZ+eKfipd15YVUnV70dZTv8B7JOuEWrIbLVG0gUXIVNYYL@gmail.com
+X-Received: by 2002:a05:620a:288e:b0:7c5:5909:18d9 with SMTP id af79cd13be357-7c918fcb263mr265967585a.5.1744812871828;
+        Wed, 16 Apr 2025 07:14:31 -0700 (PDT)
+ARC-Seal: i=3; a=rsa-sha256; t=1744812871; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=KtTvU8k0EWm6D3h9UcSVj+cKTGZ5bO8bIza3FxqxtMnxdzlL4haasoHK3du07HfijE
+         F0SJYlsYgqqSSz0NKP3BVD55xxZ0DJZ8A10qQgg8aluiHDSzPPSiIOi9VaERKXRyoSms
+         3UC7islgdU6/IPXWtEllxbMXM/NcXo5kiunmNzp8/RdYKTRVgFE1tikwtETtWtL244JJ
+         2IFEe2cF0en8lCvU+3bKduPYGS8pdtL0UZqZLBrG3AaCK9UcWrI/b3bB79oWCx8wagAn
+         03KeJ5aWD3901Hfao4O7Oo9wNbCebALMKi67MWC/Nrm+VaLhd4d/NRWh11QEonIqnK3Z
+         yD9Q==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe:list-archive:list-help:list-post:list-id
+         :mailing-list:precedence:to:subject:message-id:date:from
+         :mime-version:dkim-signature;
+        bh=dSMI5lif3/+8dpAGknK8xQ82o2BhLVbqzeKEbdF+xxM=;
+        fh=/km0FrqL4KMuAVK4ORRNgYVPGz2qb4W2GVeJTfNrlik=;
+        b=UH6gSKaw4Eu+BbvqnLagUZHWCjnD8RB22pn7yGWufQ7AQCkYGmkoSWN6c2i6rql/Rm
+         j8gWQT4tRYyos249zkGJt48yv7Rvl6jns4s8mcukb71qszTrn6db9rFOlLQf1vVgxGZo
+         ezVeaxi6n98iwzKATkQ6p1wOSYTBULO1fRny9LJJ7FEr47fDw0wgHjQ7jA/qG6ra5HDr
+         dG6xkwP4yOavJOJZulwWt59fzBP0UDFNkpqx1xJkxmvzT3q6fynKGIj8ynn40twlY54Z
+         OuHDxsq43nMp3VnraK+RjJ5QRGWjQNwFpvdL5UnJdp2bdm++bR6qyulzI55C4QhkN7F5
+         laGw==;
+        dara=google.com
+ARC-Authentication-Results: i=3; mx.google.com;
+       dkim=pass header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=jDarZrtq;
+       arc=pass (i=2 spf=pass spfdomain=nptel.iitm.ac.in dkim=pass dkdomain=nptel-iitm-ac-in.20230601.gappssmtp.com dmarc=pass fromdomain=iitm.ac.in);
+       spf=pass (google.com: domain of newsletter-announce+bncbcz5rxnbuuobbqgy727qmgqeuqsa62a@nptel.iitm.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=newsletter-announce+bncBCZ5RXNBUUOBBQGY727QMGQEUQSA62A@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@gmail.com
+Return-Path: <newsletter-announce+bncBCZ5RXNBUUOBBQGY727QMGQEUQSA62A@nptel.iitm.ac.in>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id af79cd13be357-7c7a10c15e2sor1854183785a.8.2025.04.16.07.14.31
+        for <vsrikanthoffl@gmail.com>
+        (Google Transport Security);
+        Wed, 16 Apr 2025 07:14:31 -0700 (PDT)
+Received-SPF: pass (google.com: domain of newsletter-announce+bncbcz5rxnbuuobbqgy727qmgqeuqsa62a@nptel.iitm.ac.in designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       dkim=pass header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=jDarZrtq;
+       arc=pass (i=2 spf=pass spfdomain=nptel.iitm.ac.in dkim=pass dkdomain=nptel-iitm-ac-in.20230601.gappssmtp.com dmarc=pass fromdomain=iitm.ac.in);
+       spf=pass (google.com: domain of newsletter-announce+bncbcz5rxnbuuobbqgy727qmgqeuqsa62a@nptel.iitm.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=newsletter-announce+bncBCZ5RXNBUUOBBQGY727QMGQEUQSA62A@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@gmail.com
+ARC-Seal: i=2; a=rsa-sha256; t=1744812871; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=XjnIBFh8+16tA2ZxHRC1O0Hh/MNxlINS75+VBrvTRTTUZOHi4wHlU2R0bQF/xA2QoO
+         lTjRFn9Xh3eKrKeSA4S+u872v41jyOVPBbJozwwCh8tWmb4eTzW+AVBG2fZWcrGYGIMz
+         DNEQvV6zw1kVSoAJ3hM8zSJMjkaeuSPm4r+S+NCHo5hRBCWqEaHg2wJmcP90fBGP+XpG
+         cHAkeLJOqzYFsFijoUv+zcWvdxC7oouhhV702ZeVLO7/iSrr/yKFaEk4XiZ+mIXlVA4V
+         jHY2uHv1tI8O1qp2UvParkdbSQbGjXtihK6NzWRWSvDcZxHAILHiIvQC/mWtnUzVDJxG
+         BnTg==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe:list-archive:list-help:list-post:list-id
+         :mailing-list:precedence:to:subject:message-id:date:from
+         :mime-version:dkim-signature;
+        bh=dSMI5lif3/+8dpAGknK8xQ82o2BhLVbqzeKEbdF+xxM=;
+        fh=/km0FrqL4KMuAVK4ORRNgYVPGz2qb4W2GVeJTfNrlik=;
+        b=WFYbWrSwzWu0cYkoe2kaBFx1gICJpViXaIAfivLuJBcPC/2p7EVmM+l8ZwLg1YBdZ+
+         bYNrOofqnlsL1XxTlVfxesIjLSvdmtnome22e7398nsq+ds6M3LhwBYoAbDyVO61HjK6
+         MhloiCgSUCBc29B1rQ7c6PYqLvhgn2OHm+biNmdTl2+Z8rgw+WqPjrbtrNqwd1qUeJu3
+         ZQBMbBMC/T+7ZCbA+ZGgc8CdqEoFqNdZff0XV5QbQA19cIZ/d1QA5WCxcDKk7IF5PpZC
+         gHuE872TsGZ7poGntnW1+BEy5PgvF0tg/tgPT2x9WR344ZndaC0gNpqCSrNPyuRm3ps/
+         AhMA==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=HE3v9wni;
+       spf=pass (google.com: domain of onlinecourses@nptel.iitm.ac.in designates 209.85.220.41 as permitted sender) smtp.mailfrom=onlinecourses@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@nptel.iitm.ac.in
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=nptel-iitm-ac-in.20230601.gappssmtp.com; s=20230601; t=1744812871; x=1745417671; dara=google.com;
+        h=list-unsubscribe:list-archive:list-help:list-post:list-id
+         :mailing-list:precedence:x-original-authentication-results
+         :x-original-sender:to:subject:message-id:date:from:mime-version:from
+         :to:cc:subject:date:message-id:reply-to;
+        bh=dSMI5lif3/+8dpAGknK8xQ82o2BhLVbqzeKEbdF+xxM=;
+        b=jDarZrtqhqBsJLcIbYqUa+kJ/qTcWr/fgW0SiHn4zKg647DuSJ5LNJhM08eCqGaPnd
+         0aOrUBn9qUanH1Hrs44HhzOotX546v/wFwrIhQOh0WI43S/aEJIca3mciHhg+VcXwP5/
+         qC+Us0Uq07q6xASuL6Pw6HtgZhb+nQGBZ5XtwpvLSbU6A29taHdqavvWT9ICahxad1kc
+         fmBBb15djxtvqP93QSxHIi6lcDXqPa6DkWUoAfrKTqaUy0WZdpvHPDqevpOXgbeNxNfU
+         tujCauM/Tb89IprMNXPsvezjc1ifosCQhJ8wvOHmdC/MxWMXQQ44f1ngSI637mDd7tmD
+         /W0w==
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744812871; x=1745417671;
+        h=list-unsubscribe:list-archive:list-help:list-post
+         :x-spam-checked-in-group:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender:to:subject
+         :message-id:date:from:mime-version:x-beenthere:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=dSMI5lif3/+8dpAGknK8xQ82o2BhLVbqzeKEbdF+xxM=;
+        b=vD+3+fACU//sD391aLEpgy9B6rA1T09w4qN3d1abBLiKfPuTJpTVcRKNruTCbmv5tT
+         S2V6cknHezffpkj3Eod/Pn8kkDnmeqT/lcvK0G7YUGMGXSyXt/h9bNgNxJQ6+rIwRyrF
+         UmnhZS0dWa7go1dR4yBhL8NUvDirW0XicoOwIMCDP9aMw8Qq1Dfi94jkbOQFw+Vz7N8W
+         6fm6TlYTygaxfb6HUKULomMI3C5/wNip6+Wb5xm/xFn0lMCiA+wTdTbbBkSz4RN954yr
+         trvJaUSHA2MYhdJHhzHdCYOY3AXzXUSwyIrtf+PeH7d/T8YeCjWT39k7E22bMACtX2cR
+         5yog==
+X-Forwarded-Encrypted: i=2; AJvYcCUZOcipTA7NyMxUN8Z57kgk6Yuynm6gqD4zV5Kyd+t3Rw+r9G+eY0KsliqA7vHQxxo0TXn8Gr6scxncpUyl@gmail.com
+X-Gm-Message-State: AOJu0Yy6tn/Nb4CLnbkTzjCwvszlpUskWc5bonMnd+uzAEL/LQCKdzNr
+	gOrIMgUF87DM2HFtY6VDf+QqYxO3KjM/379FHaJlJdBqxpRH2W/2TwzLhLIHllM=
+X-Google-Smtp-Source: AGHT+IFDFMUK/WmckZqP57IwTzvFcLsJP/T6lgIn7pMf6cRcZiM85YRewTNvVHiTOchloRbc0YVbQg==
+X-Received: by 2002:ac8:7f04:0:b0:475:39:9d35 with SMTP id d75a77b69052e-47ad80b413emr26165131cf.14.1744812871001;
+        Wed, 16 Apr 2025 07:14:31 -0700 (PDT)
+X-BeenThere: newsletter-announce@nptel.iitm.ac.in; h=ARLLPAK+RW6SQnsCHqag42G+tiM5hdmaKObAqmFyiGoT5t8dNw==
+Received: by 2002:a05:622a:a008:b0:476:734f:a485 with SMTP id
+ d75a77b69052e-4796b4f6eb4ls48722331cf.2.-pod-prod-02-us; Wed, 16 Apr 2025
+ 06:10:22 -0700 (PDT)
+X-Received: by 2002:ac8:58d3:0:b0:474:e3e8:1a58 with SMTP id d75a77b69052e-47ad80b479amr21489831cf.16.1744809022521;
+        Wed, 16 Apr 2025 06:10:22 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1744809022; cv=none;
+        d=google.com; s=arc-20240605;
+        b=O7qN1xJLH4gPOQpzLJbfQ2mEcLT5XCsg56fmlizjbMSEH62b+c9uKIgm4UMIUOS498
+         gkof3Ckq48hobFcsQ99ijMsGevpE0fmBaFcAvxLoqbNRUMm9B/AHRGQ74JbqvP6ow90F
+         9YQ83Dlohvg71/vKGT7LAiSrMS31jllDZmmn6SdqsOs6tE7edekAV97K4YUlE7gpcLjQ
+         YFKNwkQkR7ThrnYE9ck5SC/SJS4KYJnd97WStr4tOE3AgbCjKohnabnGYw1hbpaV4jIQ
+         IjXlsM4xvCzLDZNFMgIAZ31M1HPYsYw5uzXsVO75UWdaabCEKMFp7/tAOoT9aTfFzDBr
+         t5zA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=Emlfb28/v4csQzjxsdCEEqTWfpQTZk2mS6RDjUfD0o4=;
+        fh=AOGeH7lFm2zf0K4xCbfWhVHs5/wGjaI4aTeqnl/IpcU=;
+        b=RoXRoxYKpIR60auVsacHmN2zVgsF6DFpTjwggP5uobyhTjffS6PAOxB0KmFKczR+zK
+         eEy2SLDnWbJovMHf30ZAoWHQq2f3t3/HSj9p9G4cAXBCo0sAuVv78QuOh+USRlAbtyYs
+         dxAJP2rgz86WH8kWiFNmcymKDHo65dD/XbCmRBwK27Sn3DBBfq5DyJcT5Xk5T6Wkz90Y
+         wfzrVP15oTJLktB3jM3tOJHo0re2fX4QvZDyXO/dZWOnXOAD+WLLb+SD3LnuL8aknnj2
+         e7FP668gnZKko/mwyM+mluKONoZLDb2lghDRfcGwOAPJPNYCfRpJeE7UzJMGmWpOhPZE
+         hFhQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=HE3v9wni;
+       spf=pass (google.com: domain of onlinecourses@nptel.iitm.ac.in designates 209.85.220.41 as permitted sender) smtp.mailfrom=onlinecourses@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@nptel.iitm.ac.in
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id af79cd13be357-7c7a10c15e2sor1836348785a.8.2025.04.16.06.10.22
+        for <newsletter-announce@nptel.iitm.ac.in>
+        (Google Transport Security);
+        Wed, 16 Apr 2025 06:10:22 -0700 (PDT)
+Received-SPF: pass (google.com: domain of onlinecourses@nptel.iitm.ac.in designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Gm-Gg: ASbGnctgHJTrjfOJy7QvgaBzQhKVqIRrNLl/V77RwYYHLc5I5kRgP/2nqVhiRzGPKTw
+	hoFkEvhnHYlX+rx9pg59q5+uF/OFkkO7q8q92KXO5X7REVE1k8qai7Dms+uPY03+xuO6PUzpOeX
+	d/+l6OwTp3hMq8a7kUPBYsxQ==
+X-Received: by 2002:a05:620a:240c:b0:7c5:4bb7:8e45 with SMTP id
+ af79cd13be357-7c919061f36mr249750485a.40.1744809021789; Wed, 16 Apr 2025
+ 06:10:21 -0700 (PDT)
+MIME-Version: 1.0
+From: NPTEL <onlinecourses@nptel.iitm.ac.in>
+Date: Wed, 16 Apr 2025 18:40:10 +0530
+X-Gm-Features: ATxdqUEZIOuyNoVMS22-_ppURN2EhtDOKPzyAPQqK4Z8SsX8dKvMtKcv9LVkc0I
+Message-ID: <CAFi4wK8O-+nxO-_iMKAgfSJ1uJVCdypD7+CxrEvWjprSMjQcSA@mail.gmail.com>
+Subject: NPTEL Newsletter: Supply Chain Management Professional Certification
+ | Jointly certified by CII and CODE IIT Madras
+To: newsletter-announce@nptel.iitm.ac.in
+Content-Type: multipart/alternative; boundary="000000000000f209c20632e501de"
+X-Original-Sender: onlinecourses@nptel.iitm.ac.in
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601
+ header.b=HE3v9wni;       spf=pass (google.com: domain of onlinecourses@nptel.iitm.ac.in
+ designates 209.85.220.41 as permitted sender) smtp.mailfrom=onlinecourses@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@nptel.iitm.ac.in
+Precedence: list
+Mailing-list: list newsletter-announce@nptel.iitm.ac.in; contact newsletter-announce+owners@nptel.iitm.ac.in
+List-ID: <newsletter-announce.nptel.iitm.ac.in>
+X-Spam-Checked-In-Group: newsletter-announce@nptel.iitm.ac.in
+X-Google-Group-Id: 821389845798
+List-Post: <https://groups.google.com/a/nptel.iitm.ac.in/group/newsletter-announce/post>,
+ <mailto:newsletter-announce@nptel.iitm.ac.in>
+List-Help: <https://support.google.com/a/nptel.iitm.ac.in/bin/topic.py?topic=25838>,
+ <mailto:newsletter-announce+help@nptel.iitm.ac.in>
+List-Archive: <https://groups.google.com/a/nptel.iitm.ac.in/group/newsletter-announce/>
+List-Unsubscribe: <mailto:googlegroups-manage+821389845798+unsubscribe@googlegroups.com>,
+ <https://groups.google.com/a/nptel.iitm.ac.in/group/newsletter-announce/subscribe>
+
+--000000000000f209c20632e501de
+Content-Type: text/plain; charset="UTF-8"
+
+<https://code.iitm.ac.in/supply-chain-management-professional-certification-scm-pro>
+
+Thanks and Regards,
+NPTEL TEAM.
+
+-- 
+To unsubscribe from this group and stop receiving emails from it:
+Log in to Google Groups and click on My Groups seen in the left navigation pane. You will see the list of your groups. Choose the group "NPTEL Newsletter"
+Click the Leave Group icon on the right side to leave the group or you can choose the "No email" option under Subscription to stop receiving these emails.
+To unsubscribe from this group and stop receiving emails from it, send an email to newsletter-announce+unsubscribe@nptel.iitm.ac.in.
+
+--000000000000f209c20632e501de
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div>
+
+
+
+ =20
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+  <meta name=3D"x-apple-disable-message-reformatting">
+ =20
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+ =20
+  <title></title>
+
+  <style type=3D"text/css">
+    @media only screen and (min-width: 520px) {
+      .u-row {
+        width: 500px !important;
+      }
+      .u-row .u-col {
+        vertical-align: top;
+      }
+      .u-row .u-col-100 {
+        width: 500px !important;
+      }
+    }
+   =20
+    @media only screen and (max-width: 520px) {
+      .u-row-container {
+        max-width: 100% !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+      }
+      .u-row {
+        width: 100% !important;
+      }
+      .u-row .u-col {
+        display: block !important;
+        width: 100% !important;
+        min-width: 320px !important;
+        max-width: 100% !important;
+      }
+      .u-row .u-col&gt;div {
+        margin: 0 auto;
+      }
+      .u-row .u-col img {
+        max-width: 100% !important;
+      }
+    }
+   =20
+    body {
+      margin: 0;
+      padding: 0
+    }
+   =20
+    table,
+    td,
+    tr {
+      border-collapse: collapse;
+      vertical-align: top
+    }
+   =20
+    .ie-container table,
+    .mso-container table {
+      table-layout: fixed
+    }
+   =20
+    * {
+      line-height: inherit
+    }
+   =20
+    a[x-apple-data-detectors=3Dtrue] {
+      color: inherit!important;
+      text-decoration: none!important
+    }
+   =20
+    table,
+    td {
+      color: #000000;
+    }
+   =20
+    #u_body a {
+      color: #0000ee;
+      text-decoration: underline;
+    }
+  </style>
+
+
+
+
+
+
+ =20
+ =20
+  <table id=3D"u_body" style=3D"border-collapse:collapse;table-layout:fixed=
+;border-spacing:0;vertical-align:top;min-width:320px;Margin:0 auto;backgrou=
+nd-color:#ffffff;width:100%" cellpadding=3D"0" cellspacing=3D"0">
+    <tbody>
+      <tr style=3D"vertical-align:top">
+        <td style=3D"word-break:break-word;border-collapse:collapse!importa=
+nt;vertical-align:top">
+         =20
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:500px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:500px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table width=3D"100%" cellpadding=3D"0" cells=
+pacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://code.iitm.ac.in/supp=
+ly-chain-management-professional-certification-scm-pro" target=3D"_blank">
+                                      <img align=3D"center" border=3D"0" sr=
+c=3D"https://assets.unlayer.com/projects/50932/1738582644251-Supply%20Chain=
+%20Management-02.jpg?w=3D500px" alt=3D"" title=3D"" style=3D"outline: none;=
+text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: =
+inline-block !important;border: none;height: auto;float: none;width: 100%;m=
+ax-width: 500px;" width=3D"500">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+         =20
+        </td>
+      </tr>
+    </tbody>
+  </table>
+ =20
+ =20
+
+
+
+
+</div><div><div dir=3D"ltr" class=3D"gmail_signature" data-smartmail=3D"gma=
+il_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div dir=3D"ltr"><div>=
+<div style=3D"font-size:12.8px"><br></div></div><div>Thanks and Regards,</d=
+iv><div>NPTEL TEAM.</div></div></div></div></div></div></div></div>
+
+<p></p>
+
+-- <br />
+To unsubscribe from this group and stop receiving emails from it:<br />
+Log in to Google Groups and click on My Groups seen in the left navigation =
+pane. You will see the list of your groups. Choose the group &quot;NPTEL Ne=
+wsletter&quot;<br />
+Click the Leave Group icon on the right side to leave the group or you can =
+choose the &quot;No email&quot; option under Subscription to stop receiving=
+ these emails.<br />
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:newsletter-announce+unsubscribe@nptel.iitm.ac.in"=
+>newsletter-announce+unsubscribe@nptel.iitm.ac.in</a>.<br />
+
+--000000000000f209c20632e501de--

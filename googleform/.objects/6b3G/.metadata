@@ -1,0 +1,12 @@
+﻿{
+  "Name": "Chrome bus ticket booking - Google Chrome",
+  "Type": "App",
+  "Id": "6b3G2dQACUKPwVVNlFfvJw",
+  "Reference": "dNeTHvO8h02TA0mp4Mwm7w/6b3G2dQACUKPwVVNlFfvJw",
+  "Created": "2025-04-22T14:57:39.0294703Z",
+  "Updated": "2025-04-22T14:57:39.0294703Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

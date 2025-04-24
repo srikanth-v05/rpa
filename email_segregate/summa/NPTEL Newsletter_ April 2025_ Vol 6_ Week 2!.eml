@@ -1,0 +1,1743 @@
+Delivered-To: vsrikanthoffl@gmail.com
+Received: by 2002:a05:7300:7495:b0:160:1ab0:82c8 with SMTP id l21csp2012507dyd;
+        Mon, 14 Apr 2025 10:13:55 -0700 (PDT)
+X-Forwarded-Encrypted: i=4; AJvYcCX92vs+6Sprg6KZZwuKouLRm7EYrh7e2t7nUKyty0jgoPxoO4LyjlUfMq7q55GuvfAfNbHeucy8xft25sf0@gmail.com
+X-Received: by 2002:a05:6e02:32c7:b0:3d6:d145:3002 with SMTP id e9e14a558f8ab-3d7ec27afd4mr167536935ab.20.1744650835651;
+        Mon, 14 Apr 2025 10:13:55 -0700 (PDT)
+ARC-Seal: i=3; a=rsa-sha256; t=1744650835; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=DI+XaSrYz4Bh+wmBkNPwDAU+zxn0teFforr4uiTDqaCJzM7TnAT6AtXmEYno6P/Pem
+         xf40Cg4Uv3fjE0G+8L5ATGKUI3adfKyWUGragh8ou7o2vQ1HJyVma3nwYJ7ZOPI8XqkE
+         NSInjZOH4+fC8zL/6XTSEvSj2qpyL+GV40J1Xp30fwIREyGxUWqrkF9a/EzNQbEGjMVD
+         J1TkZce6Fw828658d5MFYCmXLQEvV1HrB1HwZfi5z1DqloTbNi/baqI/vYuNFYeSh+L3
+         4P2qnnPHTjiePZXZMaoPJeStbYm3Hi/hTKyYYrpBndmtlcO3lFnopLuWh9PSsWubgtov
+         HQNg==
+ARC-Message-Signature: i=3; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe:list-archive:list-help:list-post:list-id
+         :mailing-list:precedence:to:subject:message-id:date:from
+         :mime-version;
+        bh=uHNIg2s1osEAqoyMnViq33EMn88JrOXtXdlsIw97Uik=;
+        fh=1w1mIpfpPSLe2qZTfiun+amotDgF/l55Du0xJaJmYWA=;
+        b=EgxyzN/IDbUUp2iRo0cEzmz5yRZOCd6VNHyd4aoOSl6qos0soWF+Lx9QCpFfGGD/8I
+         8tNTNcMQOtv8reRtj2wPqc1VSPZLgLJCO1Jer3qpiZvezPKKLTknQKhlxGCVprhEYFaz
+         Uh2P9m39mwjLPKPoNjE6cdhEzNmbRlOl55znz1KWEmjsqZB9nIzedGk4DEQagTc4nZa+
+         j7k4yq3hLQtEtnaXuSae11rDizwh0ceMXrX+O//pPa7+yqpMkJJ9YshxCimGi2D/E0qU
+         M2YIJFejzztlrY0Qlm1KKCDQcMMyAYDp1YSWyxOXpejoPlyL55+3HtRWFUXkIaLnW0zH
+         AIUg==;
+        dara=google.com
+ARC-Authentication-Results: i=3; mx.google.com;
+       arc=pass (i=2 spf=pass spfdomain=nptel.iitm.ac.in dkim=pass dkdomain=nptel-iitm-ac-in.20230601.gappssmtp.com dmarc=pass fromdomain=iitm.ac.in);
+       spf=pass (google.com: domain of newsletter-announce+bncbcz5rxnbuuobbegj6s7qmgqe6xxko4i@nptel.iitm.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=newsletter-announce+bncBCZ5RXNBUUOBBEGJ6S7QMGQE6XXKO4I@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@gmail.com
+Return-Path: <newsletter-announce+bncBCZ5RXNBUUOBBEGJ6S7QMGQE6XXKO4I@nptel.iitm.ac.in>
+Received: from mail-sor-f69.google.com (mail-sor-f69.google.com. [209.85.220.69])
+        by mx.google.com with SMTPS id e9e14a558f8ab-3d80912e387sor1669375ab.4.2025.04.14.10.13.55
+        for <vsrikanthoffl@gmail.com>
+        (Google Transport Security);
+        Mon, 14 Apr 2025 10:13:55 -0700 (PDT)
+Received-SPF: pass (google.com: domain of newsletter-announce+bncbcz5rxnbuuobbegj6s7qmgqe6xxko4i@nptel.iitm.ac.in designates 209.85.220.69 as permitted sender) client-ip=209.85.220.69;
+Authentication-Results: mx.google.com;
+       arc=pass (i=2 spf=pass spfdomain=nptel.iitm.ac.in dkim=pass dkdomain=nptel-iitm-ac-in.20230601.gappssmtp.com dmarc=pass fromdomain=iitm.ac.in);
+       spf=pass (google.com: domain of newsletter-announce+bncbcz5rxnbuuobbegj6s7qmgqe6xxko4i@nptel.iitm.ac.in designates 209.85.220.69 as permitted sender) smtp.mailfrom=newsletter-announce+bncBCZ5RXNBUUOBBEGJ6S7QMGQE6XXKO4I@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@gmail.com
+ARC-Seal: i=2; a=rsa-sha256; t=1744650835; cv=pass;
+        d=google.com; s=arc-20240605;
+        b=QvZCVsQMbDaWJbrKop2tT9aC3CIUhKOBoEsIbZcg1YGqdOq1CXmEZGYCkBHLrUd3e7
+         86O5FKS/M6ruYtFx4E6mlR5IXWRU7RhyIxAnmhrBlnQ+1F+HqoxjHkwSLmR/7C8nMe8o
+         vcNaIhpMoTbjMcqvZ8/QCcYP0z99k/VAShDJT2SB1DlX5rSgDio3NvqPioxipZzQr/cA
+         /Fs8fRGD3em7xNeTj0aj+QS7wqlw1xL86HhYTiKs5yw/PqfjOKaKaF6rhJGvQMFrZaOa
+         MkI7HuCCc0/k7rNojbf+iYt/yepGrw84xAUNEwi+vx5GKTeETSzsAZ4deCu7+A/JT/MS
+         ToOA==
+ARC-Message-Signature: i=2; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=list-unsubscribe:list-archive:list-help:list-post:list-id
+         :mailing-list:precedence:to:subject:message-id:date:from
+         :mime-version;
+        bh=uHNIg2s1osEAqoyMnViq33EMn88JrOXtXdlsIw97Uik=;
+        fh=1w1mIpfpPSLe2qZTfiun+amotDgF/l55Du0xJaJmYWA=;
+        b=hYP/yErRmVtstZg+JJmiOcHYFwz9/XUDpKXhNoQQO8YtZrdxURkzM0meutOnBWHEfT
+         DpRdtjMhzWu39hRQuqCBZqT/W1ePeMVrLIxcT1mNm0nzNzU9XdFuzf4CYtyt9aXoKinV
+         qGWmK7YMYDLfkPSTW6gu4e40FwyQISfzraOjZ4gL1DXRjDT2PUCeYEPdGA9aw4gTQXTo
+         TrR5KuaasUr/pPn3m5IQB5QtDT7EkTSx0JaJUQEokvNzNBCSNjV3I5XWkacKHXlKyXnN
+         QDYdCmrTPplEt1moreDkoGsTaZQ3/8hfBReG/aPXVCZlcirdPSYsqH1b7R4yBB4B/MWK
+         VJ2g==;
+        dara=google.com
+ARC-Authentication-Results: i=2; mx.google.com;
+       dkim=pass header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=W1gUZQlo;
+       spf=pass (google.com: domain of onlinecourses@nptel.iitm.ac.in designates 209.85.220.41 as permitted sender) smtp.mailfrom=onlinecourses@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@nptel.iitm.ac.in
+X-Google-DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed;
+        d=1e100.net; s=20230601; t=1744650835; x=1745255635;
+        h=list-unsubscribe:list-archive:list-help:list-post
+         :x-spam-checked-in-group:list-id:mailing-list:precedence
+         :x-original-authentication-results:x-original-sender:to:subject
+         :message-id:date:from:mime-version:x-beenthere:x-gm-message-state
+         :from:to:cc:subject:date:message-id:reply-to;
+        bh=uHNIg2s1osEAqoyMnViq33EMn88JrOXtXdlsIw97Uik=;
+        b=V3arPnjivojm/vx0m8uRdeDBNgezkEQxr04UNOsVgNvJ2Bu+7jwojcCFdUKU37YKyV
+         UOlTquRky+2c4JwwDrQqGYq86Nji/ccPF2G8XxfDLrnNaWXAUUC3qfQpQrHozjg2EwJA
+         62yQlH+dMLXgVI1Qi3a1XYGxcXKnHWryYj/sRK1rUR3xw1MO3syOagtSJZFFyi3/tVRk
+         PwmJ+wrPFiKtt7pnegjhKLmqqCLXbYA6Kd3B0hiWdjNd2xJ+UNZxunzJsm+w/QngAQut
+         7E1eHYHqetH/0r+VNhhor36iFU4yjnUiAR/2KH2eYecK5nAUWWHh7oe1FpLCaLe+/jai
+         SgUg==
+X-Forwarded-Encrypted: i=2; AJvYcCVvbwpuylH9BPU1fFLUPimb7b2OJGubsFsIqHEdVkkhBbRXJwLAgZKPm749bkHH5axPuOSxU+uHj6RlDmVl@gmail.com
+X-Gm-Message-State: AOJu0Yyo6bUsebCP1zyaotGgnd2BpVIfuytoudTWRZ5owbdAEXBmsrpy
+	oKEiyz0zCmNQ2TFcvzm/90NVgEjIu84etx3B2g5PJLxY98w3su0kjdzwxUpmV3U=
+X-Google-Smtp-Source: AGHT+IE9g65N/eE4iNKnoOhUZ22pnnj0rVSlCwwvZ1L+oa2lqOKLjzZD05hdQDGatUgaCymlrQLjlA==
+X-Received: by 2002:a05:622a:15cf:b0:476:639e:ede0 with SMTP id d75a77b69052e-47977575b30mr186670321cf.26.1744647240598;
+        Mon, 14 Apr 2025 09:14:00 -0700 (PDT)
+X-BeenThere: newsletter-announce@nptel.iitm.ac.in; h=ARLLPAK7MLOEGDER4CKh+eWx4ENhh9p6q5ZLbuyMu45sV+iMKQ==
+Received: by 2002:ac8:5387:0:b0:476:7e25:5f46 with SMTP id d75a77b69052e-4796b4c7e9als48126471cf.1.-pod-prod-08-us;
+ Mon, 14 Apr 2025 08:06:54 -0700 (PDT)
+X-Received: by 2002:a05:620a:3941:b0:7c5:e370:5b1 with SMTP id af79cd13be357-7c7af0b983cmr2109879785a.7.1744643213906;
+        Mon, 14 Apr 2025 08:06:53 -0700 (PDT)
+ARC-Seal: i=1; a=rsa-sha256; t=1744643213; cv=none;
+        d=google.com; s=arc-20240605;
+        b=F1+idlcgzgK1yAQmeOJv9i15/Q/KwDIsPzvpCXIZREX13IBr+fsSfwz3faANzyP+in
+         CgQqQyrNF/UqJD/6yqEVxV+KtMDgqHplhaGhGz+gsvrjopFKMh08Dv5Vl9bmPGtxjj74
+         X5HiJGIUYOF0NqAlfbTiyTl7Is/qRPKAXCr78RP8bhONnCW5DtHyCZG6lRba4xVHZx48
+         D9YtJDfl+I96KnHkvxh+5Kg+RO7ZdyruY8x5O/ewNcRxj7OxryFh01tiTRIjJyykbBID
+         EYRjBF30SZDOpoCtgZMGji1A6eq6prJYVimiN98zmw499PBNcJ0Y7NcEgnnLXeJC98qq
+         sOkA==
+ARC-Message-Signature: i=1; a=rsa-sha256; c=relaxed/relaxed; d=google.com; s=arc-20240605;
+        h=to:subject:message-id:date:from:mime-version:dkim-signature;
+        bh=k8BPZm922I3oIOtL1Ib89ne6j1qXX0nYGuN0s94cyRI=;
+        fh=AOGeH7lFm2zf0K4xCbfWhVHs5/wGjaI4aTeqnl/IpcU=;
+        b=JL05FNuX27FX3ZDpoEkppf3omUZNBKv8m5/YL4NfExOZ/vKIvE3NPrYoqEhNn9Kv98
+         ASgGa2eXcLXodga/SwOiJdCcV0qpHwwLSNyVTgiG0VhKAvtVip+3T5Gutqxz9wBCVTrm
+         6bGZ90iaxigWAH3ycEVprUJoCaHDapdEtEFGLpvqgTNBqOX5cg+kN5tA14Bdj55RxM1E
+         Z/PAoe5s5OFP3ml8K2IRcZ8x6hY4duKRU7mF+TdLRuVsY0vc0tWIIJCTHJruncCn9R/O
+         AUikLvZp8ZO+FPdkxUlYvHEABXDq58HYn3V8e2I2pSwQlphd3jbHrl2ckVt18shz1TJz
+         aAuQ==;
+        dara=google.com
+ARC-Authentication-Results: i=1; mx.google.com;
+       dkim=pass header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601 header.b=W1gUZQlo;
+       spf=pass (google.com: domain of onlinecourses@nptel.iitm.ac.in designates 209.85.220.41 as permitted sender) smtp.mailfrom=onlinecourses@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@nptel.iitm.ac.in
+Received: from mail-sor-f41.google.com (mail-sor-f41.google.com. [209.85.220.41])
+        by mx.google.com with SMTPS id ada2fe7eead31-4c9d61451ffsor1337900137.6.2025.04.14.08.06.53
+        for <newsletter-announce@nptel.iitm.ac.in>
+        (Google Transport Security);
+        Mon, 14 Apr 2025 08:06:53 -0700 (PDT)
+Received-SPF: pass (google.com: domain of onlinecourses@nptel.iitm.ac.in designates 209.85.220.41 as permitted sender) client-ip=209.85.220.41;
+X-Gm-Gg: ASbGncuPl/+IlwH1Vnz6kKLuwyxYqXUolO7TfduD4pksThg8fTifauNUcYBzYzO7p5I
+	HQjBcvsbuplBriQqIfT0oeEgi8y50jyCWbW4M8Y1lAHofk5OQ0vx/uEQ2S5F/EcZkjslKSbApvi
+	h+WNyNTOpQ3hQP/GzQ6CZ/8q/JY8xtothYMNCwcJgqcGo+Bgt/I0TGGw==
+X-Received: by 2002:a05:6122:2218:b0:518:7ab7:afbb with SMTP id
+ 71dfb90a1353d-527c35c618cmr7578274e0c.8.1744643213101; Mon, 14 Apr 2025
+ 08:06:53 -0700 (PDT)
+MIME-Version: 1.0
+From: NPTEL <onlinecourses@nptel.iitm.ac.in>
+Date: Mon, 14 Apr 2025 20:36:41 +0530
+X-Gm-Features: ATxdqUEiwRLIm6IFJFJyH2ScMj_vi5CYXLptFn2bBPui0rEIcqzMh7I-g0CdZgA
+Message-ID: <CAFi4wK9RUrU+zMva5+Db3pefy0v2O+1w_DQgTVTnHOtTYH6Z5w@mail.gmail.com>
+Subject: NPTEL Newsletter: April 2025: Vol 6: Week 2!
+To: newsletter-announce@nptel.iitm.ac.in
+Content-Type: multipart/alternative; boundary="000000000000fa32050632be6667"
+X-Original-Sender: onlinecourses@nptel.iitm.ac.in
+X-Original-Authentication-Results: mx.google.com;       dkim=pass
+ header.i=@nptel-iitm-ac-in.20230601.gappssmtp.com header.s=20230601
+ header.b=W1gUZQlo;       spf=pass (google.com: domain of onlinecourses@nptel.iitm.ac.in
+ designates 209.85.220.41 as permitted sender) smtp.mailfrom=onlinecourses@nptel.iitm.ac.in;
+       dmarc=pass (p=QUARANTINE sp=NONE dis=NONE) header.from=iitm.ac.in;
+       dara=pass header.i=@nptel.iitm.ac.in
+Precedence: list
+Mailing-list: list newsletter-announce@nptel.iitm.ac.in; contact newsletter-announce+owners@nptel.iitm.ac.in
+List-ID: <newsletter-announce.nptel.iitm.ac.in>
+X-Spam-Checked-In-Group: newsletter-announce@nptel.iitm.ac.in
+X-Google-Group-Id: 821389845798
+List-Post: <https://groups.google.com/a/nptel.iitm.ac.in/group/newsletter-announce/post>,
+ <mailto:newsletter-announce@nptel.iitm.ac.in>
+List-Help: <https://support.google.com/a/nptel.iitm.ac.in/bin/topic.py?topic=25838>,
+ <mailto:newsletter-announce+help@nptel.iitm.ac.in>
+List-Archive: <https://groups.google.com/a/nptel.iitm.ac.in/group/newsletter-announce/>
+List-Unsubscribe: <mailto:googlegroups-manage+821389845798+unsubscribe@googlegroups.com>,
+ <https://groups.google.com/a/nptel.iitm.ac.in/group/newsletter-announce/subscribe>
+
+--000000000000fa32050632be6667
+Content-Type: text/plain; charset="UTF-8"
+
+<https://www.instagram.com/p/DIauzorMDII/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA==>
+<https://youtu.be/8h1O2Et5PlU?si=jjcowM-u3Fa360nt>
+<https://code.iitm.ac.in/webmtech>
+<https://code.iitm.ac.in/sustainability-for-indian-businesses>
+<https://elearn.nptel.ac.in/shop/iit-workshops/ongoing/java-programming-batch-2/?v=c86ee0d9d7ed>
+<https://elearn.nptel.ac.in/shop/masterclasss-workshops/masterclass-series-ongoing/introduction-to-hydrodynamic-stability/?v=c86ee0d9d7ed>
+<https://elearn.nptel.ac.in/shop/iit-workshops/ongoing/introduction-to-data-engineering-using-azure-batch-2/?v=c86ee0d9d7ed>
+<https://elearn.nptel.ac.in/shop/iit-workshops/ongoing/career-development-grow-your-team/?v=c86ee0d9d7ed>
+<https://elearn.nptel.ac.in/shop/iit-workshops/ongoing/critical-natural-resources-exploration-and-exploitation-policy/?v=c86ee0d9d7ed>
+<https://elearn.nptel.ac.in/shop/iit-workshops/ongoing/apis-agro-and-materials-using-cross-coupling/?v=c86ee0d9d7ed>
+<https://elearn.nptel.ac.in/shop/iit-workshops/ongoing/the-emergence-of-the-c-h-functionalization-strategy-in-medicinal-chemistry-and-drug-discovery/?v=c86ee0d9d7ed>
+<https://elearn.nptel.ac.in/shop/iit-workshops/ongoing/inspection-and-quality-control-in-manufacturing/?v=c86ee0d9d7ed>
+<https://elearn.nptel.ac.in/shop/iit-workshops/ongoing/signal-classification-using-long-short-term-memory-networks/?v=c86ee0d9d7ed>
+<https://elearn.nptel.ac.in/shop/iit-workshops/ongoing/survey-research-and-experimentation-in-action/?v=c86ee0d9d7ed>
+<https://elearn.nptel.ac.in/shop/iit-workshops/ongoing/weld-defects-and-their-remedies-2/?v=c86ee0d9d7ed>
+<https://elearn.nptel.ac.in/shop/iit-workshops/ongoing/deciphering-employee-ambidexterity/?v=c86ee0d9d7ed>
+
+*Follow Us:*
+[image: Facebook] <https://www.facebook.com/NPTELNoc/>
+[image: X]
+<https://x.com/nptel_official?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor>
+[image: YouTube] <https://www.youtube.com/user/nptelhrd>
+[image: Instagram] <https://www.instagram.com/nptel_india/>
+
+NPTEL Administrator,
+
+IC & SR, 3rd floor, IIT Madras, Chennai - 600036
+
+Thanks and Regards,
+NPTEL TEAM.
+
+-- 
+To unsubscribe from this group and stop receiving emails from it:
+Log in to Google Groups and click on My Groups seen in the left navigation pane. You will see the list of your groups. Choose the group "NPTEL Newsletter"
+Click the Leave Group icon on the right side to leave the group or you can choose the "No email" option under Subscription to stop receiving these emails.
+To unsubscribe from this group and stop receiving emails from it, send an email to newsletter-announce+unsubscribe@nptel.iitm.ac.in.
+
+--000000000000fa32050632be6667
+Content-Type: text/html; charset="UTF-8"
+Content-Transfer-Encoding: quoted-printable
+
+<div dir=3D"ltr"><div>
+
+
+
+ =20
+  <meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3DUTF-8">
+  <meta name=3D"viewport" content=3D"width=3Ddevice-width, initial-scale=3D=
+1.0">
+  <meta name=3D"x-apple-disable-message-reformatting">
+ =20
+  <meta http-equiv=3D"X-UA-Compatible" content=3D"IE=3Dedge">
+ =20
+  <title></title>
+
+  <style type=3D"text/css">
+    @media only screen and (min-width: 520px) {
+      .u-row {
+        width: 500px !important;
+      }
+      .u-row .u-col {
+        vertical-align: top;
+      }
+      .u-row .u-col-50 {
+        width: 250px !important;
+      }
+      .u-row .u-col-100 {
+        width: 500px !important;
+      }
+    }
+   =20
+    @media only screen and (max-width: 520px) {
+      .u-row-container {
+        max-width: 100% !important;
+        padding-left: 0px !important;
+        padding-right: 0px !important;
+      }
+      .u-row {
+        width: 100% !important;
+      }
+      .u-row .u-col {
+        display: block !important;
+        width: 100% !important;
+        min-width: 320px !important;
+        max-width: 100% !important;
+      }
+      .u-row .u-col&gt;div {
+        margin: 0 auto;
+      }
+      .u-row .u-col img {
+        max-width: 100% !important;
+      }
+    }
+   =20
+    body {
+      margin: 0;
+      padding: 0
+    }
+   =20
+    table,
+    td,
+    tr {
+      border-collapse: collapse;
+      vertical-align: top
+    }
+   =20
+    .ie-container table,
+    .mso-container table {
+      table-layout: fixed
+    }
+   =20
+    * {
+      line-height: inherit
+    }
+   =20
+    a[x-apple-data-detectors=3Dtrue] {
+      color: inherit!important;
+      text-decoration: none!important
+    }
+   =20
+    table,
+    td {
+      color: #000000;
+    }
+  </style>
+
+
+
+
+
+
+ =20
+ =20
+  <table role=3D"presentation" id=3D"u_body" style=3D"border-collapse:colla=
+pse;table-layout:fixed;border-spacing:0;vertical-align:top;min-width:320px;=
+Margin:0 auto;background-color:#ffffff;width:100%" cellpadding=3D"0" cellsp=
+acing=3D"0">
+    <tbody>
+      <tr style=3D"vertical-align:top">
+        <td style=3D"word-break:break-word;border-collapse:collapse!importa=
+nt;vertical-align:top">
+         =20
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:500px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:500px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+
+                                    <img align=3D"center" border=3D"0" src=
+=3D"https://assets.unlayer.com/projects/50932/1744630835665-Newsletter-Desi=
+gn-April-14,-2025_01.jpg?w=3D1000px" alt=3D"" title=3D"" style=3D"outline: =
+none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;disp=
+lay: inline-block !important;border: none;height: auto;float: none;width: 1=
+00%;max-width: 500px;" width=3D"500">
+
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:500px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:500px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://www.instagram.com/p/=
+DIauzorMDII/?utm_source=3Dig_web_copy_link&amp;igsh=3DMzRlODBiNWFlZA=3D=3D"=
+ target=3D"_blank">
+                                      <img align=3D"center" border=3D"0" sr=
+c=3D"https://assets.unlayer.com/projects/50932/1744630865399-Newsletter-Des=
+ign-April-14,-2025_02.jpg?w=3D1000px" alt=3D"" title=3D"" style=3D"outline:=
+ none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;dis=
+play: inline-block !important;border: none;height: auto;float: none;width: =
+100%;max-width: 500px;" width=3D"500">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:500px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:500px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://youtu.be/8h1O2Et5PlU=
+?si=3DjjcowM-u3Fa360nt" target=3D"_blank" style=3D"color:rgb(0,0,238);text-=
+decoration:underline;line-height:inherit"><img align=3D"center" border=3D"0=
+" src=3D"https://assets.unlayer.com/projects/50932/1744630908195-Newsletter=
+-Design-April-14,-2025_03.jpg?w=3D1000px" alt=3D"" title=3D"" style=3D"outl=
+ine: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both=
+;display: inline-block !important;border: none;height: auto;float: none;wid=
+th: 100%;max-width: 500px;" width=3D"500">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:500px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-50" style=3D"max-width:320px;min-=
+width:250px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://code.iitm.ac.in/webm=
+tech" target=3D"_blank" style=3D"color:rgb(0,0,238);text-decoration:underli=
+ne;line-height:inherit"><img align=3D"center" border=3D"0" src=3D"https://a=
+ssets.unlayer.com/projects/50932/1744630938007-Newsletter-Design-April-14,-=
+2025_04.jpg?w=3D500px" alt=3D"" title=3D"" style=3D"outline: none;text-deco=
+ration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-bl=
+ock !important;border: none;height: auto;float: none;width: 100%;max-width:=
+ 250px;" width=3D"250">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+                <div class=3D"u-col u-col-50" style=3D"max-width:320px;min-=
+width:250px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://code.iitm.ac.in/sust=
+ainability-for-indian-businesses" target=3D"_blank" style=3D"color:rgb(0,0,=
+238);text-decoration:underline;line-height:inherit"><img align=3D"center" b=
+order=3D"0" src=3D"https://assets.unlayer.com/projects/50932/1744630947136-=
+Newsletter-Design-April-14,-2025_05.jpg?w=3D500px" alt=3D"" title=3D"" styl=
+e=3D"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;cl=
+ear: both;display: inline-block !important;border: none;height: auto;float:=
+ none;width: 100%;max-width: 250px;" width=3D"250">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:500px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:500px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://elearn.nptel.ac.in/s=
+hop/iit-workshops/ongoing/java-programming-batch-2/?v=3Dc86ee0d9d7ed" targe=
+t=3D"_blank" style=3D"color:rgb(0,0,238);text-decoration:underline;line-hei=
+ght:inherit"><img align=3D"center" border=3D"0" src=3D"https://assets.unlay=
+er.com/projects/50932/1744632023027-Newsletter-Design-April-14,-2025_06.jpg=
+?w=3D1000px" alt=3D"" title=3D"" style=3D"outline: none;text-decoration: no=
+ne;-ms-interpolation-mode: bicubic;clear: both;display: inline-block !impor=
+tant;border: none;height: auto;float: none;width: 100%;max-width: 500px;" w=
+idth=3D"500">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:500px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:500px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://elearn.nptel.ac.in/s=
+hop/masterclasss-workshops/masterclass-series-ongoing/introduction-to-hydro=
+dynamic-stability/?v=3Dc86ee0d9d7ed" target=3D"_blank" style=3D"color:rgb(0=
+,0,238);text-decoration:underline;line-height:inherit"><img align=3D"center=
+" border=3D"0" src=3D"https://assets.unlayer.com/projects/50932/17446320606=
+84-Newsletter-Design-April-14,-2025_07.jpg?w=3D1000px" alt=3D"" title=3D"" =
+style=3D"outline: none;text-decoration: none;-ms-interpolation-mode: bicubi=
+c;clear: both;display: inline-block !important;border: none;height: auto;fl=
+oat: none;width: 100%;max-width: 500px;" width=3D"500">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:500px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:500px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://elearn.nptel.ac.in/s=
+hop/iit-workshops/ongoing/introduction-to-data-engineering-using-azure-batc=
+h-2/?v=3Dc86ee0d9d7ed" target=3D"_blank" style=3D"color:rgb(0,0,238);text-d=
+ecoration:underline;line-height:inherit"><img align=3D"center" border=3D"0"=
+ src=3D"https://assets.unlayer.com/projects/50932/1744632082013-Newsletter-=
+Design-April-14,-2025_08.jpg?w=3D1000px" alt=3D"" title=3D"" style=3D"outli=
+ne: none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;=
+display: inline-block !important;border: none;height: auto;float: none;widt=
+h: 100%;max-width: 500px;" width=3D"500">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:500px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:500px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://elearn.nptel.ac.in/s=
+hop/iit-workshops/ongoing/career-development-grow-your-team/?v=3Dc86ee0d9d7=
+ed" target=3D"_blank" style=3D"color:rgb(0,0,238);text-decoration:underline=
+;line-height:inherit"><img align=3D"center" border=3D"0" src=3D"https://ass=
+ets.unlayer.com/projects/50932/1744632088161-Newsletter-Design-April-14,-20=
+25_09.jpg?w=3D1000px" alt=3D"" title=3D"" style=3D"outline: none;text-decor=
+ation: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-blo=
+ck !important;border: none;height: auto;float: none;width: 100%;max-width: =
+500px;" width=3D"500">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:500px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:500px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://elearn.nptel.ac.in/s=
+hop/iit-workshops/ongoing/critical-natural-resources-exploration-and-exploi=
+tation-policy/?v=3Dc86ee0d9d7ed" target=3D"_blank" style=3D"color:rgb(0,0,2=
+38);text-decoration:underline;line-height:inherit"><img align=3D"center" bo=
+rder=3D"0" src=3D"https://assets.unlayer.com/projects/50932/1744632124229-N=
+ewsletter-Design-April-14,-2025_10.jpg?w=3D1000px" alt=3D"" title=3D"" styl=
+e=3D"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;cl=
+ear: both;display: inline-block !important;border: none;height: auto;float:=
+ none;width: 100%;max-width: 500px;" width=3D"500">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:500px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:500px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://elearn.nptel.ac.in/s=
+hop/iit-workshops/ongoing/apis-agro-and-materials-using-cross-coupling/?v=
+=3Dc86ee0d9d7ed" target=3D"_blank" style=3D"color:rgb(0,0,238);text-decorat=
+ion:underline;line-height:inherit"><img align=3D"center" border=3D"0" src=
+=3D"https://assets.unlayer.com/projects/50932/1744632167335-Newsletter-Desi=
+gn-April-14,-2025_11.jpg?w=3D1000px" alt=3D"" title=3D"" style=3D"outline: =
+none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;disp=
+lay: inline-block !important;border: none;height: auto;float: none;width: 1=
+00%;max-width: 500px;" width=3D"500">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:500px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:500px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://elearn.nptel.ac.in/s=
+hop/iit-workshops/ongoing/the-emergence-of-the-c-h-functionalization-strate=
+gy-in-medicinal-chemistry-and-drug-discovery/?v=3Dc86ee0d9d7ed" target=3D"_=
+blank" style=3D"color:rgb(0,0,238);text-decoration:underline;line-height:in=
+herit"><img align=3D"center" border=3D"0" src=3D"https://assets.unlayer.com=
+/projects/50932/1744632196998-Newsletter-Design-April-14,-2025_12.jpg?w=3D1=
+000px" alt=3D"" title=3D"" style=3D"outline: none;text-decoration: none;-ms=
+-interpolation-mode: bicubic;clear: both;display: inline-block !important;b=
+order: none;height: auto;float: none;width: 100%;max-width: 500px;" width=
+=3D"500">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:500px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:500px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://elearn.nptel.ac.in/s=
+hop/iit-workshops/ongoing/inspection-and-quality-control-in-manufacturing/?=
+v=3Dc86ee0d9d7ed" target=3D"_blank" style=3D"color:rgb(0,0,238);text-decora=
+tion:underline;line-height:inherit"><img align=3D"center" border=3D"0" src=
+=3D"https://assets.unlayer.com/projects/50932/1744632233513-Newsletter-Desi=
+gn-April-14,-2025_14.jpg?w=3D1000px" alt=3D"" title=3D"" style=3D"outline: =
+none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;disp=
+lay: inline-block !important;border: none;height: auto;float: none;width: 1=
+00%;max-width: 500px;" width=3D"500">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:500px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:500px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://elearn.nptel.ac.in/s=
+hop/iit-workshops/ongoing/signal-classification-using-long-short-term-memor=
+y-networks/?v=3Dc86ee0d9d7ed" target=3D"_blank" style=3D"color:rgb(0,0,238)=
+;text-decoration:underline;line-height:inherit"><img align=3D"center" borde=
+r=3D"0" src=3D"https://assets.unlayer.com/projects/50932/1744632259999-News=
+letter-Design-April-14,-2025_16.jpg?w=3D1000px" alt=3D"" title=3D"" style=
+=3D"outline: none;text-decoration: none;-ms-interpolation-mode: bicubic;cle=
+ar: both;display: inline-block !important;border: none;height: auto;float: =
+none;width: 100%;max-width: 500px;" width=3D"500">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:500px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:500px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://elearn.nptel.ac.in/s=
+hop/iit-workshops/ongoing/survey-research-and-experimentation-in-action/?v=
+=3Dc86ee0d9d7ed" target=3D"_blank" style=3D"color:rgb(0,0,238);text-decorat=
+ion:underline;line-height:inherit"><img align=3D"center" border=3D"0" src=
+=3D"https://assets.unlayer.com/projects/50932/1744632297669-Newsletter-Desi=
+gn-April-14,-2025_17.jpg?w=3D1000px" alt=3D"" title=3D"" style=3D"outline: =
+none;text-decoration: none;-ms-interpolation-mode: bicubic;clear: both;disp=
+lay: inline-block !important;border: none;height: auto;float: none;width: 1=
+00%;max-width: 500px;" width=3D"500">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:500px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:500px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://elearn.nptel.ac.in/s=
+hop/iit-workshops/ongoing/weld-defects-and-their-remedies-2/?v=3Dc86ee0d9d7=
+ed" target=3D"_blank" style=3D"color:rgb(0,0,238);text-decoration:underline=
+;line-height:inherit"><img align=3D"center" border=3D"0" src=3D"https://ass=
+ets.unlayer.com/projects/50932/1744632327191-Newsletter-Design-April-14,-20=
+25_18.jpg?w=3D1000px" alt=3D"" title=3D"" style=3D"outline: none;text-decor=
+ation: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-blo=
+ck !important;border: none;height: auto;float: none;width: 100%;max-width: =
+500px;" width=3D"500">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:500px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:500px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:0px;=
+font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <table role=3D"presentation" width=3D"100%" c=
+ellpadding=3D"0" cellspacing=3D"0" border=3D"0">
+                                <tbody><tr>
+                                  <td style=3D"padding-right:0px;padding-le=
+ft:0px" align=3D"center">
+                                    <a href=3D"https://elearn.nptel.ac.in/s=
+hop/iit-workshops/ongoing/deciphering-employee-ambidexterity/?v=3Dc86ee0d9d=
+7ed" target=3D"_blank" style=3D"color:rgb(0,0,238);text-decoration:underlin=
+e;line-height:inherit"><img align=3D"center" border=3D"0" src=3D"https://as=
+sets.unlayer.com/projects/50932/1744632366109-Newsletter-Design-April-14,-2=
+025_19.jpg?w=3D1000px" alt=3D"" title=3D"" style=3D"outline: none;text-deco=
+ration: none;-ms-interpolation-mode: bicubic;clear: both;display: inline-bl=
+ock !important;border: none;height: auto;float: none;width: 100%;max-width:=
+ 500px;" width=3D"500">
+                                    </a>
+                                  </td>
+                                </tr>
+                              </tbody></table>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:500px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:500px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:10px=
+;font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <div style=3D"font-size:14px;line-height:140%=
+;text-align:left;word-wrap:break-word">
+                                <p style=3D"line-height:140%;text-align:cen=
+ter;margin:0px"><span style=3D"font-size:18px;line-height:25.2px"><strong>F=
+ollow Us:</strong></span></p>
+                              </div>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:500px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:500px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:10px=
+;font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <div align=3D"center" style=3D"direction:ltr"=
+>
+                                <div style=3D"display:table;max-width:147px=
+">
+                                 =20
+
+
+                                 =20
+                                  <table role=3D"presentation" border=3D"0"=
+ cellspacing=3D"0" cellpadding=3D"0" width=3D"32" height=3D"32" style=3D"wi=
+dth:32px!important;height:32px!important;display:inline-block;border-collap=
+se:collapse;table-layout:fixed;border-spacing:0;vertical-align:top;margin-r=
+ight:5px">
+                                    <tbody>
+                                      <tr style=3D"vertical-align:top">
+                                        <td valign=3D"middle" style=3D"word=
+-break:break-word;border-collapse:collapse!important;vertical-align:top">
+                                          <a href=3D"https://www.facebook.c=
+om/NPTELNoc/" title=3D"Facebook" target=3D"_blank" style=3D"color:rgb(0,0,2=
+38);text-decoration:underline;line-height:inherit"><img src=3D"https://cdn.=
+tools.unlayer.com/social/icons/circle/facebook.png" alt=3D"Facebook" title=
+=3D"Facebook" width=3D"32" style=3D"outline: none;text-decoration: none;-ms=
+-interpolation-mode: bicubic;clear: both;display: block !important;border: =
+none;height: auto;float: none;max-width: 32px !important">
+                                          </a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                 =20
+
+                                 =20
+                                  <table role=3D"presentation" border=3D"0"=
+ cellspacing=3D"0" cellpadding=3D"0" width=3D"32" height=3D"32" style=3D"wi=
+dth:32px!important;height:32px!important;display:inline-block;border-collap=
+se:collapse;table-layout:fixed;border-spacing:0;vertical-align:top;margin-r=
+ight:5px">
+                                    <tbody>
+                                      <tr style=3D"vertical-align:top">
+                                        <td valign=3D"middle" style=3D"word=
+-break:break-word;border-collapse:collapse!important;vertical-align:top">
+                                          <a href=3D"https://x.com/nptel_of=
+ficial?ref_src=3Dtwsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" title=3D"X=
+" target=3D"_blank" style=3D"color:rgb(0,0,238);text-decoration:underline;l=
+ine-height:inherit"><img src=3D"https://cdn.tools.unlayer.com/social/icons/=
+circle/x.png" alt=3D"X" title=3D"X" width=3D"32" style=3D"outline: none;tex=
+t-decoration: none;-ms-interpolation-mode: bicubic;clear: both;display: blo=
+ck !important;border: none;height: auto;float: none;max-width: 32px !import=
+ant">
+                                          </a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                 =20
+
+                                 =20
+                                  <table role=3D"presentation" border=3D"0"=
+ cellspacing=3D"0" cellpadding=3D"0" width=3D"32" height=3D"32" style=3D"wi=
+dth:32px!important;height:32px!important;display:inline-block;border-collap=
+se:collapse;table-layout:fixed;border-spacing:0;vertical-align:top;margin-r=
+ight:5px">
+                                    <tbody>
+                                      <tr style=3D"vertical-align:top">
+                                        <td valign=3D"middle" style=3D"word=
+-break:break-word;border-collapse:collapse!important;vertical-align:top">
+                                          <a href=3D"https://www.youtube.co=
+m/user/nptelhrd" title=3D"YouTube" target=3D"_blank" style=3D"color:rgb(0,0=
+,238);text-decoration:underline;line-height:inherit"><img src=3D"https://cd=
+n.tools.unlayer.com/social/icons/circle/youtube.png" alt=3D"YouTube" title=
+=3D"YouTube" width=3D"32" style=3D"outline: none;text-decoration: none;-ms-=
+interpolation-mode: bicubic;clear: both;display: block !important;border: n=
+one;height: auto;float: none;max-width: 32px !important">
+                                          </a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                 =20
+
+                                 =20
+                                  <table role=3D"presentation" border=3D"0"=
+ cellspacing=3D"0" cellpadding=3D"0" width=3D"32" height=3D"32" style=3D"wi=
+dth:32px!important;height:32px!important;display:inline-block;border-collap=
+se:collapse;table-layout:fixed;border-spacing:0;vertical-align:top;margin-r=
+ight:0px">
+                                    <tbody>
+                                      <tr style=3D"vertical-align:top">
+                                        <td valign=3D"middle" style=3D"word=
+-break:break-word;border-collapse:collapse!important;vertical-align:top">
+                                          <a href=3D"https://www.instagram.=
+com/nptel_india/" title=3D"Instagram" target=3D"_blank" style=3D"color:rgb(=
+0,0,238);text-decoration:underline;line-height:inherit"><img src=3D"https:/=
+/cdn.tools.unlayer.com/social/icons/circle/instagram.png" alt=3D"Instagram"=
+ title=3D"Instagram" width=3D"32" style=3D"outline: none;text-decoration: n=
+one;-ms-interpolation-mode: bicubic;clear: both;display: block !important;b=
+order: none;height: auto;float: none;max-width: 32px !important">
+                                          </a>
+                                        </td>
+                                      </tr>
+                                    </tbody>
+                                  </table>
+                                 =20
+
+
+                                 =20
+                                </div>
+                              </div>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+
+
+          <div class=3D"u-row-container" style=3D"padding:0px;background-co=
+lor:transparent">
+            <div class=3D"u-row" style=3D"margin:0 auto;min-width:320px;max=
+-width:500px;word-wrap:break-word;word-break:break-word;background-color:tr=
+ansparent">
+              <div style=3D"border-collapse:collapse;display:table;width:10=
+0%;height:100%;background-color:transparent">
+               =20
+
+               =20
+                <div class=3D"u-col u-col-100" style=3D"max-width:320px;min=
+-width:500px;display:table-cell;vertical-align:top">
+                  <div style=3D"height:100%;width:100%!important;border-rad=
+ius:0px">
+                   =20
+                    <div style=3D"box-sizing:border-box;height:100%;padding=
+:0px;border-top:0px solid transparent;border-left:0px solid transparent;bor=
+der-right:0px solid transparent;border-bottom:0px solid transparent;border-=
+radius:0px">
+                     =20
+
+                      <table style=3D"font-family:arial,helvetica,sans-seri=
+f" role=3D"presentation" cellpadding=3D"0" cellspacing=3D"0" width=3D"100%"=
+ border=3D"0">
+                        <tbody>
+                          <tr>
+                            <td style=3D"word-break:break-word;padding:10px=
+;font-family:arial,helvetica,sans-serif" align=3D"left">
+
+                              <div style=3D"font-size:14px;line-height:140%=
+;text-align:left;word-wrap:break-word">
+                                <p style=3D"line-height:140%;text-align:cen=
+ter;margin:0px"><span style=3D"font-size:16px;line-height:22.4px">NPTEL Adm=
+inistrator,</span></p>
+                                <p style=3D"line-height:140%;text-align:cen=
+ter;margin:0px"><span style=3D"font-size:16px;line-height:22.4px">IC &amp; =
+SR, 3rd floor, IIT Madras, Chennai - 600036</span></p>
+                              </div>
+
+                            </td>
+                          </tr>
+                        </tbody>
+                      </table>
+
+                     =20
+                    </div>
+                   =20
+                  </div>
+                </div>
+               =20
+               =20
+              </div>
+            </div>
+          </div>
+
+
+
+         =20
+        </td>
+      </tr>
+    </tbody>
+  </table>
+ =20
+ =20
+
+
+
+
+
+
+</div><div><div dir=3D"ltr" class=3D"gmail_signature" data-smartmail=3D"gma=
+il_signature"><div dir=3D"ltr"><div><div dir=3D"ltr"><div dir=3D"ltr"><div>=
+<div style=3D"font-size:12.8px"><br></div></div><div>Thanks and Regards,</d=
+iv><div>NPTEL TEAM.</div></div></div></div></div></div></div></div>
+
+<p></p>
+
+-- <br />
+To unsubscribe from this group and stop receiving emails from it:<br />
+Log in to Google Groups and click on My Groups seen in the left navigation =
+pane. You will see the list of your groups. Choose the group &quot;NPTEL Ne=
+wsletter&quot;<br />
+Click the Leave Group icon on the right side to leave the group or you can =
+choose the &quot;No email&quot; option under Subscription to stop receiving=
+ these emails.<br />
+To unsubscribe from this group and stop receiving emails from it, send an e=
+mail to <a href=3D"mailto:newsletter-announce+unsubscribe@nptel.iitm.ac.in"=
+>newsletter-announce+unsubscribe@nptel.iitm.ac.in</a>.<br />
+
+--000000000000fa32050632be6667--

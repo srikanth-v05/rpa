@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-16"?>
+<ObjectRepositoryTargetData ContentHash="ggz6p_gE60qqS6UIlHW5GA" xmlns="http://schemas.uipath.com/workflow/activities/uix" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <ObjectRepositoryTargetData.Data>
+    <TargetAnchorable x:Key="TargetAnchorable" BrowserURL="docs.google.com/forms/d/e/1FAIpQLSfPHUOXMeuCQTnQViUpjwgmE2yBx6WX9rpCzxHsW6gbP6z_Mg/viewform" CVScreenId="a0e450aa-2f66-48da-ad01-ac922c41107d" CvElementArea="587, 964, 375, 43" CvType="InputBox" DesignTimeRectangle="591, 975, 99, 25" DesignTimeScaleFactor="1.25" ElementType="Text" FuzzySelectorArgument="&lt;webctrl aaname='Your answer' type='' tag='DIV' class='ndJi5d snByac' check:innerText='Your answer' /&gt;" Guid="be2cfac2-32ba-4599-9a50-cc7e6f34dbeb" ScopeSelectorArgument="&lt;html app='chrome.exe' title='bus ticket booking' /&gt;" SearchSteps="FuzzySelector, CV" Version="V4" Visibility="Interactive">
+      <TargetAnchorable.Anchors>
+        <scg:List x:TypeArguments="ITarget" Capacity="4">
+          <Target CVScreenId="a0e450aa-2f66-48da-ad01-ac922c41107d" CvTextArea="589, 912, 133, 21" CvTextArgument="Passenger age" CvType="Text" DesignTimeRectangle="591, 905, 131, 30" ElementType="Text" FuzzySelectorArgument="&lt;webctrl parentid='i11' tag='SPAN' type='' class='M7eMe' aaname='Passenger age' check:innerText='Passenger age' /&gt;" Guid="31822c21-b644-4451-af68-879bee03c08d" SearchSteps="FuzzySelector, CV" />
+        </scg:List>
+      </TargetAnchorable.Anchors>
+      <imageRef attrName="InformativeScreenshot" originalValue="200380521691b956ab9bd0fb5722c411.png" xmlns="">07Y-YsNk8DUenwwBdM0XaGw</imageRef>
+    </TargetAnchorable>
+    <x:String x:Key="ActivityType">TypeInto</x:String>
+  </ObjectRepositoryTargetData.Data>
+</ObjectRepositoryTargetData>

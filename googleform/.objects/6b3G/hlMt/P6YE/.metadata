@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome bus ticket booking",
+  "Type": "Screen",
+  "Id": "P6YEuNBTR0-0RoDCZJeKug",
+  "Reference": "dNeTHvO8h02TA0mp4Mwm7w/P6YEuNBTR0-0RoDCZJeKug",
+  "ParentRef": "dNeTHvO8h02TA0mp4Mwm7w/hlMtn62YGkCNq-qkYYPGkw",
+  "Created": "2025-04-22T15:00:55.1901161Z",
+  "Updated": "2025-04-22T15:00:55.1901161Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

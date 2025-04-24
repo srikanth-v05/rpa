@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome bus ticket booking - Google Chrome",
+  "Type": "Screen",
+  "Id": "16n6CcqqUU-tkP-N9y9PMA",
+  "Reference": "dNeTHvO8h02TA0mp4Mwm7w/16n6CcqqUU-tkP-N9y9PMA",
+  "ParentRef": "dNeTHvO8h02TA0mp4Mwm7w/hlMtn62YGkCNq-qkYYPGkw",
+  "Created": "2025-04-22T14:57:39.0689859Z",
+  "Updated": "2025-04-22T14:57:39.0689859Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=24.10.6.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.11.1.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}

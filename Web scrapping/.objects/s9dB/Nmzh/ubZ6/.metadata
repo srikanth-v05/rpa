@@ -1,0 +1,13 @@
+﻿{
+  "Name": "Chrome Amazon.in  iphone 16e",
+  "Type": "Screen",
+  "Id": "ubZ63GP0ekO_PjeD0ncsGw",
+  "Reference": "Pjx5RKMAPkCMgrPzv9Jztg/ubZ63GP0ekO_PjeD0ncsGw",
+  "ParentRef": "Pjx5RKMAPkCMgrPzv9Jztg/NmzhJ1LWN0a1BPHVaZT7Vw",
+  "Created": "2025-04-22T15:18:58.7953305Z",
+  "Updated": "2025-04-22T15:18:58.7953305Z",
+  "CreatedBy": [
+    "UiPath.UIAutomationCore, Version=25.2.1.0, Culture=neutral, PublicKeyToken=null",
+    "UiPath.Platform, Version=24.12.3.0, Culture=neutral, PublicKeyToken=null"
+  ]
+}
